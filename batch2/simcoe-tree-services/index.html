@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simcoe Tree Services — Barrie & Simcoe County's trusted tree care professionals. Expert tree removal, pruning, stump grinding, arborist services, and emergency storm response.">
+    <meta name="keywords" content="tree service, Barrie, Simcoe County, tree removal, arborist, stump grinding, tree pruning, emergency tree service, Ontario">
+    <meta name="author" content="Simcoe Tree Services">
+    <meta name="theme-color" content="#1a1f1c">
+    <title>Simcoe Tree Services | Barrie's Trusted Tree Care Experts</title>
+    <style>
+        /* ==========================================================================
+           CSS CUSTOM PROPERTIES / DESIGN TOKENS
+           ========================================================================== */
+        :root {
+            /* Dark palette – slate green & copper metallic */
+            --bg-deep: #0f1411;
+            --bg-dark: #1a1f1c;
+            --bg-mid: #222926;
+            --bg-card: #2a322d;
+            --bg-card-hover: #333c36;
+            --bg-hero-overlay: rgba(10, 16, 12, 0.82);
+
+            /* Slate greens */
+            --green-deep: #1e3a2f;
+            --green-mid: #2c5e44;
+            --green-bright: #3c8c5e;
+            --green-muted: #5a7d6a;
+            --green-light: #8ab89a;
+            --green-pale: #c4d9cc;
+            --green-neon: #4ade80;
+
+            /* Copper metallics */
+            --copper-dark: #7b4a2e;
+            --copper-mid: #b8733b;
+            --copper-bright: #d4894a;
+            --copper-light: #e8b485;
+            --copper-pale: #f5dcc3;
+            --copper-glow: #f0a050;
+
+            /* Accent / Neutrals */
+            --cream: #f5efe6;
+            --text-primary: #e8edeb;
+            --text-secondary: #b0bdb6;
+            --text-muted: #7d8c84;
+            --text-on-dark: #e0e5e2;
+            --border-subtle: rgba(255,255,255,0.06);
+            --border-card: rgba(255,255,255,0.08);
+
+            /* Gradients */
+            --gradient-copper: linear-gradient(135deg, var(--copper-mid), var(--copper-bright), var(--copper-mid));
+            --gradient-green: linear-gradient(135deg, var(--green-deep), var(--green-mid), var(--green-bright));
+            --gradient-hero-overlay: linear-gradient(180deg, rgba(10,16,12,0.72) 0%, rgba(15,20,17,0.88) 60%, rgba(15,20,17,0.96) 100%);
+            --gradient-card-border: linear-gradient(145deg, var(--copper-mid), transparent 60%);
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+            --shadow-copper: 0 0 30px rgba(184, 115, 59, 0.18);
+            --shadow-green: 0 0 20px rgba(60, 140, 94, 0.12);
+
+            /* Typography */
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+            /* Spacing */
+            --section-pad-y: 100px;
+            --section-pad-x: clamp(20px, 5vw, 60px);
+            --container-max: 1200px;
+
+            /* Transitions */
+            --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --duration-fast: 0.2s;
+            --duration-base: 0.35s;
+            --duration-slow: 0.5s;
+        }
+
+        /* ==========================================================================
+           RESET & BASE
+           ========================================================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+        }
+
+        /* Subtle background texture */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse at 20% 20%, rgba(60,140,94,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 60%, rgba(184,115,59,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 80%, rgba(60,140,94,0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        a { color: var(--copper-light); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); }
+        a:hover { color: var(--copper-bright); }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ==========================================================================
+           UTILITY CLASSES
+           ========================================================================== */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--section-pad-x);
+            position: relative;
+            z-index: 1;
+        }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
+        .text-copper { color: var(--copper-bright); }
+        .text-green { color: var(--green-bright); }
+        .text-muted { color: var(--text-muted); }
+
+        /* ==========================================================================
+           SECTION HEADER BLOCK (shared)
+           ========================================================================== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-header .label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--copper-bright);
+            margin-bottom: 12px;
+            padding: 4px 16px;
+            border: 1px solid rgba(184,115,59,0.25);
+            border-radius: 50px;
+            background: rgba(184,115,59,0.06);
+        }
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+        .section-header h2 span {
+            color: var(--copper-bright);
+        }
+        .section-header .divider {
+            display: block;
+            width: 56px;
+            height: 3px;
+            margin: 0 auto 20px;
+            background: var(--gradient-copper);
+            border-radius: 2px;
+        }
+        .section-header p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1.08rem;
+            line-height: 1.75;
+        }
+
+        /* ==========================================================================
+           NAVIGATION
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 18px 0;
+            transition: all var(--duration-base) var(--ease-out);
+            background: transparent;
+        }
+        .navbar.scrolled {
+            background: rgba(15, 20, 17, 0.95);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            box-shadow: var(--shadow-md);
+            padding: 10px 0;
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .nav-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gradient-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            box-shadow: var(--shadow-green);
+            flex-shrink: 0;
+        }
+        .nav-logo span {
+            color: var(--copper-bright);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            transition: color var(--duration-fast);
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--copper-bright);
+            transition: width var(--duration-base) var(--ease-out);
+            border-radius: 1px;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta-btn {
+            display: inline-block;
+            padding: 10px 26px;
+            background: var(--gradient-copper);
+            color: #fff !important;
+            font-weight: 600;
+            font-size: 0.88rem;
+            border-radius: 50px;
+            letter-spacing: 0.02em;
+            transition: all var(--duration-base) var(--ease-out);
+            box-shadow: 0 4px 18px rgba(184,115,59,0.25);
+            white-space: nowrap;
+        }
+        .nav-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(184,115,59,0.4);
+            color: #fff !important;
+        }
+        .nav-cta-btn::after { display: none !important; }
+
+        /* Mobile hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all var(--duration-base) var(--ease-out);
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 20, 17, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            list-style: none;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+        .mobile-menu .mobile-cta {
+            margin-top: 12px;
+            padding: 14px 40px;
+            background: var(--gradient-copper);
+            border-radius: 50px;
+            color: #fff !important;
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-deep);
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero-overlay);
+            z-index: 2;
+        }
+        .hero-bg-image {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(160deg, rgba(30,58,47,0.35) 0%, rgba(15,20,17,0.6) 50%, rgba(10,16,12,0.8) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" stop-color="%231e3a2f"/><stop offset="50%25" stop-color="%230f1814"/><stop offset="100%25" stop-color="%230a100c"/></linearGradient></defs><rect fill="url(%23g)" width="1200" height="800"/><g opacity="0.06"><circle cx="200" cy="100" r="300" fill="%233c8c5e"/><circle cx="900" cy="400" r="200" fill="%238ab89a"/><circle cx="600" cy="700" r="350" fill="%232c5e44"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        /* Tree silhouette overlay */
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -5%;
+            width: 110%;
+            height: 40%;
+            background: 
+                radial-gradient(ellipse at 30% 100%, rgba(30,58,47,0.55) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 100%, rgba(44,94,68,0.40) 0%, transparent 50%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            z-index: 4;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            background: rgba(184,115,59,0.12);
+            border: 1px solid rgba(184,115,59,0.3);
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--copper-light);
+            margin-bottom: 24px;
+        }
+        .hero-badge::before {
+            content: '';
+            width: 8px; height: 8px;
+            background: var(--copper-bright);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--copper-glow);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+        .hero h1 .highlight {
+            color: var(--copper-bright);
+            position: relative;
+        }
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-copper);
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 36px;
+            max-width: 520px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 34px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            letter-spacing: 0.02em;
+            transition: all var(--duration-base) var(--ease-out);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--gradient-copper);
+            color: #fff;
+            box-shadow: 0 6px 28px rgba(184,115,59,0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 36px rgba(184,115,59,0.45);
+            color: #fff;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid rgba(255,255,255,0.18);
+        }
+        .btn-secondary:hover {
+            border-color: var(--copper-mid);
+            color: var(--copper-light);
+            background: rgba(184,115,59,0.06);
+        }
+
+        /* Hero stat cards */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .hero-stat-card {
+            background: rgba(42,50,45,0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: all var(--duration-base) var(--ease-out);
+        }
+        .hero-stat-card:hover {
+            background: rgba(42,50,45,0.75);
+            border-color: rgba(184,115,59,0.2);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-copper);
+        }
+        .hero-stat-card .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--copper-bright);
+            line-height: 1.1;
+            display: block;
+        }
+        .hero-stat-card .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 0.02em;
+        }
+        .hero-stat-card .stat-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* ==========================================================================
+           SERVICES SECTION
+           ========================================================================== */
+        .services {
+            padding: var(--section-pad-y) 0;
+            background-color: var(--bg-dark);
+            position: relative;
+            z-index: 1;
+        }
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184,115,59,0.15), transparent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 36px 28px;
+            transition: all var(--duration-slow) var(--ease-in-out);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-copper);
+            border-radius: 0 0 2px 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--duration-base) var(--ease-out);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(184,115,59,0.15);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(184,115,59,0.18), rgba(60,140,94,0.12));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 22px;
+            border: 1px solid rgba(184,115,59,0.15);
+        }
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .service-card .learn-more {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--copper-light);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap var(--duration-fast);
+        }
+        .service-card .learn-more:hover { gap: 10px; color: var(--copper-bright); }
+
+        /* ==========================================================================
+           ABOUT SECTION
+           ========================================================================== */
+        .about {
+            padding: var(--section-pad-y) 0;
+            background-color: var(--bg-deep);
+            position: relative;
+            z-index: 1;
+        }
+        .about .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .about-image {
+            width: 100%;
+            height: 440px;
+            border-radius: 20px;
+            background: linear-gradient(150deg, var(--green-deep), var(--bg-dark), var(--copper-dark));
+            position: relative;
+            overflow: hidden;
+        }
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(138,184,154,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(184,115,59,0.1) 0%, transparent 50%);
+        }
+        /* Tree illustration */
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 70%;
+            background: 
+                radial-gradient(ellipse at 50% 0%, rgba(30,58,47,0.6) 0%, transparent 70%),
+                linear-gradient(to top, rgba(44,94,68,0.4), transparent 60%);
+            border-radius: 50% 50% 0 0;
+        }
+        .about-image .image-label {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(15,20,17,0.82);
+            backdrop-filter: blur(8px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--copper-light);
+            border: 1px solid rgba(184,115,59,0.2);
+            z-index: 2;
+        }
+
+        .about-content .section-header {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        .about-content .section-header .divider { margin-left: 0; }
+        .about-content .section-header h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: left; }
+        .about-content .section-header p { margin-left: 0; max-width: 100%; }
+
+        .about-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .about-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 18px;
+            background: rgba(42,50,45,0.35);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: all var(--duration-fast);
+        }
+        .about-features li:hover {
+            background: rgba(42,50,45,0.5);
+            border-color: rgba(184,115,59,0.12);
+        }
+        .about-features .check-icon {
+            width: 28px; height: 28px;
+            min-width: 28px;
+            background: var(--gradient-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #fff;
+            margin-top: 2px;
+        }
+        .about-features .feature-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+        .about-features .feature-text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================================================
+           WHY CHOOSE US
+           ========================================================================== */
+        .why-us {
+            padding: var(--section-pad-y) 0;
+            background-color: var(--bg-dark);
+            position: relative;
+            z-index: 1;
+        }
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(60,140,94,0.12), transparent);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .why-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all var(--duration-base) var(--ease-out);
+            position: relative;
+        }
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(60,140,94,0.18);
+            box-shadow: var(--shadow-green);
+            background: var(--bg-card-hover);
+        }
+        .why-card .icon-circle {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(60,140,94,0.18), rgba(184,115,59,0.1));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border: 1px solid rgba(60,140,94,0.2);
+        }
+        .why-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .why-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* ==========================================================================
+           TESTIMONIALS
+           ========================================================================== */
+        .testimonials {
+            padding: var(--section-pad-y) 0;
+            background-color: var(--bg-deep);
+            position: relative;
+            z-index: 1;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 30px 28px;
+            position: relative;
+            transition: all var(--duration-base) var(--ease-out);
+        }
+        .testimonial-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(184,115,59,0.12);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .testimonial-card .quote-icon {
+            font-size: 2.4rem;
+            color: var(--copper-mid);
+            opacity: 0.5;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .testimonial-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-card .author-avatar {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .testimonial-card .author-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.92rem;
+        }
+        .testimonial-card .author-location {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .testimonial-card .stars {
+            display: flex;
+            gap: 2px;
+            color: var(--copper-bright);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Placeholder badge */
+        .placeholder-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.04);
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px dashed rgba(255,255,255,0.12);
+            margin-bottom: 16px;
+        }
+
+        /* ==========================================================================
+           CONTACT / CTA
+           ========================================================================== */
+        .contact {
+            padding: var(--section-pad-y) 0;
+            background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%);
+            position: relative;
+            z-index: 1;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184,115,59,0.2), transparent);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .contact-info h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .contact-info h2 span {
+            color: var(--copper-bright);
+        }
+        .contact-info > p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .contact-detail .detail-icon {
+            width: 46px; height: 46px;
+            min-width: 46px;
+            background: linear-gradient(135deg, rgba(184,115,59,0.15), rgba(60,140,94,0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid rgba(184,115,59,0.15);
+        }
+        .contact-detail .detail-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+        .contact-detail .detail-text span {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 36px 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-form h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .contact-form > p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            letter-spacing: 0.02em;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            background: var(--bg-mid);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 0.93rem;
+            color: var(--text-primary);
+            transition: all var(--duration-fast) var(--ease-out);
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--copper-mid);
+            box-shadow: 0 0 0 3px rgba(184,115,59,0.1);
+            background: var(--bg-dark);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%237d8c84%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+        .form-group select option {
+            background: var(--bg-mid);
+            color: var(--text-primary);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: var(--gradient-copper);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            letter-spacing: 0.02em;
+            transition: all var(--duration-base) var(--ease-out);
+            box-shadow: 0 6px 24px rgba(184,115,59,0.25);
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(184,115,59,0.4);
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .footer {
+            background: var(--bg-deep);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 50px 0 30px;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+        }
+        .footer-brand .footer-logo span { color: var(--copper-bright); }
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            max-width: 300px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all var(--duration-fast);
+            color: var(--text-muted);
+        }
+        .footer-social a:hover {
+            background: rgba(184,115,59,0.15);
+            border-color: var(--copper-mid);
+            color: var(--copper-bright);
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 18px;
+            letter-spacing: 0.02em;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-col ul a {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            transition: color var(--duration-fast);
+        }
+        .footer-col ul a:hover { color: var(--copper-light); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+        .footer-bottom .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .footer-bottom .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        /* ==========================================================================
+           SCROLL TO TOP
+           ========================================================================== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            background: var(--gradient-copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(184,115,59,0.3);
+            z-index: 999;
+            cursor: pointer;
+            border: none;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all var(--duration-base) var(--ease-out);
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(184,115,59,0.5);
+        }
+
+        /* ==========================================================================
+           ANIMATION HELPERS
+           ========================================================================== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           RESPONSIVE
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content { max-width: 100%; }
+            .hero p { max-width: 100%; margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats {
+                max-width: 500px;
+                margin: 30px auto 0;
+            }
+            .about .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-image { height: 340px; }
+            .about-content .section-header { text-align: center; }
+            .about-content .section-header .divider { margin-left: auto; margin-right: auto; }
+            .about-content .section-header h2 { text-align: center; }
+            .about-content .section-header p { margin-left: auto; margin-right: auto; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --section-pad-y: 60px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            .hero { padding: 100px 0 60px; min-height: auto; }
+            .hero-stats { grid-template-columns: 1fr 1fr; gap: 14px; }
+            .hero-stat-card { padding: 20px 16px; }
+            .hero-stat-card .stat-number { font-size: 2rem; }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .why-us-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats { grid-template-columns: 1fr; }
+            .why-us-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; align-items: stretch; }
+            .btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVIGATION
+         ========================================================================== -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="#" class="nav-logo" aria-label="Simcoe Tree Services Home">
+                <div class="logo-icon" aria-hidden="true">🌳</div>
+                Simcoe<span>Tree</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta-btn">Get Estimate</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobileMenu" role="menu" aria-hidden="true">
+        <li><a href="#services" role="menuitem">Services</a></li>
+        <li><a href="#about" role="menuitem">About</a></li>
+        <li><a href="#why-us" role="menuitem">Why Us</a></li>
+        <li><a href="#testimonials" role="menuitem">Reviews</a></li>
+        <li><a href="#contact" class="mobile-cta" role="menuitem">Get Your Free Estimate</a></li>
+    </ul>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="hero" aria-label="Hero">
+        <div class="hero-bg">
+            <div class="hero-bg-image" aria-hidden="true"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Serving Simcoe County Since 2008</div>
+                <h1>
+                    Simcoe County's<br>
+                    <span class="highlight">Trusted Tree</span> Care<br>
+                    Professionals
+                </h1>
+                <p>
+                    Expert tree removal, precision pruning, stump grinding, and emergency storm response 
+                    across Barrie, Innisfil, Orillia, and all of Simcoe County. Your trees deserve the best — 
+                    and we deliver every time.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">📋 Get Free Estimate</a>
+                    <a href="#services" class="btn btn-secondary">🔍 Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat-card">
+                    <span class="stat-icon" aria-hidden="true">🏆</span>
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="stat-icon" aria-hidden="true">✅</span>
+                    <span class="stat-number">2,500+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="stat-icon" aria-hidden="true">⭐</span>
+                    <span class="stat-number">4.9</span>
+                    <span class="stat-label">Google Rating</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="stat-icon" aria-hidden="true">🛡️</span>
+                    <span class="stat-number">Fully</span>
+                    <span class="stat-label">Licensed & Insured</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES SECTION
+         ========================================================================== -->
+    <section class="services" id="services" aria-label="Our Services">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">What We Do</span>
+                <h2>Comprehensive <span>Tree Services</span></h2>
+                <span class="divider" aria-hidden="true"></span>
+                <p>
+                    From routine maintenance to emergency response, our certified arborists handle 
+                    every aspect of tree care with precision, safety, and respect for your property.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">🪓</div>
+                    <h3>Tree Removal</h3>
+                    <p>
+                        Safe, efficient removal of dead, diseased, or hazardous trees of any size. 
+                        We use advanced rigging techniques to protect your property and landscape.
+                    </p>
+                    <a href="#contact" class="learn-more">Get a Quote <span aria-hidden="true">→</span></a>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">✂️</div>
+                    <h3>Tree Pruning &amp; Trimming</h3>
+                    <p>
+                        Expert structural pruning, crown thinning, and deadwood removal to improve 
+                        tree health, aesthetics, and safety. ISA-certified techniques every time.
+                    </p>
+                    <a href="#contact" class="learn-more">Get a Quote <span aria-hidden="true">→</span></a>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">🪚</div>
+                    <h3>Stump Grinding</h3>
+                    <p>
+                        Complete stump removal down to 12 inches below grade. We grind and clear 
+                        all debris, leaving your yard clean, level, and ready for new landscaping.
+                    </p>
+                    <a href="#contact" class="learn-more">Get a Quote <span aria-hidden="true">→</span></a>
+                </article>
+
+                <!-- Service 4 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">⚠️</div>
+                    <h3>Emergency Storm Response</h3>
+                    <p>
+                        24/7 emergency service for storm-damaged and fallen trees. Fast response 
+                        when you need it most — we're on-site within hours, not days.
+                    </p>
+                    <a href="#contact" class="learn-more">Get a Quote <span aria-hidden="true">→</span></a>
+                </article>
+
+                <!-- Service 5 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">🏥</div>
+                    <h3>Tree Health &amp; Disease Care</h3>
+                    <p>
+                        Diagnosis and treatment of tree diseases, pest infestations, and nutrient 
+                        deficiencies. Deep root fertilization, cabling, and bracing services available.
+                    </p>
+                    <a href="#contact" class="learn-more">Get a Quote <span aria-hidden="true">→</span></a>
+                </article>
+
+                <!-- Service 6 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">🌿</div>
+                    <h3>Hedge &amp; Shrub Maintenance</h3>
+                    <p>
+                        Professional shaping, trimming, and care for hedges, shrubs, and ornamental 
+                        trees. Keep your entire landscape looking its absolute best year-round.
+                    </p>
+                    <a href="#contact" class="learn-more">Get a Quote <span aria-hidden="true">→</span></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT SECTION
+         ========================================================================== -->
+    <section class="about" id="about" aria-label="About Us">
+        <div class="container">
+            <div class="about-image-wrapper">
+                <div class="about-image" aria-hidden="true">
+                    <div class="image-label">📍 Barrie, Ontario</div>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="section-header">
+                    <span class="label">Who We Are</span>
+                    <h2>Simcoe County's <span>Hometown</span> Tree Experts</h2>
+                    <span class="divider" aria-hidden="true"></span>
+                    <p>
+                        We're not just a tree service — we're your neighbours. Founded in Barrie in 2008, 
+                        Simcoe Tree Services has grown into the region's most trusted name in arboriculture. 
+                        Every job is backed by a genuine commitment to safety, craftsmanship, and community.
+                    </p>
+                </div>
+                <ul class="about-features">
+                    <li>
+                        <div class="check-icon" aria-hidden="true">✓</div>
+                        <div class="feature-text">
+                            <strong>ISA Certified Arborists</strong>
+                            <span>Our team holds International Society of Arboriculture certifications</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon" aria-hidden="true">✓</div>
+                        <div class="feature-text">
+                            <strong>Fully Licensed &amp; Insured</strong>
+                            <span>$5M liability coverage — full peace of mind for every project</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon" aria-hidden="true">✓</div>
+                        <div class="feature-text">
+                            <strong>Locally Owned &amp; Operated</strong>
+                            <span>We live and work in Simcoe County — we care about our community</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="check-icon" aria-hidden="true">✓</div>
+                        <div class="feature-text">
+                            <strong>Free Estimates, No Obligation</strong>
+                            <span>Honest, transparent pricing with detailed written quotes</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHY CHOOSE US
+         ========================================================================== -->
+    <section class="why-us" id="why-us" aria-label="Why Choose Us">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">The Simcoe Difference</span>
+                <h2>Why <span>Choose Us</span></h2>
+                <span class="divider" aria-hidden="true"></span>
+                <p>
+                    When you hire Simcoe Tree Services, you're choosing a team that puts your 
+                    property, your safety, and your satisfaction above everything else.
+                </p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">👷</div>
+                    <h3>Safety First</h3>
+                    <p>
+                        Rigorous safety protocols on every job. All crew members are fully trained, 
+                        equipped with PPE, and follow WSIB-compliant procedures.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">💎</div>
+                    <h3>Premium Equipment</h3>
+                    <p>
+                        State-of-the-art bucket trucks, chippers, and climbing gear. We invest 
+                        in the best tools to deliver clean, efficient results.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">🗣️</div>
+                    <h3>Clear Communication</h3>
+                    <p>
+                        You'll always know what's happening and why. We explain every step, 
+                        answer every question, and never pressure you into a decision.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">🧹</div>
+                    <h3>Spotless Cleanup</h3>
+                    <p>
+                        We treat your property like our own. Every job includes a full cleanup — 
+                        we leave your yard cleaner than we found it.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">📋</div>
+                    <h3>Up-Front Pricing</h3>
+                    <p>
+                        No hidden fees, no surprises. You receive a detailed written estimate before 
+                        any work begins, with transparent, competitive rates.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">🌎</div>
+                    <h3>Eco-Conscious</h3>
+                    <p>
+                        We recycle 100% of wood waste into mulch or firewood. Sustainable practices 
+                        are at the core of everything we do.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">⏱️</div>
+                    <h3>Prompt &amp; Reliable</h3>
+                    <p>
+                        We show up on time, every time. Same-week availability for most non-emergency 
+                        jobs, and 24/7 response for urgent situations.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="icon-circle" aria-hidden="true">🤝</div>
+                    <h3>Community First</h3>
+                    <p>
+                        Proud sponsors of local sports teams and active participants in Barrie 
+                        community events. We give back to the place we call home.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS
+         ========================================================================== -->
+    <section class="testimonials" id="testimonials" aria-label="Customer Reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Testimonials</span>
+                <h2>What Our <span>Clients Say</span></h2>
+                <span class="divider" aria-hidden="true"></span>
+                <p>
+                    Don't just take our word for it — hear from homeowners and businesses across 
+                    Simcoe County who trust us with their trees.
+                </p>
+                <span class="placeholder-badge">▼ Representative Reviews — Real Client Feedback</span>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p>
+                        "Incredible crew. They removed a massive 60-foot maple leaning over our house 
+                        with surgical precision. Professional from start to finish — cleaned up 
+                        every last twig. Highly recommend to anyone in Barrie."
+                    </p>
+                    <div class="author">
+                        <div class="author-avatar" aria-hidden="true">MD</div>
+                        <div>
+                            <div class="author-name">Mike D.</div>
+                            <div class="author-location">Barrie, ON</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p>
+                        "Called them at 7am after a storm knocked a tree across our driveway. 
+                        They were on-site by 9am and had everything cleared by noon. True 
+                        professionals — and the price was more than fair."
+                    </p>
+                    <div class="author">
+                        <div class="author-avatar" aria-hidden="true">SR</div>
+                        <div>
+                            <div class="author-name">Sarah R.</div>
+                            <div class="author-location">Innisfil, ON</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p>
+                        "We've used Simcoe Tree Services three times now — pruning, stump grinding, 
+                        and hedge trimming. Every experience has been flawless. Fair pricing, great 
+                        communication, and they genuinely care about doing the job right."
+                    </p>
+                    <div class="author">
+                        <div class="author-avatar" aria-hidden="true">JT</div>
+                        <div>
+                            <div class="author-name">John T.</div>
+                            <div class="author-location">Orillia, ON</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT / CTA
+         ========================================================================== -->
+    <section class="contact" id="contact" aria-label="Contact & Free Estimate">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <span class="label" style="display:inline-block;margin-bottom:16px;">Get In Touch</span>
+                    <h2>Ready to <span>Get Started?</span></h2>
+                    <p>
+                        Whether you need a single tree trimmed or a complete property clearance, 
+                        we're here to help. Reach out for your free, no-obligation estimate — 
+                        we respond to all inquiries within 24 hours.
+                    </p>
+
+                    <div class="contact-detail">
+                        <div class="detail-icon" aria-hidden="true">📞</div>
+                        <div class="detail-text">
+                            <strong>Call Us</strong>
+                            <span>(705) 555-0147</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="detail-icon" aria-hidden="true">✉️</div>
+                        <div class="detail-text">
+                            <strong>Email</strong>
+                            <span>info@simcoetree.ca</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="detail-icon" aria-hidden="true">📍</div>
+                        <div class="detail-text">
+                            <strong>Service Area</strong>
+                            <span>Barrie · Innisfil · Orillia · Midland · Wasaga Beach · Collingwood · All Simcoe County</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="detail-icon" aria-hidden="true">🕐</div>
+                        <div class="detail-text">
+                            <strong>Hours</strong>
+                            <span>Mon–Fri: 7am–6pm · Sat: 8am–4pm · 24/7 Emergency Response</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Request Your Free Estimate</h3>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    <form id="estimateForm" aria-label="Free estimate request form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(705) 555-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="removal">Tree Removal</option>
+                                <option value="pruning">Tree Pruning &amp; Trimming</option>
+                                <option value="stump">Stump Grinding</option>
+                                <option value="emergency">Emergency Storm Response</option>
+                                <option value="health">Tree Health &amp; Disease Care</option>
+                                <option value="hedge">Hedge &amp; Shrub Maintenance</option>
+                                <option value="other">Other / Multiple Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Project</label>
+                            <textarea id="message" name="message" placeholder="Describe the work you need, the trees involved, and any other relevant details..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Request →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        🌳 Simcoe<span>Tree</span>
+                    </div>
+                    <p>
+                        Simcoe County's trusted tree care professionals since 2008. 
+                        Licensed, insured, and committed to excellence in every cut.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Google Business Profile">G</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Tree Removal</a></li>
+                        <li><a href="#services">Tree Pruning</a></li>
+                        <li><a href="#services">Stump Grinding</a></li>
+                        <li><a href="#services">Emergency Response</a></li>
+                        <li><a href="#services">Tree Health Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li><a href="#">Barrie</a></li>
+                        <li><a href="#">Innisfil</a></li>
+                        <li><a href="#">Orillia</a></li>
+                        <li><a href="#">Midland</a></li>
+                        <li><a href="#">All Simcoe County</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Simcoe Tree Services. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top" title="Back to top">↑</button>
+
+    <!-- ==========================================================================
+         JAVASCRIPT
+         ========================================================================== -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ── DOM Elements ────────────────────────────────────────────
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const scrollTopBtn = document.getElementById('scrollTop');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+
+            // ── Navbar scroll effect ────────────────────────────────────
+            function updateNavbar() {
+                if (!navbar) return;
+                if (window.scrollY > 60) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+
+            // ── Scroll-to-top button visibility ─────────────────────────
+            function updateScrollTop() {
+                if (!scrollTopBtn) return;
+                if (window.scrollY > 500) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            }
+
+            // ── Mobile menu toggle ──────────────────────────────────────
+            function openMobileMenu() {
+                mobileMenu.classList.add('active');
+                hamburger.classList.add('active');
+                hamburger.setAttribute('aria-expanded', 'true');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+            function toggleMobileMenu() {
+                if (mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            }
+
+            // ── Scroll-to-top click ─────────────────────────────────────
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // ── Form submission (demo) ──────────────────────────────────
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                var btn = this.querySelector('.btn-submit');
+                var originalText = btn.textContent;
+                btn.textContent = '✓ Estimate Request Sent!';
+                btn.style.background = '#2c5e44';
+                btn.disabled = true;
+                setTimeout(function() {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            }
+
+            // ── Scroll-triggered animation (Intersection Observer) ──────
+            function setupScrollAnimations() {
+                if (!('IntersectionObserver' in window)) return;
+                var observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -40px 0px'
+                };
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                    observer.observe(el);
+                });
+
+                // Also observe section cards staggered
+                document.querySelectorAll('.service-card, .why-card, .testimonial-card').forEach(function(el) {
+                    el.classList.add('animate-on-scroll');
+                    observer.observe(el);
+                });
+            }
+
+            // ── Event Listeners ─────────────────────────────────────────
+            if (hamburger) {
+                hamburger.addEventListener('click', toggleMobileMenu);
+            }
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', scrollToTop);
+            }
+            // Close mobile menu when a link is clicked
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeMobileMenu();
+                });
+            });
+            // Form
+            var form = document.getElementById('estimateForm');
+            if (form) {
+                form.addEventListener('submit', handleFormSubmit);
+            }
+            // Scroll events (throttled)
+            var ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateNavbar();
+                        updateScrollTop();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // ── Initial state ───────────────────────────────────────────
+            updateNavbar();
+            updateScrollTop();
+            setupScrollAnimations();
+
+            // ── Keyboard: close mobile menu on Escape ───────────────────
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            console.log('%c🌳 Simcoe Tree Services %c— Premium website initialized',
+                'color:#b8733b;font-weight:bold;', 'color:#8ab89a;');
+        })();
+    </script>
+
+</body>
+</html>

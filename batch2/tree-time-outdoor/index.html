@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tree Time Outdoor Services — Barrie's trusted tree care experts. Tree removal, pruning, stump grinding, emergency storm response, and more. Serving Barrie, Ontario and surrounding areas.">
+    <meta name="keywords" content="tree service, tree removal, tree pruning, stump grinding, arborist, Barrie, Ontario, tree care, emergency tree removal">
+    <meta name="author" content="Tree Time Outdoor Services">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Tree Time Outdoor Services — Barrie Tree Care Experts">
+    <meta property="og:description" content="Professional tree removal, pruning, stump grinding, and emergency tree services in Barrie, Ontario. Call us today for a free quote.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
+    <title>Tree Time Outdoor Services | Barrie, ON Tree Experts</title>
+
+    <style>
+        /* ============================================================
+           CSS CUSTOM PROPERTIES — COLOR PALETTE
+           ============================================================ */
+        :root {
+            /* Core palette */
+            --clr-bg-deep:        #0f1210;
+            --clr-bg-dark:        #161a15;
+            --clr-bg-mid:         #1d221b;
+            --clr-bg-card:        #21271f;
+            --clr-bg-card-hover:  #282f26;
+
+            /* Earthy greens */
+            --clr-green-deep:     #2d4a2c;
+            --clr-green-mid:      #3f6236;
+            --clr-green-leaf:     #5a8248;
+            --clr-green-bright:   #6e9e55;
+            --clr-green-pale:     #8db37a;
+
+            /* Warm terracotta / amber */
+            --clr-terra-deep:     #8b3e1c;
+            --clr-terra-mid:      #b8542c;
+            --clr-terra-warm:     #d4693b;
+            --clr-terra-bright:   #e87d4f;
+            --clr-terra-pale:     #f0a17e;
+
+            /* Amber / gold accents */
+            --clr-amber-deep:     #9e7622;
+            --clr-amber-mid:      #c49526;
+            --clr-amber-warm:     #daa940;
+            --clr-amber-pale:     #f0d078;
+
+            /* Neutrals */
+            --clr-white-soft:     #ece7db;
+            --clr-white-dim:      #c4bfb2;
+            --clr-white-muted:    #9d988b;
+            --clr-gray-mid:       #6b6d65;
+            --clr-gray-dark:      #3e403a;
+
+            /* Semantic aliases */
+            --clr-text-primary:   var(--clr-white-soft);
+            --clr-text-secondary: var(--clr-white-dim);
+            --clr-text-muted:     var(--clr-white-muted);
+            --clr-accent:         var(--clr-terra-warm);
+            --clr-accent-hover:   var(--clr-terra-bright);
+            --clr-btn-secondary:  var(--clr-green-leaf);
+
+            /* Typography */
+            --ff-heading:         'Georgia', 'Times New Roman', serif;
+            --ff-body:            'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --fw-light:           300;
+            --fw-regular:         400;
+            --fw-semibold:        600;
+            --fw-bold:            700;
+
+            /* Spacing */
+            --section-pad-y:      6rem;
+            --section-pad-x:      2rem;
+            --container-max:      1200px;
+            --radius-sm:          6px;
+            --radius-md:          10px;
+            --radius-lg:          16px;
+            --radius-xl:          24px;
+
+            /* Transitions */
+            --ease-smooth:        cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-bounce:        cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-fast:    180ms var(--ease-smooth);
+            --transition-med:     320ms var(--ease-smooth);
+            --transition-slow:    500ms var(--ease-smooth);
+
+            /* Shadows */
+            --shadow-card:        0 4px 20px rgba(0, 0, 0, 0.35);
+            --shadow-card-hover:  0 8px 32px rgba(0, 0, 0, 0.45);
+            --shadow-btn:         0 4px 14px rgba(212, 105, 59, 0.30);
+            --shadow-glow-green:  0 0 40px rgba(90, 130, 72, 0.15);
+        }
+
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--ff-body);
+            background-color: var(--clr-bg-deep);
+            color: var(--clr-text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Selection */
+        ::selection {
+            background-color: var(--clr-terra-warm);
+            color: var(--clr-white-soft);
+        }
+
+        /* ============================================================
+           UTILITY CLASSES
+           ============================================================ */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--section-pad-x);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-family: var(--ff-body);
+            font-size: 0.8rem;
+            font-weight: var(--fw-semibold);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--clr-terra-warm);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: var(--fw-bold);
+            color: var(--clr-text-primary);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--clr-text-secondary);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: var(--clr-terra-warm);
+        }
+        .highlight-green {
+            color: var(--clr-green-bright);
+        }
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--ff-body);
+            font-size: 0.95rem;
+            font-weight: var(--fw-semibold);
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-med);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--clr-terra-mid), var(--clr-terra-warm));
+            color: #fff;
+            box-shadow: var(--shadow-btn);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--clr-terra-warm), var(--clr-terra-bright));
+            box-shadow: 0 6px 22px rgba(212, 105, 59, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--clr-text-primary);
+            border: 2px solid var(--clr-white-dim);
+        }
+        .btn-outline:hover {
+            border-color: var(--clr-terra-warm);
+            color: var(--clr-terra-warm);
+            transform: translateY(-2px);
+        }
+
+        .btn-green {
+            background: linear-gradient(135deg, var(--clr-green-mid), var(--clr-green-leaf));
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(63, 98, 54, 0.30);
+        }
+        .btn-green:hover {
+            box-shadow: 0 6px 22px rgba(90, 130, 72, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 1rem 2.6rem;
+            font-size: 1.05rem;
+            border-radius: var(--radius-lg);
+        }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all var(--transition-med);
+            background: transparent;
+        }
+
+        .nav.scrolled {
+            background: rgba(15, 18, 16, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+            padding: 0.65rem 0;
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--section-pad-x);
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--clr-text-primary);
+            font-family: var(--ff-heading);
+            font-weight: var(--fw-bold);
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+            transition: opacity var(--transition-fast);
+        }
+        .nav__logo:hover {
+            opacity: 0.85;
+        }
+
+        .nav__logo-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--clr-green-leaf), var(--clr-green-mid));
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .nav__logo-text span {
+            display: block;
+            font-family: var(--ff-body);
+            font-size: 0.6rem;
+            font-weight: var(--fw-regular);
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: var(--clr-terra-warm);
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav__links a {
+            text-decoration: none;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+            font-weight: var(--fw-semibold);
+            letter-spacing: 0.02em;
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+        .nav__links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr-terra-warm);
+            transition: width var(--transition-med);
+        }
+        .nav__links a:hover {
+            color: var(--clr-text-primary);
+        }
+        .nav__links a:hover::after {
+            width: 100%;
+        }
+
+        .nav__cta {
+            background: var(--clr-terra-warm);
+            color: #fff !important;
+            padding: 0.55rem 1.3rem !important;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-med) !important;
+        }
+        .nav__cta:hover {
+            background: var(--clr-terra-bright) !important;
+            transform: translateY(-1px);
+        }
+        .nav__cta::after {
+            display: none !important;
+        }
+
+        /* Mobile menu toggle */
+        .nav__toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 1001;
+        }
+
+        .nav__toggle-bar {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--clr-text-primary);
+            margin: 6px 0;
+            border-radius: 2px;
+            transition: all var(--transition-med);
+        }
+        .nav__toggle.active .nav__toggle-bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .nav__toggle.active .nav__toggle-bar:nth-child(2) {
+            opacity: 0;
+        }
+        .nav__toggle.active .nav__toggle-bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 40%, rgba(47, 74, 44, 0.30) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 20% 70%, rgba(139, 62, 28, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 80% 60%, rgba(196, 149, 38, 0.10) 0%, transparent 70%),
+                var(--clr-bg-deep);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2321271f" fill-opacity="0.35" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,192C672,181,768,139,864,128C960,117,1056,139,1152,144C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/></svg>') no-repeat bottom center;
+            background-size: cover;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Animated background trees silhouette */
+        .hero__trees {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 280px;
+            opacity: 0.15;
+            pointer-events: none;
+            background:
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><polygon points="50,300 70,120 90,300" fill="%232d4a2c"/><polygon points="120,300 148,80 176,300" fill="%2330522f"/><polygon points="200,300 230,130 260,300" fill="%232d4a2c"/><polygon points="310,300 345,70 380,300" fill="%233a5c33"/><polygon points="420,300 450,110 480,300" fill="%232d4a2c"/><polygon points="540,300 578,60 616,300" fill="%233f6236"/><polygon points="660,300 695,95 730,300" fill="%2330522f"/><polygon points="770,300 798,140 826,300" fill="%232d4a2c"/><polygon points="880,300 915,75 950,300" fill="%233a5c33"/><polygon points="990,300 1020,125 1050,300" fill="%232d4a2c"/><polygon points="1100,300 1128,100 1156,300" fill="%2330522f"/></svg>') repeat-x bottom center;
+            background-size: 1200px 300px;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 105, 59, 0.12);
+            border: 1px solid rgba(212, 105, 59, 0.30);
+            color: var(--clr-terra-pale);
+            font-size: 0.8rem;
+            font-weight: var(--fw-semibold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.45rem 1.2rem;
+            border-radius: 50px;
+            margin-bottom: 1.8rem;
+        }
+        .hero__badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--clr-terra-bright);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.6); }
+        }
+
+        .hero__title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: var(--fw-bold);
+            line-height: 1.08;
+            color: var(--clr-text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero__title-line2 {
+            display: block;
+            color: var(--clr-terra-warm);
+        }
+
+        .hero__desc {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            color: var(--clr-text-secondary);
+            max-width: 580px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero__actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero__stats {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero__stat {
+            text-align: center;
+        }
+        .hero__stat-number {
+            font-family: var(--ff-heading);
+            font-size: 2.2rem;
+            font-weight: var(--fw-bold);
+            color: var(--clr-green-bright);
+            display: block;
+        }
+        .hero__stat-label {
+            font-size: 0.8rem;
+            color: var(--clr-text-muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .hero__scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--clr-text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            animation: float 2.5s ease-in-out infinite;
+        }
+        .hero__scroll-line {
+            width: 1.5px;
+            height: 34px;
+            background: linear-gradient(to bottom, var(--clr-terra-warm), transparent);
+            border-radius: 1px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ============================================================
+           SERVICES SECTION
+           ============================================================ */
+        .services {
+            padding: var(--section-pad-y) 0;
+            background: var(--clr-bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--clr-green-deep), transparent);
+        }
+
+        .services__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--clr-bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem 1.8rem;
+            transition: all var(--transition-med);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clr-green-leaf), var(--clr-terra-warm));
+            opacity: 0;
+            transition: opacity var(--transition-med);
+        }
+        .service-card:hover {
+            background: var(--clr-bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-4px);
+        }
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card__icon {
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, rgba(90, 130, 72, 0.18), rgba(90, 130, 72, 0.06));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.3rem;
+            transition: transform var(--transition-med);
+        }
+        .service-card:hover .service-card__icon {
+            transform: scale(1.08);
+        }
+
+        .service-card__title {
+            font-family: var(--ff-heading);
+            font-size: 1.25rem;
+            font-weight: var(--fw-bold);
+            color: var(--clr-text-primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .service-card__desc {
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card__tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: var(--fw-semibold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--clr-green-pale);
+            background: rgba(90, 130, 72, 0.10);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            align-self: flex-start;
+        }
+
+        /* ============================================================
+           ABOUT SECTION
+           ============================================================ */
+        .about {
+            padding: var(--section-pad-y) 0;
+            background: var(--clr-bg-deep);
+            position: relative;
+        }
+
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about__visual {
+            position: relative;
+        }
+
+        .about__image-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, var(--clr-bg-card), var(--clr-bg-mid));
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--clr-green-pale);
+            opacity: 0.6;
+            position: relative;
+            overflow: hidden;
+        }
+        .about__image-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 30% 60%, rgba(139, 62, 28, 0.20) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 70% 30%, rgba(47, 74, 44, 0.25) 0%, transparent 60%);
+        }
+
+        .about__badge {
+            position: absolute;
+            bottom: -18px;
+            right: -18px;
+            background: linear-gradient(135deg, var(--clr-terra-mid), var(--clr-terra-warm));
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: var(--fw-bold);
+            font-size: 0.85rem;
+            box-shadow: var(--shadow-btn);
+            letter-spacing: 0.02em;
+        }
+
+        .about__text .section-subtitle {
+            margin-bottom: 1.5rem;
+        }
+
+        .about__features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin: 2rem 0;
+        }
+        .about__features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--clr-text-secondary);
+        }
+        .about__features li::before {
+            content: '✓';
+            color: var(--clr-green-bright);
+            font-weight: var(--fw-bold);
+            font-size: 0.85rem;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+            width: 20px;
+        }
+
+        /* ============================================================
+           WHY CHOOSE US SECTION
+           ============================================================ */
+        .why-us {
+            padding: var(--section-pad-y) 0;
+            background: var(--clr-bg-mid);
+            position: relative;
+        }
+        .why-us::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--clr-green-deep), transparent);
+        }
+
+        .why-us__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .why-us__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-radius: var(--radius-lg);
+            background: var(--clr-bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all var(--transition-med);
+        }
+        .why-card:hover {
+            background: var(--clr-bg-card-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .why-card__icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(212, 105, 59, 0.18), rgba(212, 105, 59, 0.06));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            margin: 0 auto 1.3rem;
+            transition: all var(--transition-med);
+        }
+        .why-card:hover .why-card__icon {
+            background: linear-gradient(135deg, rgba(212, 105, 59, 0.28), rgba(212, 105, 59, 0.12));
+            transform: scale(1.08);
+        }
+
+        .why-card__title {
+            font-family: var(--ff-heading);
+            font-size: 1.15rem;
+            font-weight: var(--fw-bold);
+            color: var(--clr-text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .why-card__desc {
+            font-size: 0.88rem;
+            color: var(--clr-text-muted);
+            line-height: 1.6;
+        }
+
+        /* ============================================================
+           TESTIMONIALS SECTION
+           ============================================================ */
+        .testimonials {
+            padding: var(--section-pad-y) 0;
+            background: var(--clr-bg-dark);
+        }
+
+        .testimonials__header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .testimonial-card {
+            background: var(--clr-bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-med);
+            position: relative;
+        }
+        .testimonial-card:hover {
+            background: var(--clr-bg-card-hover);
+            box-shadow: var(--shadow-card);
+        }
+
+        .testimonial-card__stars {
+            color: var(--clr-amber-warm);
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card__quote {
+            font-size: 0.95rem;
+            color: var(--clr-text-secondary);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+            border-left: 3px solid var(--clr-green-deep);
+        }
+
+        .testimonial-card__author {
+            font-weight: var(--fw-semibold);
+            color: var(--clr-text-primary);
+            font-size: 0.9rem;
+        }
+        .testimonial-card__author span {
+            display: block;
+            font-weight: var(--fw-regular);
+            color: var(--clr-text-muted);
+            font-size: 0.78rem;
+            margin-top: 0.15rem;
+        }
+
+        /* ============================================================
+           SERVICE AREA / COVERAGE SECTION
+           ============================================================ */
+        .coverage {
+            padding: var(--section-pad-y) 0;
+            background: var(--clr-bg-deep);
+            text-align: center;
+        }
+
+        .coverage__cities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .coverage__city {
+            background: var(--clr-bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--clr-text-secondary);
+            font-weight: var(--fw-semibold);
+            transition: all var(--transition-fast);
+        }
+        .coverage__city:hover {
+            border-color: var(--clr-terra-warm);
+            color: var(--clr-terra-warm);
+        }
+
+        /* ============================================================
+           CTA / CONTACT SECTION
+           ============================================================ */
+        .cta {
+            padding: var(--section-pad-y) 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212, 105, 59, 0.10) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 30% 80%, rgba(47, 74, 44, 0.18) 0%, transparent 70%),
+                var(--clr-bg-mid);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta__inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta__title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: var(--fw-bold);
+            color: var(--clr-text-primary);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .cta__subtitle {
+            font-size: 1.05rem;
+            color: var(--clr-text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.65;
+        }
+
+        .cta__form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+        .cta__form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+        .cta__form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .cta__form label {
+            font-size: 0.8rem;
+            font-weight: var(--fw-semibold);
+            color: var(--clr-text-secondary);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .cta__form input,
+        .cta__form textarea,
+        .cta__form select {
+            background: var(--clr-bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            color: var(--clr-text-primary);
+            font-family: var(--ff-body);
+            font-size: 0.95rem;
+            transition: border-color var(--transition-fast);
+            outline: none;
+        }
+        .cta__form input:focus,
+        .cta__form textarea:focus,
+        .cta__form select:focus {
+            border-color: var(--clr-terra-warm);
+            box-shadow: 0 0 0 3px rgba(212, 105, 59, 0.10);
+        }
+        .cta__form input::placeholder,
+        .cta__form textarea::placeholder {
+            color: var(--clr-gray-mid);
+        }
+        .cta__form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .cta__contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .cta__contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+        }
+        .cta__contact-item .icon {
+            color: var(--clr-terra-warm);
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            background: var(--clr-bg-deep);
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer__brand {
+            font-family: var(--ff-heading);
+            font-size: 1.25rem;
+            font-weight: var(--fw-bold);
+            color: var(--clr-text-primary);
+            margin-bottom: 0.8rem;
+        }
+        .footer__brand-desc {
+            color: var(--clr-text-muted);
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        .footer__heading {
+            font-weight: var(--fw-semibold);
+            color: var(--clr-text-primary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .footer__links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+        .footer__links a {
+            color: var(--clr-text-muted);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        .footer__links a:hover {
+            color: var(--clr-terra-warm);
+        }
+
+        .footer__bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           MOBILE / RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .about__grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about__visual {
+                order: -1;
+            }
+            .footer__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-pad-y: 4rem;
+            }
+
+            .nav__links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(15, 18, 16, 0.97);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transition: right 0.4s var(--ease-smooth);
+                box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
+            }
+            .nav__links.open {
+                right: 0;
+            }
+
+            .nav__toggle {
+                display: block;
+            }
+
+            .hero__stats {
+                gap: 1.5rem;
+            }
+
+            .services__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta__form {
+                grid-template-columns: 1fr;
+            }
+
+            .footer__grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero__actions {
+                flex-direction: column;
+            }
+            .hero__actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .testimonials__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           MOBILE NAV OVERLAY
+           ============================================================ */
+        .nav__overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-smooth);
+        }
+        .nav__overlay.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================
+         NAVIGATION
+         =========================================================== -->
+    <header class="nav" id="navbar" role="banner">
+        <div class="nav__inner">
+            <a href="#hero" class="nav__logo" aria-label="Tree Time Outdoor Services — Home">
+                <div class="nav__logo-icon" aria-hidden="true">🌲</div>
+                <div class="nav__logo-text">
+                    Tree Time
+                    <span>Outdoor Services</span>
+                </div>
+            </a>
+
+            <nav aria-label="Primary navigation">
+                <ul class="nav__links" id="navLinks">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#cta" class="nav__cta">Get a Quote</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+        </div>
+        <div class="nav__overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- ==========================================================
+         HERO SECTION
+         =========================================================== -->
+    <section class="hero" id="hero">
+        <div class="hero__trees" aria-hidden="true"></div>
+        <div class="hero__content">
+            <div class="hero__badge">
+                <span class="hero__badge-dot" aria-hidden="true"></span>
+                Proudly Serving Barrie &amp; Simcoe County
+            </div>
+            <h1 class="hero__title">
+                Your Trees Deserve
+                <span class="hero__title-line2">Expert Care.</span>
+            </h1>
+            <p class="hero__desc">
+                From towering pines to backyard maples — Tree Time Outdoor Services delivers professional tree removal, precision pruning, stump grinding, and emergency storm response across Barrie, Ontario and the surrounding communities.
+            </p>
+            <div class="hero__actions">
+                <a href="#cta" class="btn btn-primary btn-large">Get Your Free Estimate</a>
+                <a href="#services" class="btn btn-outline btn-large">Explore Services</a>
+            </div>
+            <div class="hero__stats">
+                <div class="hero__stat">
+                    <span class="hero__stat-number">15+</span>
+                    <span class="hero__stat-label">Years Experience</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number">2,500+</span>
+                    <span class="hero__stat-label">Trees Serviced</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number">100%</span>
+                    <span class="hero__stat-label">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator" aria-hidden="true">
+            <div class="hero__scroll-line"></div>
+            Scroll
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         SERVICES SECTION
+         =========================================================== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services__header animate-on-scroll">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Complete <span class="highlight">Tree Care</span> Services</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">
+                    From routine maintenance to emergency response, our certified team handles every aspect of tree care with safety and precision.
+                </p>
+            </div>
+
+            <div class="services__grid">
+
+                <!-- Service 1 -->
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon" aria-hidden="true">🪓</div>
+                    <h3 class="service-card__title">Tree Removal</h3>
+                    <p class="service-card__desc">
+                        Safe, controlled removal of hazardous, diseased, or unwanted trees. We use advanced rigging techniques to protect your property — no tree is too big or too tight.
+                    </p>
+                    <span class="service-card__tag">Most Requested</span>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon" aria-hidden="true">✂️</div>
+                    <h3 class="service-card__title">Tree Pruning &amp; Trimming</h3>
+                    <p class="service-card__desc">
+                        Crown thinning, deadwood removal, structural pruning, and aesthetic shaping. We improve tree health, safety, and curb appeal with every cut.
+                    </p>
+                    <span class="service-card__tag">Seasonal</span>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon" aria-hidden="true">🪵</div>
+                    <h3 class="service-card__title">Stump Grinding</h3>
+                    <p class="service-card__desc">
+                        Complete stump removal below grade using commercial-grade grinders. We leave your yard clean, level, and ready for new landscaping.
+                    </p>
+                    <span class="service-card__tag">Clean Finish</span>
+                </article>
+
+                <!-- Service 4 -->
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon" aria-hidden="true">⚠️</div>
+                    <h3 class="service-card__title">Emergency Storm Response</h3>
+                    <p class="service-card__desc">
+                        24/7 emergency service when storms strike. Fallen trees, hanging limbs, property damage — we respond fast to make your property safe again.
+                    </p>
+                    <span class="service-card__tag">24/7 Available</span>
+                </article>
+
+                <!-- Service 5 -->
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon" aria-hidden="true">🏥</div>
+                    <h3 class="service-card__title">Tree Health &amp; Disease Care</h3>
+                    <p class="service-card__desc">
+                        Diagnosis and treatment for common Ontario tree diseases, pest infestations, and nutrient deficiencies. We help sick trees recover and thrive.
+                    </p>
+                    <span class="service-card__tag">Plant Health</span>
+                </article>
+
+                <!-- Service 6 -->
+                <article class="service-card animate-on-scroll">
+                    <div class="service-card__icon" aria-hidden="true">🌿</div>
+                    <h3 class="service-card__title">Lot Clearing &amp; Land Management</h3>
+                    <p class="service-card__desc">
+                        Selective clearing, brush removal, and site preparation for new construction, fences, or landscaping projects across Barrie and Simcoe County.
+                    </p>
+                    <span class="service-card__tag">Land Prep</span>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         ABOUT SECTION
+         =========================================================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__visual animate-on-scroll">
+                    <div class="about__image-placeholder" aria-hidden="true">
+                        🌲
+                    </div>
+                    <div class="about__badge">
+                        Barrie's Trusted Arborists Since 2010
+                    </div>
+                </div>
+
+                <div class="about__text animate-on-scroll">
+                    <span class="section-label">Who We Are</span>
+                    <h2 class="section-title">Rooted in <span class="highlight-green">Barrie.</span></h2>
+                    <p class="section-subtitle">
+                        Tree Time Outdoor Services is a locally owned and operated tree care company based right here in Barrie, Ontario. We're not a franchise — we're your neighbours.
+                    </p>
+                    <p class="section-subtitle" style="margin-top: 1rem;">
+                        With over 15 years of hands-on experience, our crew brings deep knowledge of the local tree species, soil conditions, and climate patterns unique to Simcoe County. Every job gets the personal attention it deserves — from the first phone call to the final cleanup.
+                    </p>
+
+                    <ul class="about__features">
+                        <li><span>Fully licensed, insured &amp; WSIB-covered for your peace of mind</span></li>
+                        <li><span>Certified arborists on every crew with ongoing safety training</span></li>
+                        <li><span>Locally owned — we live and work in the Barrie community</span></li>
+                        <li><span>Free, no-obligation on-site estimates with honest pricing</span></li>
+                    </ul>
+
+                    <a href="#cta" class="btn btn-green" style="margin-top: 0.5rem;">Meet the Team →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         WHY CHOOSE US SECTION
+         =========================================================== -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="why-us__header animate-on-scroll">
+                <span class="section-label">The Tree Time Difference</span>
+                <h2 class="section-title">Why <span class="highlight">Choose Us</span></h2>
+                <p class="section-subtitle" style="margin: 0 auto;">
+                    When you hire Tree Time, you're not just getting a tree cut down — you're getting a partner who cares about your property as much as you do.
+                </p>
+            </div>
+
+            <div class="why-us__grid">
+
+                <div class="why-card animate-on-scroll">
+                    <div class="why-card__icon" aria-hidden="true">🛡️</div>
+                    <h3 class="why-card__title">Safety First, Always</h3>
+                    <p class="why-card__desc">
+                        Every job follows strict safety protocols. Our team is trained in advanced rigging, aerial rescue, and electrical hazard awareness. Zero compromises.
+                    </p>
+                </div>
+
+                <div class="why-card animate-on-scroll">
+                    <div class="why-card__icon" aria-hidden="true">💰</div>
+                    <h3 class="why-card__title">Transparent Pricing</h3>
+                    <p class="why-card__desc">
+                        No hidden fees, no surprise upcharges. We provide detailed written estimates before any work begins, so you know exactly what to expect.
+                    </p>
+                </div>
+
+                <div class="why-card animate-on-scroll">
+                    <div class="why-card__icon" aria-hidden="true">🧹</div>
+                    <h3 class="why-card__title">Spotless Cleanup</h3>
+                    <p class="why-card__desc">
+                        We treat your property like our own. Every job ends with a thorough cleanup — we leave nothing behind but healthy trees and tidy grounds.
+                    </p>
+                </div>
+
+                <div class="why-card animate-on-scroll">
+                    <div class="why-card__icon" aria-hidden="true">⏱️</div>
+                    <h3 class="why-card__title">Reliable &amp; On Time</h3>
+                    <p class="why-card__desc">
+                        We show up when we say we will. Our scheduling is built around respect for your time — no ghosting, no multi-week delays.
+                    </p>
+                </div>
+
+                <div class="why-card animate-on-scroll">
+                    <div class="why-card__icon" aria-hidden="true">🌎</div>
+                    <h3 class="why-card__title">Eco-Conscious Practices</h3>
+                    <p class="why-card__desc">
+                        We recycle wood waste into mulch and firewood whenever possible. Healthy trees are preserved whenever safe and practical.
+                    </p>
+                </div>
+
+                <div class="why-card animate-on-scroll">
+                    <div class="why-card__icon" aria-hidden="true">📋</div>
+                    <h3 class="why-card__title">Licensed &amp; Insured</h3>
+                    <p class="why-card__desc">
+                        Fully insured with comprehensive liability coverage and WSIB compliance. You're protected from start to finish.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         TESTIMONIALS SECTION
+         =========================================================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonials__header animate-on-scroll">
+                <span class="section-label">Client Reviews</span>
+                <h2 class="section-title">What Our <span class="highlight">Customers</span> Say</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">
+                    We're proud of the reputation we've built — one happy customer at a time.
+                </p>
+            </div>
+
+            <div class="testimonials__grid">
+
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="testimonial-card__quote">
+                        "Tree Time removed a massive 60-foot maple that was leaning toward our house. The crew was incredibly professional — they had it down safely in half a day and cleaned up every twig. Highly recommend!"
+                    </blockquote>
+                    <div class="testimonial-card__author">
+                        Mike &amp; Sarah D.
+                        <span>Barrie, ON — Tree Removal</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="testimonial-card__quote">
+                        "Called them after a bad windstorm brought a huge branch down on our garage. They were at our door within an hour. Fast, fair pricing, and the crew genuinely cared about making things right."
+                    </blockquote>
+                    <div class="testimonial-card__author">
+                        Jennifer R.
+                        <span>Innisfil, ON — Emergency Response</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="testimonial-card__quote">
+                        "We had Tree Time prune our mature oaks and the difference is night and day. They knew exactly which cuts to make and the trees look beautiful and healthy. True professionals."
+                    </blockquote>
+                    <div class="testimonial-card__author">
+                        Dr. Alan K.
+                        <span>Barrie, ON — Pruning &amp; Maintenance</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         COVERAGE / SERVICE AREA
+         =========================================================== -->
+    <section class="coverage" id="coverage">
+        <div class="container animate-on-scroll">
+            <span class="section-label">Service Area</span>
+            <h2 class="section-title">Serving <span class="highlight">Simcoe County</span> &amp; Beyond</h2>
+            <p class="section-subtitle" style="margin: 0 auto;">
+                Based in Barrie, we proudly serve residential and commercial clients throughout the region.
+            </p>
+            <div class="coverage__cities">
+                <span class="coverage__city">📍 Barrie</span>
+                <span class="coverage__city">Innisfil</span>
+                <span class="coverage__city">Orillia</span>
+                <span class="coverage__city">Angus</span>
+                <span class="coverage__city">Midhurst</span>
+                <span class="coverage__city">Stroud</span>
+                <span class="coverage__city">Thornton</span>
+                <span class="coverage__city">Springwater</span>
+                <span class="coverage__city">Bradford</span>
+                <span class="coverage__city">Cookstown</span>
+                <span class="coverage__city">Alliston</span>
+                <span class="coverage__city">Wasaga Beach</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         CTA / CONTACT SECTION
+         =========================================================== -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta__inner animate-on-scroll">
+                <span class="section-label">Let's Get Started</span>
+                <h2 class="cta__title">Request Your <span class="highlight">Free Estimate</span></h2>
+                <p class="cta__subtitle">
+                    Tell us about your tree care needs and we'll respond within 24 hours with a free, no-obligation quote. Same-day estimates available for urgent work.
+                </p>
+
+                <form class="cta__form" action="#" method="POST" netlify>
+                    <div class="cta__form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required>
+                    </div>
+                    <div class="cta__form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(705) 555-0123" required>
+                    </div>
+                    <div class="cta__form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com">
+                    </div>
+                    <div class="cta__form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service…</option>
+                            <option value="tree-removal">Tree Removal</option>
+                            <option value="pruning">Pruning &amp; Trimming</option>
+                            <option value="stump-grinding">Stump Grinding</option>
+                            <option value="emergency">Emergency Storm Response</option>
+                            <option value="tree-health">Tree Health &amp; Disease</option>
+                            <option value="lot-clearing">Lot Clearing</option>
+                            <option value="other">Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="cta__form-group full-width">
+                        <label for="message">Tell Us About Your Project</label>
+                        <textarea id="message" name="message" placeholder="Describe what you need — tree size, location, urgency, etc."></textarea>
+                    </div>
+                    <div class="cta__form-group full-width" style="text-align: center; margin-top: 0.5rem;">
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%; justify-content: center;">
+                            Send My Free Estimate Request ✉️
+                        </button>
+                    </div>
+                </form>
+
+                <div class="cta__contact-info">
+                    <div class="cta__contact-item">
+                        <span class="icon" aria-hidden="true">📞</span>
+                        <span>(705) 555-TREE</span>
+                    </div>
+                    <div class="cta__contact-item">
+                        <span class="icon" aria-hidden="true">📧</span>
+                        <span>info@treetimeoutdoor.ca</span>
+                    </div>
+                    <div class="cta__contact-item">
+                        <span class="icon" aria-hidden="true">📍</span>
+                        <span>Barrie, ON L4N 0A1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         FOOTER
+         =========================================================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <div class="footer__brand">🌲 Tree Time Outdoor Services</div>
+                    <p class="footer__brand-desc">
+                        Barrie's trusted tree care professionals. Licensed, insured, and committed to the health and beauty of your landscape.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#cta">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Our Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="#services">Tree Removal</a></li>
+                        <li><a href="#services">Pruning &amp; Trimming</a></li>
+                        <li><a href="#services">Stump Grinding</a></li>
+                        <li><a href="#services">Emergency Response</a></li>
+                        <li><a href="#services">Tree Health Care</a></li>
+                        <li><a href="#services">Lot Clearing</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <span>&copy; 2026 Tree Time Outdoor Services. All rights reserved.</span>
+                <span>Proudly serving Barrie, Ontario &amp; Simcoe County.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================
+         SCRIPTS
+         =========================================================== -->
+    <script>
+        // ========================================================
+        // NAVIGATION: SCROLLED STATE
+        // ========================================================
+        const navbar = document.getElementById('navbar');
+
+        function updateNavScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', updateNavScroll, { passive: true });
+        updateNavScroll(); // initial check
+
+        // ========================================================
+        // NAVIGATION: MOBILE MENU TOGGLE
+        // ========================================================
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        let menuOpen = false;
+
+        function openMenu() {
+            menuOpen = true;
+            navLinks.classList.add('open');
+            navToggle.classList.add('active');
+            navToggle.setAttribute('aria-expanded', 'true');
+            navOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            menuOpen = false;
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        navToggle.addEventListener('click', () => {
+            if (menuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        navOverlay.addEventListener('click', closeMenu);
+
+        // Close menu when a nav link is clicked (smooth-scroll to section)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (menuOpen) {
+                    // Small delay so the smooth scroll can begin
+                    setTimeout(closeMenu, 150);
+                }
+            });
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menuOpen) {
+                closeMenu();
+                navToggle.focus();
+            }
+        });
+
+        // ========================================================
+        // SCROLL ANIMATIONS: Intersection Observer
+        // ========================================================
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback: show all immediately on browsers without IntersectionObserver
+            animatedElements.forEach(el => el.classList.add('visible'));
+        }
+
+        // ========================================================
+        // FORM HANDLING: basic validation feedback
+        // ========================================================
+        const ctaForm = document.querySelector('.cta__form');
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+
+                if (!name || !phone) {
+                    alert('Please fill out your name and phone number so we can reach you.');
+                    return;
+                }
+
+                // For demo: show success message
+                const submitBtn = ctaForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = '✓ Request Sent! We\'ll Call You Soon';
+                submitBtn.style.background = 'linear-gradient(135deg, #3f6236, #5a8248)';
+                submitBtn.disabled = true;
+
+                // Reset after a few seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                    ctaForm.reset();
+                }, 4000);
+            });
+        }
+    </script>
+
+</body>
+</html>

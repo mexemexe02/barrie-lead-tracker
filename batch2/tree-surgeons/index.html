@@ -1,0 +1,3155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tree Surgeons — Barrie's premier precision tree care service. Expert tree surgery, hazardous removals, disease treatment, and arboricultural consulting. Serving Barrie, Ontario and the surrounding region.">
+    <meta name="keywords" content="tree surgeons, tree service, Barrie, Ontario, tree removal, arborist, tree disease treatment, hazardous tree removal, precision tree care, emergency tree service">
+    <meta name="author" content="Tree Surgeons Barrie">
+    <meta name="theme-color" content="#0d1f0e">
+    <meta property="og:title" content="Tree Surgeons — Precision Tree Care | Barrie, ON">
+    <meta property="og:description" content="Surgical precision for your trees. Expert arborists delivering hazardous removals, disease treatment, and premium tree care in Barrie, Ontario.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://treesurgeonsbarrie.ca">
+    <meta property="og:locale" content="en_CA">
+
+    <title>Tree Surgeons — Precision Tree Care | Barrie, Ontario</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================================
+           CSS CUSTOM PROPERTIES — DESIGN TOKENS
+           ============================================================ */
+        :root {
+            /* Core palette */
+            --forest-deep: #0a1a0b;
+            --forest-dark: #0d1f0e;
+            --forest-mid: #132f14;
+            --forest-rich: #1a3d1c;
+            --forest-glow: #2a5e2d;
+            --forest-accent: #3d8b40;
+
+            --steel-dark: #1a232a;
+            --steel-mid: #2c3a45;
+            --steel-cool: #546e7a;
+            --steel-light: #90a4ae;
+            --steel-ice: #b0bec5;
+            --steel-white: #e0e7eb;
+
+            --surgical-white: #f0f4f3;
+            --pure-white: #ffffff;
+            --off-white: #e8edec;
+            --cream: #f5f6f0;
+
+            --accent-amber: #c9a84c;
+            --accent-gold: #d4af37;
+            --accent-bronze: #8b7355;
+
+            --danger-red: #c0392b;
+            --warning-orange: #e67e22;
+
+            /* Functional */
+            --text-primary: #e8edec;
+            --text-secondary: #b0bec5;
+            --text-muted: #6e8087;
+            --text-inverse: #0a1a0b;
+
+            --bg-primary: #0a1a0b;
+            --bg-secondary: #0d1f0e;
+            --bg-elevated: #132f14;
+            --bg-card: rgba(19, 47, 20, 0.7);
+            --bg-glass: rgba(13, 31, 14, 0.85);
+
+            --border-subtle: rgba(84, 110, 122, 0.2);
+            --border-medium: rgba(84, 110, 122, 0.35);
+            --border-strong: rgba(84, 110, 122, 0.5);
+
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+            --shadow-glow-green: 0 0 30px rgba(42, 94, 45, 0.3);
+            --shadow-glow-steel: 0 0 20px rgba(84, 110, 122, 0.2);
+
+            /* Typography */
+            --font-display: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+            /* Spacing scale */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 6rem;
+            --space-5xl: 8rem;
+
+            /* Layout */
+            --max-width: 1280px;
+            --nav-height: 80px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+
+            /* Transitions */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --duration-fast: 150ms;
+            --duration-base: 300ms;
+            --duration-slow: 500ms;
+            --duration-glacial: 800ms;
+        }
+
+        /* ============================================================
+           CSS RESET & BASE STYLES
+           ============================================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background-color: var(--forest-accent);
+            color: var(--pure-white);
+        }
+
+        ::-moz-selection {
+            background-color: var(--forest-accent);
+            color: var(--pure-white);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--forest-deep);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--forest-glow);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--forest-accent);
+        }
+
+        /* ============================================================
+           TYPOGRAPHY
+           ============================================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--pure-white);
+        }
+
+        h1 {
+            font-size: clamp(2.75rem, 6vw, 5.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4.5vw, 3.75rem);
+            font-weight: 500;
+            letter-spacing: -0.015em;
+        }
+
+        h3 {
+            font-size: clamp(1.35rem, 2.5vw, 2rem);
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: var(--space-lg);
+            color: var(--text-secondary);
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+        }
+
+        a {
+            color: var(--forest-accent);
+            text-decoration: none;
+            transition: color var(--duration-base) var(--ease-out-quint);
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* ============================================================
+           UTILITY CLASSES
+           ============================================================ */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-lg);
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--forest-accent);
+            margin-bottom: var(--space-md);
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(--forest-accent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .section-header h2 {
+            margin-bottom: var(--space-md);
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* ============================================================
+           ANIMATIONS — KEYFRAMES
+           ============================================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(61, 139, 64, 0.3), 0 0 60px rgba(61, 139, 64, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(61, 139, 64, 0.5), 0 0 80px rgba(61, 139, 64, 0.2);
+            }
+        }
+
+        @keyframes scrollIndicator {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(8px); opacity: 0.5; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes floatY {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes dash-flow {
+            to { stroke-dashoffset: -100; }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes revealLine {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            background: rgba(10, 26, 11, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all var(--duration-base) var(--ease-out-quint);
+        }
+
+        .nav.scrolled {
+            background: rgba(10, 26, 11, 0.97);
+            box-shadow: var(--shadow-md);
+            border-bottom-color: var(--border-medium);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .nav-logo-icon {
+            width: 44px;
+            height: 44px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .nav-logo-text span {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: var(--space-sm) 0;
+            position: relative;
+            transition: color var(--duration-base) var(--ease-out-quint);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: var(--forest-accent);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--duration-base) var(--ease-out-quint);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--pure-white);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: 10px 22px;
+            background: transparent;
+            border: 1.5px solid var(--forest-accent);
+            color: var(--forest-accent);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--duration-base) var(--ease-out-quint);
+        }
+
+        .nav-cta:hover {
+            background: var(--forest-accent);
+            color: var(--pure-white);
+            box-shadow: var(--shadow-glow-green);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--pure-white);
+            border-radius: 2px;
+            transition: all var(--duration-base) var(--ease-out-quint);
+            transform-origin: center;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 320px;
+                height: 100vh;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: var(--space-2xl);
+                background: rgba(10, 26, 11, 0.98);
+                backdrop-filter: blur(30px);
+                -webkit-backdrop-filter: blur(30px);
+                border-left: 1px solid var(--border-subtle);
+                transition: right var(--duration-slow) var(--ease-out-expo);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+                letter-spacing: 0.1em;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: var(--nav-height);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg-gradient {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 70% at 30% 10%, rgba(42, 94, 45, 0.25) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 80% at 80% 80%, rgba(44, 58, 69, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(10, 26, 11, 0.6) 0%, transparent 70%),
+                linear-gradient(180deg, #0a1a0b 0%, #0d1f0e 40%, #132f14 100%);
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(61, 139, 64, 0.5) 2px, rgba(61, 139, 64, 0.5) 3px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(61, 139, 64, 0.5) 2px, rgba(61, 139, 64, 0.5) 3px);
+        }
+
+        .hero-bg-rings {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            opacity: 0.06;
+        }
+
+        .hero-bg-rings svg {
+            width: 100%;
+            height: 100%;
+            animation: rotateSlow 120s linear infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: var(--space-4xl) var(--space-xl);
+            animation: fadeInUp 1s var(--ease-out-expo);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: 8px 18px;
+            background: rgba(61, 139, 64, 0.12);
+            border: 1px solid rgba(61, 139, 64, 0.3);
+            border-radius: 100px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--forest-accent);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--forest-accent);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--space-lg);
+            line-height: 1.05;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--steel-ice);
+            display: block;
+            font-size: 0.6em;
+            margin-top: var(--space-sm);
+            letter-spacing: -0.005em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--space-2xl);
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: 14px 32px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--duration-base) var(--ease-out-quint);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--forest-accent);
+            color: var(--pure-white);
+            box-shadow: 0 4px 20px rgba(61, 139, 64, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: #4a9e4d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(61, 139, 64, 0.5);
+            color: var(--pure-white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--pure-white);
+            border: 1.5px solid var(--steel-cool);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--steel-ice);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+            color: var(--pure-white);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: scrollIndicator 2s ease-in-out infinite;
+        }
+
+        .hero-scroll-indicator svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.6;
+        }
+
+        /* Hero stat badges */
+        .hero-stats {
+            display: flex;
+            gap: var(--space-3xl);
+            justify-content: center;
+            margin-top: var(--space-3xl);
+            padding-top: var(--space-2xl);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            line-height: 1;
+        }
+
+        .hero-stat-number span {
+            color: var(--forest-accent);
+        }
+
+        .hero-stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-top: var(--space-sm);
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: var(--space-xl);
+                flex-wrap: wrap;
+            }
+
+            .hero-stat-number {
+                font-size: 1.8rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ============================================================
+           SECTION: SERVICES
+           ============================================================ */
+        .services {
+            position: relative;
+            padding: var(--space-5xl) 0;
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(to bottom, transparent, var(--forest-accent), transparent);
+            opacity: 0.5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            transition: all var(--duration-slow) var(--ease-out-quint);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--forest-accent), transparent);
+            opacity: 0;
+            transition: opacity var(--duration-slow) var(--ease-out-quint);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-medium);
+            box-shadow: var(--shadow-lg), var(--shadow-glow-green);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(61, 139, 64, 0.1);
+            border: 1px solid rgba(61, 139, 64, 0.25);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-xl);
+            transition: all var(--duration-base) var(--ease-out-quint);
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(61, 139, 64, 0.18);
+            border-color: rgba(61, 139, 64, 0.5);
+        }
+
+        .service-icon svg {
+            width: 26px;
+            height: 26px;
+            color: var(--forest-accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+            color: var(--pure-white);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xl);
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            font-size: 0.85rem;
+            color: var(--steel-ice);
+            padding-left: 0;
+        }
+
+        .service-features li::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--forest-accent);
+            margin-top: 0.55em;
+            flex-shrink: 0;
+        }
+
+        .service-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--forest-accent);
+            text-decoration: none;
+            margin-top: var(--space-lg);
+            transition: gap var(--duration-base) var(--ease-out-quint);
+        }
+
+        .service-cta:hover {
+            gap: var(--space-md);
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           SECTION: ABOUT
+           ============================================================ */
+        .about {
+            position: relative;
+            padding: var(--space-5xl) 0;
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(42, 94, 45, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 60%, rgba(44, 58, 69, 0.25) 0%, transparent 60%),
+                linear-gradient(135deg, #132f14 0%, #1a232a 100%);
+        }
+
+        .about-image-placeholder .tree-icon-large {
+            width: 120px;
+            height: 120px;
+            opacity: 0.5;
+            color: var(--forest-accent);
+        }
+
+        .about-image-accent {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background: var(--forest-accent);
+            opacity: 0.15;
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(10, 26, 11, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .about-image-badge-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--forest-accent);
+        }
+
+        .about-image-badge-text {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            line-height: 1;
+        }
+
+        .about-image-badge-text span {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .about-content .section-label {
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-content h2 {
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-content .lead {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            font-weight: 400;
+            line-height: 1.65;
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-content p {
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .about-stat-item {
+            text-align: left;
+        }
+
+        .about-stat-item .number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--forest-accent);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+
+        .about-stat-item .label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-3xl);
+            }
+
+            .about-image-wrapper {
+                aspect-ratio: 3 / 4;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .about-stats-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-stats-row {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+        }
+
+        /* ============================================================
+           SECTION: WHY CHOOSE US
+           ============================================================ */
+        .why-us {
+            position: relative;
+            padding: var(--space-5xl) 0;
+            background: var(--bg-elevated);
+            overflow: hidden;
+        }
+
+        .why-us-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(61, 139, 64, 0.5) 40px, rgba(61, 139, 64, 0.5) 41px),
+                repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(61, 139, 64, 0.5) 40px, rgba(61, 139, 64, 0.5) 41px);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .why-us-card {
+            position: relative;
+            text-align: center;
+            padding: var(--space-2xl) var(--space-xl);
+            border-radius: var(--radius-lg);
+            background: rgba(10, 26, 11, 0.5);
+            border: 1px solid var(--border-subtle);
+            transition: all var(--duration-base) var(--ease-out-quint);
+        }
+
+        .why-us-card:hover {
+            border-color: rgba(61, 139, 64, 0.35);
+            background: rgba(10, 26, 11, 0.7);
+        }
+
+        .why-us-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--space-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, rgba(61, 139, 64, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            color: var(--forest-accent);
+            transition: transform var(--duration-base) var(--ease-out-quint);
+        }
+
+        .why-us-card:hover .why-us-icon {
+            transform: scale(1.1);
+        }
+
+        .why-us-icon svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .why-us-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+            color: var(--pure-white);
+        }
+
+        .why-us-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .why-us-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           SECTION: PROCESS
+           ============================================================ */
+        .process {
+            position: relative;
+            padding: var(--space-5xl) 0;
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .process-timeline {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--forest-accent), var(--steel-cool), var(--forest-accent));
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .process-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 0 var(--space-md);
+        }
+
+        .process-step-number {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--bg-elevated);
+            border: 2px solid var(--border-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-xl);
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--forest-accent);
+            transition: all var(--duration-base) var(--ease-out-quint);
+            position: relative;
+        }
+
+        .process-step:hover .process-step-number {
+            border-color: var(--forest-accent);
+            box-shadow: var(--shadow-glow-green);
+            background: var(--forest-mid);
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .process-timeline {
+                flex-direction: column;
+                gap: var(--space-2xl);
+            }
+
+            .process-timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 36px;
+                right: auto;
+                width: 1px;
+                height: 100%;
+            }
+
+            .process-step {
+                text-align: left;
+                padding-left: 88px;
+            }
+
+            .process-step-number {
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 0;
+            }
+        }
+
+        /* ============================================================
+           SECTION: TESTIMONIALS
+           ============================================================ */
+        .testimonials {
+            position: relative;
+            padding: var(--space-5xl) 0;
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            position: relative;
+            transition: all var(--duration-base) var(--ease-out-quint);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--border-medium);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-quote-mark {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--forest-accent);
+            opacity: 0.3;
+            margin-bottom: var(--space-sm);
+            font-style: italic;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-xl);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--forest-glow), var(--steel-mid));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            flex-shrink: 0;
+        }
+
+        .testimonial-author-info strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--pure-white);
+            font-weight: 600;
+        }
+
+        .testimonial-author-info span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: var(--space-md);
+            color: var(--accent-gold);
+        }
+
+        .testimonial-stars svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           SECTION: CERTIFICATIONS & TRUST
+           ============================================================ */
+        .certifications {
+            position: relative;
+            padding: var(--space-3xl) 0;
+            background: var(--bg-secondary);
+            overflow: hidden;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .cert-marquee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-4xl);
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            opacity: 0.6;
+            transition: opacity var(--duration-base);
+        }
+
+        .cert-item:hover {
+            opacity: 1;
+        }
+
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            color: var(--forest-accent);
+        }
+
+        .cert-text {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--steel-ice);
+        }
+
+        .cert-text strong {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: none;
+            color: var(--pure-white);
+            margin-bottom: 2px;
+        }
+
+        /* ============================================================
+           SECTION: CONTACT / CTA
+           ============================================================ */
+        .contact {
+            position: relative;
+            padding: var(--space-5xl) 0;
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            margin-bottom: var(--space-lg);
+        }
+
+        .contact-info .lead {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-lg);
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(61, 139, 64, 0.1);
+            border: 1px solid rgba(61, 139, 64, 0.2);
+            border-radius: var(--radius-md);
+            color: var(--forest-accent);
+            flex-shrink: 0;
+        }
+
+        .contact-detail-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-detail-text h4 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            margin-bottom: 2px;
+        }
+
+        .contact-detail-text p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .contact-detail-text a {
+            color: var(--forest-accent);
+            font-weight: 500;
+        }
+
+        /* Contact form */
+        .contact-form-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .contact-form-wrapper h3 {
+            margin-bottom: var(--space-xs);
+            font-size: 1.4rem;
+        }
+
+        .contact-form-wrapper .form-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--steel-ice);
+            margin-bottom: var(--space-sm);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(10, 26, 11, 0.6);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-sm);
+            color: var(--pure-white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all var(--duration-fast) var(--ease-out-quint);
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--forest-accent);
+            box-shadow: 0 0 0 3px rgba(61, 139, 64, 0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2390a4ae' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 48px;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--forest-mid);
+            color: var(--pure-white);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--forest-accent);
+            color: var(--pure-white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all var(--duration-base) var(--ease-out-quint);
+            box-shadow: 0 4px 20px rgba(61, 139, 64, 0.3);
+        }
+
+        .form-submit:hover {
+            background: #4a9e4d;
+            box-shadow: 0 8px 30px rgba(61, 139, 64, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .form-disclaimer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: var(--space-md);
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-3xl);
+            }
+        }
+
+        /* ============================================================
+           SECTION: EMERGENCY CTA BANNER
+           ============================================================ */
+        .emergency-banner {
+            position: relative;
+            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, var(--forest-mid) 0%, var(--steel-dark) 100%);
+            border-top: 1px solid var(--border-medium);
+            border-bottom: 1px solid var(--border-medium);
+            overflow: hidden;
+        }
+
+        .emergency-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 10px,
+                rgba(192, 57, 43, 0.03) 10px,
+                rgba(192, 57, 43, 0.03) 20px
+            );
+        }
+
+        .emergency-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-2xl);
+            flex-wrap: wrap;
+        }
+
+        .emergency-text {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .emergency-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(192, 57, 43, 0.15);
+            border: 2px solid rgba(192, 57, 43, 0.4);
+            border-radius: 50%;
+            color: var(--danger-red);
+            flex-shrink: 0;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .emergency-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .emergency-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .emergency-text p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .emergency-phone {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--pure-white);
+            text-decoration: none;
+            transition: color var(--duration-base);
+        }
+
+        .emergency-phone:hover {
+            color: var(--danger-red);
+        }
+
+        @media (max-width: 768px) {
+            .emergency-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .emergency-text {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .emergency-phone {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            position: relative;
+            padding: var(--space-4xl) 0 var(--space-2xl);
+            background: var(--forest-deep);
+            border-top: 1px solid var(--border-subtle);
+            overflow: hidden;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-3xl);
+            margin-bottom: var(--space-4xl);
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-lg);
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--pure-white);
+        }
+
+        .footer h4 {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--forest-accent);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .footer ul li a {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--duration-fast);
+        }
+
+        .footer ul li a:hover {
+            color: var(--pure-white);
+        }
+
+        .footer-bottom {
+            padding-top: var(--space-2xl);
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .footer-bottom p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: var(--space-xl);
+        }
+
+        .footer-bottom-links a {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--pure-white);
+        }
+
+        .footer-service-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .footer-service-area span {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            background: rgba(61, 139, 64, 0.1);
+            border: 1px solid rgba(61, 139, 64, 0.2);
+            border-radius: 100px;
+            color: var(--steel-ice);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-2xl);
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ============================================================
+           BACK TO TOP BUTTON
+           ============================================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--forest-accent);
+            border: none;
+            color: var(--pure-white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md), 0 0 20px rgba(61, 139, 64, 0.3);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all var(--duration-base) var(--ease-out-quint);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: #4a9e4d;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(61, 139, 64, 0.5);
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ============================================================
+           MOBILE NAV OVERLAY
+           ============================================================ */
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--duration-base);
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* ============================================================
+           REVEAL ON SCROLL (basic)
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           PARTICLE / DECORATIVE ELEMENTS
+           ============================================================ */
+        .decorative-line {
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--forest-accent);
+            margin: 0 auto var(--space-2xl);
+            opacity: 0.6;
+        }
+
+        .decorative-dot-grid {
+            position: absolute;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        /* ============================================================
+           RESPONSIVE IMAGES PLACEHOLDER PATTERN
+           ============================================================ */
+        .bg-pattern-dots {
+            background-image: radial-gradient(circle, rgba(61, 139, 64, 0.3) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    NAVIGATION
+    ============================================================ -->
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" aria-label="Tree Surgeons — Home">
+                <div class="nav-logo-icon">
+                    <!-- Scalpel / tree icon -->
+                    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="22" cy="22" r="20" stroke="#3d8b40" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        <path d="M22 6 L22 18" stroke="#3d8b40" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 14 L16 8" stroke="#3d8b40" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M22 14 L28 8" stroke="#3d8b40" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M18 18 L26 18" stroke="#3d8b40" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M14 22 L30 22" stroke="#90a4ae" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M10 28 L34 28" stroke="#90a4ae" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M16 34 L28 34" stroke="#90a4ae" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                        <circle cx="22" cy="22" r="3" fill="#b0bec5" opacity="0.6"/>
+                        <line x1="22" y1="18" x2="22" y2="38" stroke="#3d8b40" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="12" y1="38" x2="32" y2="38" stroke="#3d8b40" stroke-width="1.5" stroke-linecap="round"/>
+                        <!-- Crosshair precision reticle -->
+                        <circle cx="22" cy="22" r="8" stroke="#b0bec5" stroke-width="0.8" stroke-dasharray="3 3" fill="none" opacity="0.6"/>
+                    </svg>
+                </div>
+                <div class="nav-logo-text">
+                    Tree Surgeons
+                    <span>Precision Tree Care</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks" role="menubar">
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#why-us" role="menuitem">Why Us</a></li>
+                <li role="none"><a href="#process" role="menuitem">Process</a></li>
+                <li role="none"><a href="#testimonials" role="menuitem">Reviews</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="nav-cta">Free Quote</a>
+        </div>
+    </nav>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ============================================================
+    HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-gradient"></div>
+            <div class="hero-bg-pattern"></div>
+            <div class="hero-bg-rings">
+                <svg viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="400" cy="400" r="380" stroke="#3d8b40" stroke-width="0.5" opacity="0.3"/>
+                    <circle cx="400" cy="400" r="300" stroke="#3d8b40" stroke-width="0.5" opacity="0.25"/>
+                    <circle cx="400" cy="400" r="220" stroke="#90a4ae" stroke-width="0.5" opacity="0.2"/>
+                    <circle cx="400" cy="400" r="140" stroke="#3d8b40" stroke-width="0.8" opacity="0.3"/>
+                    <circle cx="400" cy="400" r="60" stroke="#b0bec5" stroke-width="1" opacity="0.25"/>
+                    <!-- Crosshair lines -->
+                    <line x1="400" y1="10" x2="400" y2="790" stroke="#3d8b40" stroke-width="0.3" opacity="0.15"/>
+                    <line x1="10" y1="400" x2="790" y2="400" stroke="#3d8b40" stroke-width="0.3" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                Barrie, Ontario — Licensed &amp; Insured
+            </div>
+
+            <h1>
+                Precision Tree Care
+                <em>Surgical skill for your landscape</em>
+            </h1>
+
+            <p class="hero-subtitle">
+                Expert arborists delivering hazardous removals, disease treatment, and premium tree surgery with the precision of a scalpel and the care of a guardian. Serving Barrie and Simcoe County.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Schedule Consultation
+                </a>
+                <a href="#services" class="btn btn-outline">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                    Explore Services
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">25<span>+</span></div>
+                    <div class="hero-stat-label">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">5,000<span>+</span></div>
+                    <div class="hero-stat-label">Trees Saved</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100<span>%</span></div>
+                    <div class="hero-stat-label">Safety Record</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">24<span>/7</span></div>
+                    <div class="hero-stat-label">Emergency Response</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <polyline points="19 12 12 19 5 12"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES SECTION
+    ============================================================ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2>Surgical Tree Services</h2>
+                <p>From precision pruning to complex hazardous removals — every procedure is planned with arboricultural science and executed with surgical precision.</p>
+                <span class="decorative-line"></span>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Precision Pruning -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 3v18h18"/>
+                            <path d="M8 16l4-12 4 12"/>
+                            <path d="M8 12h8"/>
+                            <circle cx="12" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <h3>Precision Pruning &amp; Canopy Management</h3>
+                    <p>Strategic crown thinning, deadwood removal, and structural pruning that enhances tree health, safety, and aesthetics. We treat each cut as a surgical incision — precise, intentional, and healing-oriented.</p>
+                    <ul class="service-features">
+                        <li>Crown thinning &amp; raising</li>
+                        <li>Deadwood removal</li>
+                        <li>Structural &amp; vista pruning</li>
+                        <li>Fruit tree restoration</li>
+                        <li>Storm damage repair</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More →</a>
+                </div>
+
+                <!-- Service 2: Hazardous Removal -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 22 22 2 22"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <h3>Hazardous Tree Removal</h3>
+                    <p>When a tree poses an imminent risk to property or life, our specialized rigging and crane-assisted techniques allow safe removal even in the tightest urban environments. Zero-incident safety record.</p>
+                    <ul class="service-features">
+                        <li>Crane-assisted removal</li>
+                        <li>Confined-space rigging</li>
+                        <li>Emergency storm response</li>
+                        <li>Utility line clearance</li>
+                        <li>Stump grinding &amp; removal</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More →</a>
+                </div>
+
+                <!-- Service 3: Disease Treatment -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                            <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <h3>Disease Diagnosis &amp; Treatment</h3>
+                    <p>Comprehensive plant health care including soil analysis, pest identification, and targeted treatment protocols. We diagnose before we treat — because every tree deserves an accurate assessment.</p>
+                    <ul class="service-features">
+                        <li>Arborist diagnostic assessment</li>
+                        <li>Pest &amp; disease management</li>
+                        <li>Soil remediation &amp; fertilization</li>
+                        <li>Injection therapy</li>
+                        <li>Preventative care plans</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More →</a>
+                </div>
+
+                <!-- Service 4: Cabling & Bracing -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                            <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3>Cabling, Bracing &amp; Structural Support</h3>
+                    <p>When a tree has structural weaknesses, we install engineered support systems — cables, braces, and rods — to extend its safe life. Think of it as orthopedic surgery for trees.</p>
+                    <ul class="service-features">
+                        <li>Dynamic &amp; static cabling</li>
+                        <li>Through-rod bracing</li>
+                        <li>Split-crotch repair</li>
+                        <li>Load redistribution</li>
+                        <li>Annual system inspection</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More →</a>
+                </div>
+
+                <!-- Service 5: Land Clearing -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                            <line x1="9" y1="9" x2="6" y2="5"/>
+                            <line x1="15" y1="9" x2="18" y2="5"/>
+                        </svg>
+                    </div>
+                    <h3>Selective Clearing &amp; Land Management</h3>
+                    <p>Responsible clearing for development, agriculture, or safety — always with an eye on ecosystem preservation. We don't just clear land; we curate the landscape.</p>
+                    <ul class="service-features">
+                        <li>Selective lot clearing</li>
+                        <li>Forestry mulching</li>
+                        <li>Invasive species removal</li>
+                        <li>Fire-smart landscaping</li>
+                        <li>Habitat preservation planning</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More →</a>
+                </div>
+
+                <!-- Service 6: Consulting -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>Arborist Consulting &amp; Reports</h3>
+                    <p>Certified arborist reports for insurance claims, development permits, tree protection plans, and risk assessments. Objective, science-backed documentation you can rely on.</p>
+                    <ul class="service-features">
+                        <li>Tree risk assessments (TRAQ)</li>
+                        <li>Insurance claim documentation</li>
+                        <li>Development permit arborist reports</li>
+                        <li>Tree protection plans</li>
+                        <li>Expert witness testimony</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    EMERGENCY BANNER
+    ============================================================ -->
+    <section class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <div class="emergency-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 22 22 2 22"/>
+                            <line x1="12" y1="9" x2="12" y2="14"/>
+                            <circle cx="12" cy="17.5" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3>24/7 Emergency Tree Service</h3>
+                        <p>Storm damage? Fallen tree? Hazardous lean? We're on call day and night across Barrie &amp; Simcoe County.</p>
+                    </div>
+                </div>
+                <a href="tel:+17051234567" class="emergency-phone">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (705) 123-4567
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ABOUT SECTION
+    ============================================================ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- About Image -->
+                <div class="about-image-wrapper reveal">
+                    <div class="about-image-placeholder">
+                        <!-- Abstract tree / surgical crosshair icon -->
+                        <svg class="tree-icon-large" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer surgical reticle -->
+                            <circle cx="60" cy="60" r="55" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+                            <circle cx="60" cy="60" r="45" stroke="currentColor" stroke-width="0.4" opacity="0.3"/>
+                            <circle cx="60" cy="60" r="30" stroke="currentColor" stroke-width="0.5" opacity="0.35"/>
+                            <!-- Crosshair -->
+                            <line x1="5" y1="60" x2="25" y2="60" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+                            <line x1="95" y1="60" x2="115" y2="60" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+                            <line x1="60" y1="5" x2="60" y2="20" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+                            <line x1="60" y1="100" x2="60" y2="115" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+                            <!-- Tree form -->
+                            <path d="M60 20 L60 110" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M60 35 L35 55" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M60 35 L85 55" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M45 50 L25 70" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M55 52 L45 72" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M75 50 L95 70" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M65 52 L75 72" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <!-- Canopy -->
+                            <circle cx="60" cy="30" r="18" stroke="currentColor" stroke-width="1" fill="none" opacity="0.6"/>
+                            <circle cx="60" cy="30" r="10" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.4"/>
+                            <!-- Roots -->
+                            <path d="M55 110 L45 115" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                            <path d="M65 110 L75 115" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                            <path d="M58 108 L52 116" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+                            <path d="M62 108 L68 116" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="about-image-accent"></div>
+                    <div class="about-image-badge">
+                        <div class="about-image-badge-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="about-image-badge-text">
+                            ISA Certified
+                            <span>Arborists on Staff</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Content -->
+                <div class="about-content reveal">
+                    <span class="section-label">Who We Are</span>
+                    <h2>The Surgeons<br>Behind the Saw</h2>
+                    <p class="lead">
+                        Tree Surgeons was founded on a simple principle: trees deserve the same level of care, precision, and expertise as any patient on an operating table. We're not just tree cutters — we're arboricultural clinicians.
+                    </p>
+                    <p>
+                        Based in Barrie, Ontario, our team brings together ISA Certified Arborists, plant pathologists, and rigging specialists who have trained across Canada and internationally. Every crew member undergoes rigorous safety certification and continuous education in the latest arboricultural science.
+                    </p>
+                    <p>
+                        We invest in state-of-the-art equipment — from precision rigging systems and crane operations to diagnostic tools that let us assess tree health at the cellular level. When you call Tree Surgeons, you're getting the most advanced tree care available in Simcoe County.
+                    </p>
+
+                    <div class="about-stats-row">
+                        <div class="about-stat-item">
+                            <div class="number">25+</div>
+                            <div class="label">Years in Business</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="number">8</div>
+                            <div class="label">ISA Certified Arborists</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="number">0</div>
+                            <div class="label">Safety Incidents</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    WHY CHOOSE US SECTION
+    ============================================================ -->
+    <section class="why-us" id="why-us">
+        <div class="why-us-bg"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header reveal">
+                <span class="section-label">Why Choose Us</span>
+                <h2>The Tree Surgeons Difference</h2>
+                <p>Precision, safety, and science-backed care set us apart from ordinary tree services.</p>
+                <span class="decorative-line"></span>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                    </div>
+                    <h3>ISA Certified Expertise</h3>
+                    <p>Every job is overseen by an ISA Certified Arborist who brings years of diagnostic training to your property — not just a crew with chainsaws.</p>
+                </div>
+
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <polyline points="9 12 11 14 15 10"/>
+                        </svg>
+                    </div>
+                    <h3>Fully Licensed &amp; Insured</h3>
+                    <p>$5M liability coverage, WSIB compliant, and fully bonded. Your property and peace of mind are protected from the moment we arrive.</p>
+                </div>
+
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Rapid Response</h3>
+                    <p>Same-day emergency dispatch across Barrie. Most non-emergency estimates are scheduled within 48 hours — we respect your time.</p>
+                </div>
+
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 22c1.25-6.5 5.5-11 10-11s8.75 4.5 10 11"/>
+                            <path d="M12 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                            <circle cx="12" cy="0" r="1.5" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <h3>Eco-Stewardship</h3>
+                    <p>We plant a tree for every removal. Our wood waste is recycled into lumber, mulch, or biofuel — nothing goes to landfill unnecessarily.</p>
+                </div>
+
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>Resistograph decay detection, drone canopy inspections, and GPS-mapped inventories deliver data-driven care, not guesswork.</p>
+                </div>
+
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Local, Family-Owned</h3>
+                    <p>We live and work in Barrie. Our reputation is built one tree at a time — we answer to our neighbours, not shareholders.</p>
+                </div>
+
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="12" y1="18" x2="12" y2="12"/>
+                            <line x1="9" y1="15" x2="15" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Transparent Pricing</h3>
+                    <p>Detailed, written estimates with no hidden fees. We explain exactly what needs to be done, why, and what it costs — before we start.</p>
+                </div>
+
+                <div class="why-us-card reveal">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>5-Star Rated</h3>
+                    <p>Consistently top-rated on Google, HomeStars, and the Better Business Bureau. Our clients' trust is our most valuable asset.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PROCESS SECTION
+    ============================================================ -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Process</span>
+                <h2>How We Operate</h2>
+                <p>A systematic, clinical approach to every project — from initial assessment to final cleanup.</p>
+                <span class="decorative-line"></span>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step reveal">
+                    <div class="process-step-number">1</div>
+                    <h3>Diagnose</h3>
+                    <p>Comprehensive on-site assessment by an ISA Certified Arborist. Soil analysis, decay detection, and risk evaluation.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step-number">2</div>
+                    <h3>Plan</h3>
+                    <p>Custom treatment or removal plan with detailed scope, timeline, and transparent pricing. No surprises.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step-number">3</div>
+                    <h3>Execute</h3>
+                    <p>Precision execution with advanced equipment. Full safety protocols. Meticulous attention to surrounding landscape.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step-number">4</div>
+                    <h3>Restore</h3>
+                    <p>Complete site cleanup. Wood recycling. Follow-up care recommendations. Your property looks better than we found it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    TESTIMONIALS SECTION
+    ============================================================ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2>What Our Clients Say</h2>
+                <p>Real feedback from homeowners, property managers, and businesses across Barrie and Simcoe County.</p>
+                <span class="decorative-line"></span>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        We had a massive 80-foot maple leaning dangerously toward our house after a windstorm. Tree Surgeons arrived within 2 hours with a crane crew and had the entire tree down safely by evening. True professionals — they treated our property like it was their own.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RM</div>
+                        <div class="testimonial-author-info">
+                            <strong>Robert M.</strong>
+                            <span>Barrie, ON — Emergency Removal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Our heritage oak was declining fast and we thought we'd lose it. Their arborist diagnosed a treatable fungal infection, treated it over two seasons, and the tree is thriving again. They literally saved a 200-year-old tree. Incredible knowledge and care.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div class="testimonial-author-info">
+                            <strong>Sarah L.</strong>
+                            <span>Innisfil, ON — Disease Treatment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        As a property manager for multiple commercial sites in Barrie, I need a tree service that's reliable, insured, and professional. Tree Surgeons has been our go-to for 6 years. Consistent quality, fair pricing, and their reports are accepted by every insurer we work with.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DK</div>
+                        <div class="testimonial-author-info">
+                            <strong>David K.</strong>
+                            <span>Barrie, ON — Commercial Property Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CERTIFICATIONS BANNER
+    ============================================================ -->
+    <section class="certifications">
+        <div class="container">
+            <div class="cert-marquee">
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="cert-text">
+                        <strong>ISA Certified</strong>
+                        International Society of Arboriculture
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="cert-text">
+                        <strong>Fully Insured</strong>
+                        $5M Liability Coverage
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                        </svg>
+                    </div>
+                    <div class="cert-text">
+                        <strong>WSIB Compliant</strong>
+                        Workplace Safety Certified
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="cert-text">
+                        <strong>TRAQ Qualified</strong>
+                        Tree Risk Assessment
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <div class="cert-text">
+                        <strong>BBB A+ Rated</strong>
+                        Better Business Bureau
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACT / CTA SECTION
+    ============================================================ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Get In Touch</span>
+                <h2>Schedule Your Consultation</h2>
+                <p>Ready to give your trees the care they deserve? Fill out the form and one of our ISA Certified Arborists will be in touch within 24 hours.</p>
+                <span class="decorative-line"></span>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info reveal">
+                    <h2>Let&rsquo;s Talk<br>About Your Trees</h2>
+                    <p class="lead">
+                        Every consultation starts with listening. Tell us about your trees, your concerns, and your goals. We'll craft a plan that fits.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Our Location</h4>
+                                <p>123 Maple Avenue<br>Barrie, ON L4N 1A2</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Call Us</h4>
+                                <p>Office: <a href="tel:+17051234567">(705) 123-4567</a></p>
+                                <p>Emergency: <a href="tel:+17051239876">(705) 123-9876</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@treesurgeonsbarrie.ca">info@treesurgeonsbarrie.ca</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <h4>Business Hours</h4>
+                                <p>Mon–Fri: 7:00 AM – 6:00 PM</p>
+                                <p>Sat: 8:00 AM – 4:00 PM</p>
+                                <p><strong style="color: var(--danger-red);">24/7 Emergency Service</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper reveal">
+                    <h3>Request a Free Estimate</h3>
+                    <p class="form-subtitle">We'll respond within 24 hours — often same-day.</p>
+
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(705) 555-0123">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service...</option>
+                                <option value="pruning">Precision Pruning &amp; Canopy Management</option>
+                                <option value="removal">Hazardous Tree Removal</option>
+                                <option value="disease">Disease Diagnosis &amp; Treatment</option>
+                                <option value="cabling">Cabling, Bracing &amp; Structural Support</option>
+                                <option value="clearing">Selective Clearing &amp; Land Management</option>
+                                <option value="consulting">Arborist Consulting &amp; Reports</option>
+                                <option value="emergency">Emergency Service (24/7)</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Trees</label>
+                            <textarea id="message" name="message" placeholder="Describe the issue, the tree(s) involved, and any specific concerns you have..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            Send Request
+                        </button>
+
+                        <p class="form-disclaimer">
+                            By submitting, you agree to our <a href="#">Privacy Policy</a>. We never share your information.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="nav-logo-icon">
+                            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="22" cy="22" r="20" stroke="#3d8b40" stroke-width="1.5" fill="none" opacity="0.5"/>
+                                <path d="M22 6 L22 18" stroke="#3d8b40" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M22 14 L16 8" stroke="#3d8b40" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M22 14 L28 8" stroke="#3d8b40" stroke-width="1.5" stroke-linecap="round"/>
+                                <line x1="22" y1="18" x2="22" y2="38" stroke="#3d8b40" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="12" y1="38" x2="32" y2="38" stroke="#3d8b40" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="22" cy="22" r="8" stroke="#b0bec5" stroke-width="0.8" stroke-dasharray="3 3" fill="none" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div class="footer-logo-text">Tree Surgeons</div>
+                    </div>
+                    <p>
+                        Precision tree care for Barrie, Ontario and the surrounding Simcoe County region. ISA Certified Arborists delivering surgical-grade tree services since 2001.
+                    </p>
+                    <div class="footer-service-area">
+                        <span>Barrie</span>
+                        <span>Innisfil</span>
+                        <span>Oro-Medonte</span>
+                        <span>Springwater</span>
+                        <span>Angus</span>
+                        <span>Midhurst</span>
+                        <span>Bradford</span>
+                        <span>All Simcoe County</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Precision Pruning</a></li>
+                        <li><a href="#services">Hazardous Removal</a></li>
+                        <li><a href="#services">Disease Treatment</a></li>
+                        <li><a href="#services">Cabling &amp; Bracing</a></li>
+                        <li><a href="#services">Land Clearing</a></li>
+                        <li><a href="#services">Arborist Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+17051234567">(705) 123-4567</a></li>
+                        <li><a href="mailto:info@treesurgeonsbarrie.ca">Email Us</a></li>
+                        <li><a href="#">123 Maple Ave, Barrie, ON</a></li>
+                        <li><a href="#">Google Business Profile</a></li>
+                        <li><a href="#">HomeStars</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tree Surgeons Barrie. All rights reserved. Precision Tree Care.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    BACK TO TOP
+    ============================================================ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // === DOM Elements ===
+            const navbar = document.getElementById('navbar');
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            const navOverlay = document.getElementById('navOverlay');
+            const backToTop = document.getElementById('backToTop');
+            const contactForm = document.getElementById('contactForm');
+            const allNavLinks = navLinks.querySelectorAll('a');
+
+            // === Mobile Nav Toggle ===
+            function openNav() {
+                navLinks.classList.add('open');
+                navToggle.classList.add('active');
+                navOverlay.classList.add('active');
+                navToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeNav() {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('active');
+                navOverlay.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            navToggle.addEventListener('click', function() {
+                if (navLinks.classList.contains('open')) {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            });
+
+            navOverlay.addEventListener('click', closeNav);
+
+            // Close nav when a link is clicked
+            allNavLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('open')) {
+                        closeNav();
+                    }
+                });
+            });
+
+            // === Navbar Scroll Effect ===
+            function updateNavbar() {
+                const scrollY = window.scrollY;
+                if (scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+
+            // === Back to Top Button ===
+            function updateBackToTop() {
+                if (window.scrollY > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // === Active Nav Link Highlight ===
+            function updateActiveLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPos = window.scrollY + 120;
+
+                sections.forEach(function(section) {
+                    const top = section.offsetTop;
+                    const bottom = top + section.offsetHeight;
+
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        const id = section.getAttribute('id');
+                        allNavLinks.forEach(function(link) {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // === Scroll Reveal Animation ===
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const revealPoint = 80; // px before element enters viewport
+
+                reveals.forEach(function(el) {
+                    const revealTop = el.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - revealPoint) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+
+            // === Combined Scroll Handler (throttled) ===
+            let ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateNavbar();
+                        updateBackToTop();
+                        updateActiveLink();
+                        revealOnScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // === Contact Form Handler ===
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Basic validation
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const service = document.getElementById('service').value;
+
+                if (!name || !email || !service) {
+                    alert('Please fill in all required fields (Name, Email, and Service).');
+                    return;
+                }
+
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+
+                // In a real deployment, this would POST to a server endpoint.
+                // For this demo, we simulate success.
+                const submitBtn = contactForm.querySelector('.form-submit');
+                const originalText = submitBtn.textContent;
+
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+
+                setTimeout(function() {
+                    submitBtn.textContent = '✓ Request Sent!';
+                    submitBtn.style.background = '#2a5e2d';
+                    submitBtn.style.opacity = '1';
+
+                    // Reset after a moment
+                    setTimeout(function() {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                        contactForm.reset();
+                    }, 3000);
+                }, 1200);
+            });
+
+            // === Keyboard: ESC to close nav ===
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+                    closeNav();
+                    navToggle.focus();
+                }
+            });
+
+            // === Initial call on page load ===
+            updateNavbar();
+            updateBackToTop();
+            updateActiveLink();
+            revealOnScroll();
+
+            console.log('%c🌳 Tree Surgeons Barrie %c— Precision Tree Care',
+                'color: #3d8b40; font-size: 1.2em; font-weight: bold;',
+                'color: #b0bec5;');
+            console.log('%cReady to serve Barrie & Simcoe County. Schedule your consultation today.',
+                'color: #90a4ae;');
+        })();
+    </script>
+
+</body>
+</html>

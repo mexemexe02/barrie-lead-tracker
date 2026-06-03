@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lakeside Tree Experts — Barrie's premier tree care service. Specializing in waterfront and lakefront tree maintenance, removal, and arborist services across the Lake Simcoe area.">
+    <meta name="keywords" content="tree service Barrie, arborist Lake Simcoe, tree removal Barrie, waterfront tree care, tree trimming Ontario, Lakeside Tree Experts">
+    <meta name="author" content="Lakeside Tree Experts">
+    <meta property="og:title" content="Lakeside Tree Experts — Lake Simcoe's Tree Care">
+    <meta property="og:description" content="Premium tree care for Barrie and the Lake Simcoe waterfront. Expert arborists, insured, and lake-friendly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lakesidetreeexperts.ca">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Lakeside Tree Experts — Lake Simcoe's Tree Care | Barrie, ON</title>
+
+    <style>
+        /* ============================================================
+           CSS CUSTOM PROPERTIES — Lakeside Premium Palette
+           ============================================================ */
+        :root {
+            --navy-deep: #080e1a;
+            --navy: #0a1628;
+            --navy-mid: #0f1f3a;
+            --navy-light: #15294d;
+            --teal: #0891b2;
+            --teal-bright: #06b6d4;
+            --teal-glow: rgba(8, 145, 178, 0.3);
+            --teal-subtle: rgba(8, 145, 178, 0.08);
+            --sand: #c4956a;
+            --sand-light: #d4a574;
+            --sand-pale: #e8c9a0;
+            --sand-subtle: rgba(196, 149, 106, 0.12);
+            --cream: #f5efe6;
+            --white: #ffffff;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            --radius-sm: 4px;
+            --radius: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+            --shadow-lg: 0 12px 48px rgba(0,0,0,0.5);
+            --shadow-teal: 0 4px 20px rgba(8, 145, 178, 0.2);
+
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--navy-deep);
+            color: var(--gray-200);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================================
+           TYPOGRAPHY
+           ============================================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--white);
+        }
+
+        h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
+        h4 { font-size: 1.25rem; }
+
+        a {
+            color: var(--teal-bright);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover { color: var(--sand-light); }
+
+        p { margin-bottom: 1rem; }
+        p:last-child { margin-bottom: 0; }
+
+        .section-label {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--sand);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .highlight {
+            color: var(--teal-bright);
+        }
+        .highlight-sand {
+            color: var(--sand-light);
+        }
+
+        /* ============================================================
+           UTILITY CLASSES
+           ============================================================ */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .container-narrow {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .text-center { text-align: center; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: var(--white);
+            box-shadow: var(--shadow-teal);
+        }
+        .btn-primary:hover {
+            background: var(--teal-bright);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(8, 145, 178, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+        .btn-outline:hover {
+            border-color: var(--sand);
+            color: var(--sand-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-sand {
+            background: var(--sand);
+            color: var(--navy-deep);
+            font-weight: 700;
+        }
+        .btn-sand:hover {
+            background: var(--sand-light);
+            color: var(--navy-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(196, 149, 106, 0.35);
+        }
+
+        .btn-large {
+            padding: 1.1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           BACKGROUND TEXTURES & DECORATIONS
+           ============================================================ */
+        .bg-pattern {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(8, 145, 178, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(196, 149, 106, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(8, 145, 178, 0.04) 0%, transparent 50%);
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--sand));
+            border-radius: 2px;
+        }
+        .section-divider.center {
+            margin: 0 auto 2rem;
+        }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(8, 14, 26, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: all var(--transition);
+        }
+
+        .nav.scrolled {
+            background: rgba(8, 14, 26, 0.95);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--teal), #0e7490);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sand);
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--teal);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem !important;
+            border-radius: var(--radius);
+            font-weight: 600 !important;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--teal-bright) !important;
+            color: var(--white) !important;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            z-index: 1001;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 28px;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all var(--transition);
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg,
+                    rgba(8, 14, 26, 0.3) 0%,
+                    rgba(8, 14, 26, 0.7) 40%,
+                    rgba(8, 14, 26, 1) 100%),
+                radial-gradient(ellipse at 30% 20%, rgba(8, 145, 178, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(196, 149, 106, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+
+        .hero-bg-waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            z-index: 2;
+            opacity: 0.15;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(8, 145, 178, 0.3) 3px,
+                rgba(8, 145, 178, 0.3) 5px
+            );
+            mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(8, 145, 178, 0.15);
+            border: 1px solid rgba(8, 145, 178, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--teal-bright);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--teal-bright);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 6vw, 4.5rem);
+            margin-bottom: 1.25rem;
+            animation: fadeInUp 0.8s ease-out 0.15s both;
+            line-height: 1.1;
+        }
+
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--teal-bright), var(--sand-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--gray-400);
+            max-width: 550px;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.45s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-top: 0.25rem;
+        }
+
+        .hero-stat-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================================
+           SERVICES SECTION
+           ============================================================ */
+        .services {
+            background: var(--navy);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background: var(--navy-mid);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            transition: all var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--sand));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-slow);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(8, 145, 178, 0.2);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius);
+            background: var(--teal-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            transition: all var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(8, 145, 178, 0.2);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            margin-top: 1.25rem;
+            list-style: none;
+        }
+
+        .service-features li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-300);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-size: 0.75rem;
+            top: 2px;
+        }
+
+        /* ============================================================
+           ABOUT SECTION
+           ============================================================ */
+        .about {
+            background: var(--navy-deep);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 60%, rgba(8, 145, 178, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(196, 149, 106, 0.1) 0%, transparent 60%);
+        }
+
+        .about-image-icon {
+            font-size: 8rem;
+            opacity: 0.15;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            background: var(--navy-deep);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            padding: 1rem 1.5rem;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .about-image-badge .badge-number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--teal-bright);
+            line-height: 1;
+        }
+
+        .about-image-badge .badge-label {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+            margin-top: 0.25rem;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text .lead {
+            font-size: 1.15rem;
+            color: var(--gray-300);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .about-text p {
+            color: var(--gray-400);
+            margin-bottom: 1rem;
+        }
+
+        .about-credentials {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: var(--gray-300);
+        }
+
+        .credential-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           WHY CHOOSE US
+           ============================================================ */
+        .why-us {
+            background: var(--navy);
+            position: relative;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: var(--radius-lg);
+            background: var(--navy-mid);
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: all var(--transition-slow);
+        }
+
+        .why-card:hover {
+            border-color: rgba(196, 149, 106, 0.2);
+            box-shadow: var(--shadow);
+        }
+
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--sand-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.25rem;
+            transition: all var(--transition);
+        }
+
+        .why-card:hover .why-icon {
+            background: rgba(196, 149, 106, 0.2);
+            transform: scale(1.1);
+        }
+
+        .why-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .why-card p {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================================
+           TESTIMONIALS
+           ============================================================ */
+        .testimonials {
+            background: var(--navy-deep);
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background: var(--navy-mid);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: rgba(8, 145, 178, 0.08);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testimonial-stars {
+            color: var(--sand);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray-300);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--teal), #0e7490);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        /* ============================================================
+           CTA SECTION
+           ============================================================ */
+        .cta {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+            border: 1px solid rgba(8, 145, 178, 0.15);
+            border-radius: var(--radius-xl);
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .cta-inner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-xl);
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(8, 145, 178, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 70%, rgba(196, 149, 106, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-inner > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-inner h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-inner p {
+            color: var(--gray-400);
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 520px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.9rem 1.2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all var(--transition);
+        }
+
+        .cta-input:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px var(--teal-glow);
+        }
+
+        .cta-input::placeholder {
+            color: var(--gray-500);
+        }
+
+        /* ============================================================
+           CONTACT / FOOTER
+           ============================================================ */
+        .contact {
+            background: var(--navy-deep);
+            position: relative;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            background: var(--teal-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            font-size: 0.95rem;
+            color: var(--gray-400);
+        }
+        .contact-text strong {
+            display: block;
+            color: var(--white);
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-service-areas {
+            margin-top: 2rem;
+        }
+
+        .contact-service-areas h4 {
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+        }
+
+        .area-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .area-tag {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.04);
+            color: var(--gray-400);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-bottom {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* ============================================================
+           SCROLL ANIMATIONS
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about-image-wrapper {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(8, 14, 26, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                padding: 2rem;
+                transition: right var(--transition-slow);
+                border-left: 1px solid rgba(255,255,255,0.06);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .hero-stat-number {
+                font-size: 2rem;
+            }
+
+            .cta-inner {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .hero-stat-divider {
+                width: 100%;
+                height: 1px;
+            }
+
+            .about-credentials {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    NAVIGATION
+    ============================================================ -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-icon">🌲</div>
+                <span>Lakeside<br><small style="font-size:0.65rem;color:var(--gray-400);">TREE EXPERTS</small></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+    HERO
+    ============================================================ -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-bg-dots"></div>
+            <div class="hero-bg-waves"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Barrie &amp; Lake Simcoe Area
+                </div>
+                <h1>
+                    Lakeside <span class="accent">Tree Experts</span><br>
+                    Lake Simcoe's Trusted<br>
+                    Tree Care
+                </h1>
+                <p class="hero-description">
+                    From century oaks to shoreline willows — we protect the trees that make your waterfront property extraordinary. Fully insured, ISA-certified arborists serving Barrie, Innisfil, Orillia, and the entire Lake Simcoe region.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-large">Get Your Free Estimate</a>
+                    <a href="#services" class="btn btn-outline btn-large">Explore Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-number">15+</div>
+                        <div class="hero-stat-label">Years Serving<br>Lake Simcoe</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div>
+                        <div class="hero-stat-number">2,500+</div>
+                        <div class="hero-stat-label">Properties<br>Serviced</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div>
+                        <div class="hero-stat-number">100%</div>
+                        <div class="hero-stat-label">Fully Licensed<br>&amp; Insured</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES
+    ============================================================ -->
+    <section class="services section" id="services">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Complete Tree Care<br>for Waterfront Properties</h2>
+                <div class="section-divider center"></div>
+                <p class="section-subtitle">
+                    We understand the unique challenges of lakefront trees — from erosion control to preserving those priceless shoreline views.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card reveal">
+                    <div class="service-icon">🪓</div>
+                    <h3>Tree Removal</h3>
+                    <p>Safe, precision tree removal — even in tight waterfront spaces. We handle hazardous trees, storm damage, and deadwood with zero-impact techniques that protect your shoreline.</p>
+                    <ul class="service-features">
+                        <li>Crane-assisted removal available</li>
+                        <li>Emergency storm response 24/7</li>
+                        <li>Stump grinding included</li>
+                        <li>Shoreline buffer zone compliant</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card reveal">
+                    <div class="service-icon">✂️</div>
+                    <h3>Pruning &amp; Trimming</h3>
+                    <p>Expert structural pruning that improves tree health, enhances your lake view, and reduces storm risk. We follow ANSI A300 standards for every cut.</p>
+                    <ul class="service-features">
+                        <li>View corridor pruning for lakefronts</li>
+                        <li>Deadwood removal &amp; crown thinning</li>
+                        <li>Fruit tree &amp; ornamental shaping</li>
+                        <li>Young tree structural training</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card reveal">
+                    <div class="service-icon">🏥</div>
+                    <h3>Tree Health &amp; Disease</h3>
+                    <p>Diagnosis and treatment for common Ontario tree diseases. We protect your investment with proactive plant health care programs.</p>
+                    <ul class="service-features">
+                        <li>Emerald Ash Borer treatment</li>
+                        <li>Oak Wilt &amp; Dutch Elm management</li>
+                        <li>Soil analysis &amp; deep-root feeding</li>
+                        <li>Insect &amp; pest control</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card reveal">
+                    <div class="service-icon">🌊</div>
+                    <h3>Shoreline Restoration</h3>
+                    <p>We specialize in naturalizing and stabilizing lakefront shorelines with native trees, shrubs, and deep-root plantings that prevent erosion.</p>
+                    <ul class="service-features">
+                        <li>Erosion control plantings</li>
+                        <li>Native species selection</li>
+                        <li>Riparian buffer restoration</li>
+                        <li>LSRCA guideline compliant</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card reveal">
+                    <div class="service-icon">🌳</div>
+                    <h3>Planting &amp; Landscaping</h3>
+                    <p>Strategic tree planting that enhances property value, provides privacy, and thrives in the unique Lake Simcoe microclimate.</p>
+                    <ul class="service-features">
+                        <li>Large-caliper tree installation</li>
+                        <li>Privacy screen &amp; windbreak design</li>
+                        <li>Waterfront-appropriate species</li>
+                        <li>3-year establishment guarantee</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card reveal">
+                    <div class="service-icon">📋</div>
+                    <h3>Arborist Reports</h3>
+                    <p>ISA-certified tree assessments for development permits, insurance claims, and property transactions. Detailed, professional reports accepted by all area municipalities.</p>
+                    <ul class="service-features">
+                        <li>Tree risk assessments</li>
+                        <li>Development permit reports</li>
+                        <li>Tree preservation plans</li>
+                        <li>Insurance &amp; legal documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ABOUT
+    ============================================================ -->
+    <section class="about section" id="about">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper reveal">
+                    <div class="about-image-placeholder">
+                        <div class="about-image-icon">🌲</div>
+                        <div class="about-image-badge">
+                            <div class="badge-number">2009</div>
+                            <div class="badge-label">Established</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text reveal">
+                    <span class="section-label">Who We Are</span>
+                    <h2>Your Lake Simcoe<br>Tree Care Partner</h2>
+                    <div class="section-divider" style="margin-bottom:1.5rem;"></div>
+                    <p class="lead">
+                        Lakeside Tree Experts was born on the shores of Lake Simcoe — founded by a team of arborists who saw that waterfront properties needed a different kind of tree care.
+                    </p>
+                    <p>
+                        We're not a generic tree service that treats every property the same. We understand lakefront ecosystems: the soil conditions, the wind patterns off the water, the municipal shoreline regulations, and how a single tree can anchor an entire slope against erosion.
+                    </p>
+                    <p>
+                        Every member of our crew is either an ISA Certified Arborist or working toward certification. We invest in ongoing training, top-tier equipment, and a safety culture that has earned us an impeccable record over 15+ years of operation.
+                    </p>
+                    <div class="about-credentials">
+                        <div class="credential-item">
+                            <div class="credential-check">✓</div>
+                            ISA Certified Arborists
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-check">✓</div>
+                            Fully Insured — $5M Liability
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-check">✓</div>
+                            WSIB Covered
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-check">✓</div>
+                            TCIA Accredited
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    WHY CHOOSE US
+    ============================================================ -->
+    <section class="why-us section" id="why-us">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">The Lakeside Difference</span>
+                <h2 class="section-title">Why Barrie Chooses Us</h2>
+                <div class="section-divider center"></div>
+                <p class="section-subtitle">
+                    We're not just tree cutters — we're arborists who treat every tree and every shoreline with the respect it deserves.
+                </p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon">🏠</div>
+                    <h3>Lakefront Specialists</h3>
+                    <p>We know Lake Simcoe. From Kempenfelt Bay to Cook's Bay, we understand the unique conditions of every shoreline and the trees that grow there.</p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon">🛡️</div>
+                    <h3>Safety First, Always</h3>
+                    <p>Every job starts with a safety briefing. We use the latest rigging, crane, and climbing technology — and our safety record proves it works.</p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon">🌿</div>
+                    <h3>Eco-Conscious Care</h3>
+                    <p>We follow Lake Simcoe Region Conservation Authority guidelines. When a tree can be saved, we save it. When it must go, we do it responsibly.</p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon">💰</div>
+                    <h3>Fair, Transparent Pricing</h3>
+                    <p>No surprises. Detailed written estimates before any work begins. We believe in honest pricing that reflects the quality of our work.</p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon">⏱️</div>
+                    <h3>24/7 Emergency Service</h3>
+                    <p>Storms don't wait for business hours. Our emergency response team is on call 24/7 for hazardous tree situations across the Lake Simcoe area.</p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-icon">⭐</div>
+                    <h3>5-Star Reputation</h3>
+                    <p>Hundreds of satisfied homeowners, cottagers, and commercial clients across Barrie, Innisfil, Orillia, and beyond. Your neighbors trust us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    TESTIMONIALS
+    ============================================================ -->
+    <section class="testimonials section" id="testimonials">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Client Reviews</span>
+                <h2 class="section-title">What Our Neighbors Say</h2>
+                <div class="section-divider center"></div>
+                <p class="section-subtitle">
+                    Real feedback from homeowners and cottage owners around Lake Simcoe.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "We have a century-old oak leaning over the water, and two other companies said it had to come down. Lakeside's arborist found a way to cable and brace it instead. Three years later, it's healthier than ever and still holding our shoreline in place. True professionals."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Michael &amp; Sarah T.</div>
+                            <div class="testimonial-role">Kempenfelt Bay, Barrie</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "After that big windstorm in 2024, a massive pine came down across our driveway at 2 AM. Lakeside's emergency crew was there within 45 minutes. They had it cleared and safely removed by sunrise. Absolutely incredible response time."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">D</div>
+                        <div>
+                            <div class="testimonial-name">Doug R.</div>
+                            <div class="testimonial-role">Innisfil, ON</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "We bought a cottage on Lake Simcoe and the shoreline was a mess — eroded, overgrown, dying trees everywhere. Lakeside did a complete restoration: removed the hazards, planted native species, and now our shoreline looks like a park. Property value definitely went up."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div>
+                            <div class="testimonial-name">Catherine L.</div>
+                            <div class="testimonial-role">Orillia, ON</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section class="cta section" id="contact">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <div class="cta-inner reveal">
+                <span class="section-label">Let's Talk Trees</span>
+                <h2>Ready to Give Your Trees<br>the Care They Deserve?</h2>
+                <p>
+                    Free estimates, honest advice, and no pressure. Tell us what's happening with your trees and we'll create a plan that works for your property and your budget.
+                </p>
+                <form class="cta-form" onsubmit="handleFormSubmit(event)">
+                    <input type="tel" class="cta-input" placeholder="Your phone number" required>
+                    <input type="text" class="cta-input" placeholder="Your name" required>
+                    <button type="submit" class="btn btn-sand btn-large">Get My Free Estimate</button>
+                </form>
+                <p style="font-size:0.8rem;color:var(--gray-500);margin-top:1rem;">
+                    Or call us directly: <strong style="color:var(--white);">(705) 555-TREE</strong> — We answer 24/7 for emergencies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACT / FOOTER
+    ============================================================ -->
+    <footer class="contact section" id="footer">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Lakeside Tree Experts</h3>
+                    <p style="color:var(--gray-400);margin-bottom:2rem;">
+                        Barrie's premier waterfront tree care service. ISA-certified arborists serving the entire Lake Simcoe region since 2009.
+                    </p>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <strong>Our Location</strong>
+                            245 Lakeshore Drive<br>
+                            Barrie, ON L4N 7V2
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <strong>Phone</strong>
+                            (705) 555-TREE (8733)<br>
+                            <span style="font-size:0.85rem;">24/7 Emergency Line Available</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <strong>Email</strong>
+                            info@lakesidetreeexperts.ca<br>
+                            estimates@lakesidetreeexperts.ca
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom:1.25rem;">Quick Links</h3>
+                    <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="#home" style="color:var(--gray-400);">Home</a></li>
+                        <li><a href="#services" style="color:var(--gray-400);">Services</a></li>
+                        <li><a href="#about" style="color:var(--gray-400);">About Us</a></li>
+                        <li><a href="#why-us" style="color:var(--gray-400);">Why Choose Us</a></li>
+                        <li><a href="#testimonials" style="color:var(--gray-400);">Testimonials</a></li>
+                        <li><a href="#contact" style="color:var(--gray-400);">Get a Quote</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom:1.25rem;">Service Area</h3>
+                    <div class="contact-service-areas">
+                        <h4>Primary Service Area</h4>
+                        <div class="area-tags">
+                            <span class="area-tag">Barrie</span>
+                            <span class="area-tag">Innisfil</span>
+                            <span class="area-tag">Orillia</span>
+                            <span class="area-tag">Kempenfelt Bay</span>
+                            <span class="area-tag">Cook's Bay</span>
+                            <span class="area-tag">Shanty Bay</span>
+                            <span class="area-tag">Big Bay Point</span>
+                        </div>
+                    </div>
+                    <div class="contact-service-areas" style="margin-top:1.5rem;">
+                        <h4>Also Serving</h4>
+                        <div class="area-tags">
+                            <span class="area-tag">Angus</span>
+                            <span class="area-tag">Bradford</span>
+                            <span class="area-tag">Alliston</span>
+                            <span class="area-tag">Midland</span>
+                            <span class="area-tag">Georgina</span>
+                            <span class="area-tag">Beaverton</span>
+                            <span class="area-tag">Washago</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:2rem;">
+                        <h3 style="margin-bottom:0.75rem;">Hours</h3>
+                        <div style="color:var(--gray-400);font-size:0.9rem;line-height:1.8;">
+                            Mon–Fri: 7:00 AM – 6:00 PM<br>
+                            Saturday: 8:00 AM – 4:00 PM<br>
+                            Sunday: Emergency Only<br>
+                            <strong style="color:var(--teal-bright);">24/7 Emergency Response</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Lakeside Tree Experts. All rights reserved.
+                </div>
+                <div>
+                    Proudly serving Barrie &amp; Lake Simcoe since 2009
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script>
+        // --- Sticky Nav Scroll Effect ---
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // --- Mobile Nav Toggle ---
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // --- Scroll Reveal Animation (Intersection Observer) ---
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- Staggered reveal delay for grid items ---
+        document.querySelectorAll('.services-grid .reveal').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 0.1}s`;
+        });
+        document.querySelectorAll('.why-us-grid .reveal').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 0.08}s`;
+        });
+        document.querySelectorAll('.testimonials-grid .reveal').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 0.15}s`;
+        });
+
+        // --- Contact Form Handler (demo) ---
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+
+            button.textContent = '✓ Message Sent!';
+            button.style.background = '#059669';
+            button.disabled = true;
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+                button.disabled = false;
+                form.reset();
+            }, 3000);
+        }
+
+        console.log('%c🌲 Lakeside Tree Experts %c— Premium Site Ready',
+            'color: #06b6d4; font-size: 1.2rem; font-weight: bold;',
+            'color: #c4956a;');
+        console.log('%cBarrie, ON • Lake Simcoe\'s Trusted Tree Care • est. 2009',
+            'color: #94a3b8;');
+    </script>
+
+</body>
+</html>
