@@ -9,16 +9,18 @@
 body{font-family:system-ui,-apple-system,sans-serif;background:#0f1117;color:#e0e0e0;padding:20px}
 h1{color:#c9a84c;margin-bottom:8px;font-size:1.4rem}
 .subtitle{color:#888;margin-bottom:24px;font-size:0.9rem}
-table{width:100%;border-collapse:collapse;font-size:0.85rem}
-th{background:#1a1d2a;color:#c9a84c;padding:10px 8px;text-align:left;font-weight:600;border-bottom:2px solid #2a2d3a}
-td{padding:8px;border-bottom:1px solid #1a1d2a}
+.table-wrap{overflow-x:auto;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:0.82rem;min-width:900px}
+th{background:#1a1d2a;color:#c9a84c;padding:10px 6px;text-align:left;font-weight:600;border-bottom:2px solid #2a2d3a;white-space:nowrap}
+td{padding:8px 6px;border-bottom:1px solid #1a1d2a;vertical-align:top}
 tr:hover{background:#1a1d2a}
 .status-new{color:#4ade80}
 .status-sent{color:#60a5fa}
 .status-pending{color:#fbbf24}
 .status-replied{color:#c084fc}
-.url{color:#60a5fa;font-size:0.8rem;word-break:break-all}
-.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.75rem;font-weight:600}
+.url{color:#60a5fa;font-size:0.78rem;word-break:break-all;text-decoration:none}
+.url:hover{text-decoration:underline}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.72rem;font-weight:600;white-space:nowrap}
 .badge-new{background:#166534;color:#4ade80}
 .badge-sent{background:#1e3a5f;color:#60a5fa}
 .badge-pending{background:#5c4a1f;color:#fbbf24}
@@ -28,6 +30,8 @@ tr:hover{background:#1a1d2a}
 .stat-num{font-size:1.6rem;font-weight:700;color:#c9a84c}
 .stat-label{font-size:0.75rem;color:#888}
 .last-updated{color:#666;font-size:0.75rem;margin-top:24px;text-align:center}
+.last-updated a{color:#c9a84c;text-decoration:none}
+.last-updated a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -42,41 +46,43 @@ tr:hover{background:#1a1d2a}
   <div class="stat"><div class="stat-num">0</div><div class="stat-label">Cleaned & Verified</div></div>
 </div>
 
+<div class="table-wrap">
 <table>
 <thead>
-<tr><th>#</th><th>Business</th><th>Category</th><th>Contact</th><th>Demo URL</th><th>Status</th></tr>
+<tr><th>#</th><th>Business</th><th>Category</th><th>Phone</th><th>Email</th><th>Social / Other</th><th>Demo URL</th><th>Status</th></tr>
 </thead>
 <tbody>
-<tr><td>1</td><td>Pacheco Mobile Mechanic</td><td>Auto Repair</td><td>(705) 229-0694</td><td class="url">b12f6ruz0z3vlidk4pj1c344.178.156.135.237.sslip.io</td><td><span class="badge badge-pending">pending</span></td></tr>
-<tr><td>2</td><td>Carmen's Maid Service</td><td>Cleaning</td><td>(705) 734-1118</td><td class="url">vbc05q9ireu4i6re7hogzsfh.178.156.135.237.sslip.io</td><td><span class="badge badge-pending">pending</span></td></tr>
-<tr><td>3</td><td>Pawfection Grooming Boutique</td><td>Dog Grooming</td><td>pawfection@hotmail.ca</td><td class="url">cs5cvtxl9wmrbjj2pi963t49.178.156.135.237.sslip.io</td><td><span class="badge badge-sent">sent</span></td></tr>
-<tr><td>4</td><td>Pawtricia's Dog Grooming</td><td>Dog & Cat Grooming</td><td>pawtricias.dog.grooming@gmail.com</td><td class="url">e9rgxg22dizdm4ptfglth6f8.178.156.135.237.sslip.io</td><td><span class="badge badge-sent">sent</span></td></tr>
-<tr><td>5</td><td>Fitness Training with Olga</td><td>Personal Training</td><td>@FitnessTrainingBarrie</td><td class="url">zrga8reyjutehuhwaeyx71k9.178.156.135.237.sslip.io</td><td><span class="badge badge-pending">pending</span></td></tr>
-<tr><td>6</td><td>Blanchettes Services</td><td>Handyman</td><td>(705) 903-8423</td><td class="url">oct6w22w1cigj8aeq2vw6q3c.178.156.135.237.sslip.io</td><td><span class="badge badge-pending">pending</span></td></tr>
-<tr><td>7</td><td>Grass Barber</td><td>Landscaping</td><td>—</td><td class="url">gna68nejt7igaqkcnnbxijmv.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>8</td><td>Strong Roots Landscaping</td><td>Landscaping</td><td>—</td><td class="url">yxxewm0x5cosm002mnie0ghv.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>9</td><td>TLC Landscapes</td><td>Landscaping</td><td>—</td><td class="url">uegt1lgh0nj05yvtmjryowrc.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>10</td><td>Eaglecrest Painting</td><td>Painting</td><td>—</td><td class="url">wjqpau8zqvb4hya2tv1aahht.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>11</td><td>Wagg's Painting</td><td>Painting</td><td>—</td><td class="url">macxj7eit4zv2drryi3zxr9n.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>12</td><td>Fresh Coat Painting</td><td>Painting</td><td>—</td><td class="url">lolevhktibqvp0n1yk9jh0l9.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>13</td><td>Luv To Paint</td><td>Painting & Renovation</td><td>—</td><td class="url">dl426ja8wgjga5kfd5rubsl4.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>14</td><td>Georgian Detailing</td><td>Auto Detailing</td><td>—</td><td class="url">xxyivatxwjih7wy61w28kz18.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>15</td><td>Atrium Landscapes</td><td>Landscaping</td><td>—</td><td class="url">sp1m2sub55gygjywp01b7gmo.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>16</td><td>Foxcon Contracting</td><td>General Contracting</td><td>—</td><td class="url">aqfhypcym0tu48z112ucn310.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>17</td><td>7 Oaks Tree Care</td><td>Tree Service / Urban Forestry</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>18</td><td>Tree Time Outdoor Services</td><td>Tree Service</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>19</td><td>Simcoe Tree Services</td><td>Tree Service</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>20</td><td>Tree Surgeons</td><td>Tree Service</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>21</td><td>Superior Grinderz</td><td>Stump Grinding</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>22</td><td>Lakeside Tree Experts</td><td>Tree Service</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>23</td><td>Ray's Tree Service Ltd.</td><td>Tree Service</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>24</td><td>Tree Removal Barrie</td><td>Tree Removal</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>25</td><td>Lotus Tree Care</td><td>Tree Service</td><td>—</td><td class="url">TBD.178.156.135.237.sslip.io</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>26</td><td>Alpa Roof Trusses Barrie</td><td> Barrie ON</td><td>149 Welham Rd</td><td class="url"> Roofers</td><td><span class="badge badge-new"></span></td></tr>
+<tr><td>1</td><td>Pacheco Mobile Mechanic</td><td>Auto Repair</td><td><a href="tel:(705) 229-0694" class="url">(705) 229-0694</a></td><td>—</td><td>—</td><td><a href="http://b12f6ruz0z3vlidk4pj1c344.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">b12f6ruz0z3vlidk4pj1c344.178.156.135.237.sslip.io</a></td><td><span class="badge badge-pending">pending</span></td></tr>
+<tr><td>2</td><td>Carmen's Maid Service</td><td>Cleaning</td><td><a href="tel:(705) 734-1118" class="url">(705) 734-1118</a></td><td>—</td><td>—</td><td><a href="http://vbc05q9ireu4i6re7hogzsfh.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">vbc05q9ireu4i6re7hogzsfh.178.156.135.237.sslip.io</a></td><td><span class="badge badge-pending">pending</span></td></tr>
+<tr><td>3</td><td>Pawfection Grooming Boutique</td><td>Dog Grooming</td><td><a href="tel:(705) 734-3647" class="url">(705) 734-3647</a></td><td><a href="mailto:pawfection@hotmail.ca" class="url">pawfection@hotmail.ca</a></td><td>—</td><td><a href="http://cs5cvtxl9wmrbjj2pi963t49.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">cs5cvtxl9wmrbjj2pi963t49.178.156.135.237.sslip.io</a></td><td><span class="badge badge-sent">sent</span></td></tr>
+<tr><td>4</td><td>Pawtricia's Dog Grooming</td><td>Dog & Cat Grooming</td><td><a href="tel:(416) 857-5300" class="url">(416) 857-5300</a></td><td><a href="mailto:pawtricias.dog.grooming@gmail.com" class="url">pawtricias.dog.grooming@gmail.com</a></td><td>—</td><td><a href="http://e9rgxg22dizdm4ptfglth6f8.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">e9rgxg22dizdm4ptfglth6f8.178.156.135.237.sslip.io</a></td><td><span class="badge badge-sent">sent</span></td></tr>
+<tr><td>5</td><td>Fitness Training with Olga</td><td>Personal Training</td><td>—</td><td><a href="mailto:@FitnessTrainingBarrie" class="url">@FitnessTrainingBarrie</a></td><td>—</td><td><a href="http://zrga8reyjutehuhwaeyx71k9.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">zrga8reyjutehuhwaeyx71k9.178.156.135.237.sslip.io</a></td><td><span class="badge badge-pending">pending</span></td></tr>
+<tr><td>6</td><td>Blanchettes Services</td><td>Handyman</td><td><a href="tel:(705) 903-8423" class="url">(705) 903-8423</a></td><td>—</td><td>Jack</td><td><a href="http://oct6w22w1cigj8aeq2vw6q3c.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">oct6w22w1cigj8aeq2vw6q3c.178.156.135.237.sslip.io</a></td><td><span class="badge badge-pending">pending</span></td></tr>
+<tr><td>7</td><td>Grass Barber</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="http://gna68nejt7igaqkcnnbxijmv.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">gna68nejt7igaqkcnnbxijmv.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>8</td><td>Strong Roots Landscaping</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="http://yxxewm0x5cosm002mnie0ghv.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">yxxewm0x5cosm002mnie0ghv.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>9</td><td>TLC Landscapes</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="http://uegt1lgh0nj05yvtmjryowrc.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">uegt1lgh0nj05yvtmjryowrc.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>10</td><td>Eaglecrest Painting</td><td>Painting</td><td><a href="tel:249-489-1013" class="url">249-489-1013</a></td><td>—</td><td>facebook.com/profile.php?id=100092585270153</td><td><a href="http://wjqpau8zqvb4hya2tv1aahht.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">wjqpau8zqvb4hya2tv1aahht.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>11</td><td>Wagg's Painting</td><td>Painting</td><td><a href="tel:705-794-0345" class="url">705-794-0345</a></td><td>—</td><td>facebook.com/waggspainting/</td><td><a href="http://macxj7eit4zv2drryi3zxr9n.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">macxj7eit4zv2drryi3zxr9n.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>12</td><td>Fresh Coat Painting</td><td>Painting</td><td><a href="tel:905-868-6105" class="url">905-868-6105</a></td><td>—</td><td>facebook.com/people/Fresh-Coat-InteriorExterior-Painting/100039534506034/</td><td><a href="http://lolevhktibqvp0n1yk9jh0l9.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">lolevhktibqvp0n1yk9jh0l9.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>13</td><td>Luv To Paint</td><td>Painting & Renovation</td><td><a href="tel:705-735-6100" class="url">705-735-6100</a></td><td>—</td><td>facebook.com/pages/Luv-To-Paint/200126866677048</td><td><a href="http://dl426ja8wgjga5kfd5rubsl4.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">dl426ja8wgjga5kfd5rubsl4.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>14</td><td>Georgian Detailing</td><td>Auto Detailing</td><td><a href="tel:705-730-5800" class="url">705-730-5800</a></td><td>—</td><td>facebook.com/1444589319120912</td><td><a href="http://xxyivatxwjih7wy61w28kz18.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">xxyivatxwjih7wy61w28kz18.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>15</td><td>Atrium Landscapes</td><td>Landscaping</td><td><a href="tel:705-305-4768" class="url">705-305-4768</a></td><td>—</td><td>facebook.com/Atrium-Landscapes-448039962326688/</td><td><a href="http://sp1m2sub55gygjywp01b7gmo.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">sp1m2sub55gygjywp01b7gmo.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>16</td><td>Foxcon Contracting</td><td>General Contracting</td><td><a href="tel:705-627-9738" class="url">705-627-9738</a></td><td>—</td><td>facebook.com/Foxconcontracting/</td><td><a href="http://aqfhypcym0tu48z112ucn310.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">aqfhypcym0tu48z112ucn310.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>17</td><td>7 Oaks Tree Care</td><td>Tree Service / Urban Forestry</td><td><a href="tel:905-773-1733" class="url">905-773-1733</a></td><td>—</td><td>facebook.com/7oakstreecare/</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>18</td><td>Tree Time Outdoor Services</td><td>Tree Service</td><td><a href="tel:705-305-4420" class="url">705-305-4420</a></td><td>—</td><td>facebook.com/Tree-time-outdoor-services-342286532295086/</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>19</td><td>Simcoe Tree Services</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>20</td><td>Tree Surgeons</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>21</td><td>Superior Grinderz</td><td>Stump Grinding</td><td>—</td><td>—</td><td>—</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>22</td><td>Lakeside Tree Experts</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>23</td><td>Ray's Tree Service Ltd.</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>24</td><td>Tree Removal Barrie</td><td>Tree Removal</td><td>—</td><td>—</td><td>—</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>25</td><td>Lotus Tree Care</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td><a href="http://TBD.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">TBD.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>26</td><td>Alpa Roof Trusses Barrie</td><td> Barrie ON</td><td>—</td><td><a href="mailto:149 Welham Rd" class="url">149 Welham Rd</a></td><td>—</td><td><a href="http://Roofers" target="_blank" class="url" rel="noopener">Roofers</a></td><td><span class="badge badge-new"></span></td></tr>
 </tbody>
 </table>
+</div>
 
-<p class="last-updated">Last updated: June 03, 2026 at 12:35 UTC · Generated by Hermes Agent · <a href="https://www.kumon.com/barrie-mapleview-on" style="color:#c9a84c">Kumon Barrie Mapleview — Humberto Dominguez</a></p>
+<p class="last-updated">Last updated: June 03, 2026 at 12:52 UTC · Generated by Hermes Agent · <a href="https://www.kumon.com/barrie-mapleview-on" target="_blank">Kumon Barrie Mapleview — Humberto Dominguez</a></p>
 
 </body>
 </html>
