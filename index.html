@@ -8,7 +8,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:system-ui,-apple-system,sans-serif;background:#0f1117;color:#e0e0e0;padding:20px}
 h1{color:#c9a84c;margin-bottom:8px;font-size:1.4rem}
-.subtitle{color:#888;margin-bottom:24px;font-size:0.9rem}
+.subtitle{color:#888;margin-bottom:16px;font-size:0.9rem}
 .table-wrap{overflow-x:auto;margin-bottom:16px}
 table{width:100%;border-collapse:collapse;font-size:0.82rem;min-width:900px}
 th{background:#1a1d2a;color:#c9a84c;padding:10px 6px;text-align:left;font-weight:600;border-bottom:2px solid #2a2d3a;white-space:nowrap}
@@ -18,6 +18,7 @@ tr:hover{background:#1a1d2a}
 .status-sent{color:#60a5fa}
 .status-pending{color:#fbbf24}
 .status-replied{color:#c084fc}
+.status-dead{color:#ef4444}
 .url{color:#60a5fa;font-size:0.78rem;word-break:break-all;text-decoration:none}
 .url:hover{text-decoration:underline}
 .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.72rem;font-weight:600;white-space:nowrap}
@@ -25,6 +26,7 @@ tr:hover{background:#1a1d2a}
 .badge-sent{background:#1e3a5f;color:#60a5fa}
 .badge-pending{background:#5c4a1f;color:#fbbf24}
 .badge-replied{background:#3b1f5e;color:#c084fc}
+.badge-dead{background:#3b1111;color:#ef4444}
 .summary{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
 .stat{background:#1a1d2a;padding:12px 18px;border-radius:8px;text-align:center}
 .stat-num{font-size:1.6rem;font-weight:700;color:#c9a84c}
@@ -33,7 +35,6 @@ tr:hover{background:#1a1d2a}
 .last-updated a{color:#c9a84c;text-decoration:none}
 .last-updated a:hover{text-decoration:underline}
 .hidden-row{display:none}
-.toggle-row{display:table-row}
 </style>
 </head>
 <body>
@@ -64,43 +65,43 @@ tr:hover{background:#1a1d2a}
 <tbody>
 <tr><td>1</td><td>Pacheco Mobile Mechanic</td><td>Auto Repair</td><td><a href="tel:(705) 229-0694" class="url">(705) 229-0694</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/pacheco-mobile-mechanic/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/pacheco-mobile-mechanic</a></td><td><span class="badge badge-sent">sent</span></td></tr>
 <tr><td>2</td><td>Carmen's Maid Service</td><td>Cleaning</td><td><a href="tel:(705) 734-1118" class="url">(705) 734-1118</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/carmens-maid-service/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/carmens-maid-service</a></td><td><span class="badge badge-sent">sent</span></td></tr>
-<tr><td>3</td><td>Pawfection Grooming Boutique</td><td>Dog Grooming</td><td><a href="tel:(705) 734-3647" class="url">(705) 734-3647</a></td><td><a href="mailto:pawfection@hotmail.ca" class="url">pawfection@hotmail.ca</a></td><td>—</td><td><a href="https://mexemexe02.github.io/pawfection-grooming/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/pawfection-grooming</a></td><td><span class="badge badge-new">dead</span></td></tr>
+<tr><td>3</td><td>Pawfection Grooming Boutique</td><td>Dog Grooming</td><td><a href="tel:(705) 734-3647" class="url">(705) 734-3647</a></td><td><a href="mailto:pawfection@hotmail.ca" class="url">pawfection@hotmail.ca</a></td><td>—</td><td><a href="https://mexemexe02.github.io/pawfection-grooming/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/pawfection-grooming</a></td><td><span class="badge badge-dead">dead</span></td></tr>
 <tr><td>4</td><td>Pawtricia's Dog Grooming</td><td>Dog & Cat Grooming</td><td><a href="tel:(416) 857-5300" class="url">(416) 857-5300</a></td><td><a href="mailto:pawtricias.dog.grooming@gmail.com" class="url">pawtricias.dog.grooming@gmail.com</a></td><td>—</td><td><a href="https://mexemexe02.github.io/pawtricias-dog-grooming/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/pawtricias-dog-grooming</a></td><td><span class="badge badge-sent">sent</span></td></tr>
 <tr><td>5</td><td>Fitness Training with Olga</td><td>Personal Training</td><td>—</td><td><a href="mailto:@FitnessTrainingBarrie" class="url">@FitnessTrainingBarrie</a></td><td>—</td><td><a href="https://mexemexe02.github.io/fitness-training-olga/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/fitness-training-olga</a></td><td><span class="badge badge-pending">pending</span></td></tr>
 <tr><td>6</td><td>Blanchettes Services</td><td>Handyman</td><td><a href="tel:(705) 903-8423" class="url">(705) 903-8423</a></td><td>—</td><td>Jack</td><td><a href="https://mexemexe02.github.io/blanchettes-services/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/blanchettes-services</a></td><td><span class="badge badge-sent">sent</span></td></tr>
-<tr><td>7</td><td>Grass Barber</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/grass-barber/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/grass-barber</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>8</td><td>Strong Roots Landscaping</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/strong-roots-landscaping/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/strong-roots-landscaping</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>9</td><td>TLC Landscapes</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/tlc-landscapes/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/tlc-landscapes</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>10</td><td>Eaglecrest Painting</td><td>Painting</td><td><a href="tel:249-489-1013" class="url">249-489-1013</a></td><td>—</td><td><a href="https://www.facebook.com/profile.php?id=100092585270153" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/eaglecrest-painting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/eaglecrest-painting</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>11</td><td>Wagg's Painting</td><td>Painting</td><td><a href="tel:705-794-0345" class="url">705-794-0345</a></td><td>—</td><td><a href="https://www.facebook.com/waggspainting/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/waggs-painting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/waggs-painting</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>12</td><td>Fresh Coat Painting</td><td>Painting</td><td><a href="tel:905-868-6105" class="url">905-868-6105</a></td><td>—</td><td><a href="https://www.facebook.com/people/Fresh-Coat-InteriorExterior-Painting/100039534506034/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/fresh-coat-painting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/fresh-coat-painting</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>13</td><td>Luv To Paint</td><td>Painting & Renovation</td><td><a href="tel:705-735-6100" class="url">705-735-6100</a></td><td>—</td><td><a href="https://www.facebook.com/pages/Luv-To-Paint/200126866677048" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/luv-to-paint/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/luv-to-paint</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>14</td><td>Georgian Detailing</td><td>Auto Detailing</td><td><a href="tel:705-730-5800" class="url">705-730-5800</a></td><td>—</td><td><a href="https://www.facebook.com/1444589319120912" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/georgian-detailing/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/georgian-detailing</a></td><td><span class="badge badge-new">dead</span></td></tr>
+<tr><td>7</td><td>Grass Barber</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/grass-barber/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/grass-barber</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>8</td><td>Strong Roots Landscaping</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/strong-roots-landscaping/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/strong-roots-landscaping</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>9</td><td>TLC Landscapes</td><td>Landscaping</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/tlc-landscapes/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/tlc-landscapes</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>10</td><td>Eaglecrest Painting</td><td>Painting</td><td><a href="tel:249-489-1013" class="url">249-489-1013</a></td><td>—</td><td><a href="https://www.facebook.com/profile.php?id=100092585270153" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/eaglecrest-painting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/eaglecrest-painting</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>11</td><td>Wagg's Painting</td><td>Painting</td><td><a href="tel:705-794-0345" class="url">705-794-0345</a></td><td>—</td><td><a href="https://www.facebook.com/waggspainting/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/waggs-painting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/waggs-painting</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>12</td><td>Fresh Coat Painting</td><td>Painting</td><td><a href="tel:905-868-6105" class="url">905-868-6105</a></td><td>—</td><td><a href="https://www.facebook.com/people/Fresh-Coat-InteriorExterior-Painting/100039534506034/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/fresh-coat-painting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/fresh-coat-painting</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>13</td><td>Luv To Paint</td><td>Painting & Renovation</td><td><a href="tel:705-735-6100" class="url">705-735-6100</a></td><td>—</td><td><a href="https://www.facebook.com/pages/Luv-To-Paint/200126866677048" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/luv-to-paint/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/luv-to-paint</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>14</td><td>Georgian Detailing</td><td>Auto Detailing</td><td><a href="tel:705-730-5800" class="url">705-730-5800</a></td><td>—</td><td><a href="https://www.facebook.com/1444589319120912" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/georgian-detailing/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/georgian-detailing</a></td><td><span class="badge badge-dead">dead</span></td></tr>
 <tr><td>15</td><td>Atrium Landscapes</td><td>Landscaping</td><td><a href="tel:705-305-4768" class="url">705-305-4768</a></td><td>—</td><td><a href="https://www.facebook.com/Atrium-Landscapes-448039962326688/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/atrium-landscapes/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/atrium-landscapes</a></td><td><span class="badge badge-sent">sent</span></td></tr>
-<tr><td>16</td><td>Foxcon Contracting</td><td>General Contracting</td><td><a href="tel:705-627-9738" class="url">705-627-9738</a></td><td>—</td><td><a href="https://www.facebook.com/Foxconcontracting/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/foxcon-contracting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/foxcon-contracting</a></td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>17</td><td>7 Oaks Tree Care</td><td>Tree Service / Urban Forestry</td><td><a href="tel:905-773-1733" class="url">905-773-1733</a></td><td>—</td><td><a href="https://www.facebook.com/7oakstreecare/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/7-oaks-tree-care/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/7-oaks-tree-care</a></td><td><span class="badge badge-new">dead</span></td></tr>
+<tr><td>16</td><td>Foxcon Contracting</td><td>General Contracting</td><td><a href="tel:705-627-9738" class="url">705-627-9738</a></td><td>—</td><td><a href="https://www.facebook.com/Foxconcontracting/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/foxcon-contracting/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/foxcon-contracting</a></td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>17</td><td>7 Oaks Tree Care</td><td>Tree Service / Urban Forestry</td><td><a href="tel:905-773-1733" class="url">905-773-1733</a></td><td>—</td><td><a href="https://www.facebook.com/7oakstreecare/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/7-oaks-tree-care/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/7-oaks-tree-care</a></td><td><span class="badge badge-dead">dead</span></td></tr>
 <tr><td>18</td><td>Tree Time Outdoor Services</td><td>Tree Service</td><td><a href="tel:705-305-4420" class="url">705-305-4420</a></td><td>—</td><td><a href="https://www.facebook.com/Tree-time-outdoor-services-342286532295086/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/tree-time/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/tree-time</a></td><td><span class="badge badge-sent">sent</span></td></tr>
-<tr><td>19</td><td>Simcoe Tree Services</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>20</td><td>Tree Surgeons</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>21</td><td>Superior Grinderz</td><td>Stump Grinding</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>22</td><td>Lakeside Tree Experts</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>23</td><td>Ray's Tree Service Ltd.</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>24</td><td>Tree Removal Barrie</td><td>Tree Removal</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>25</td><td>Lotus Tree Care</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>26</td><td>Alpa Roof Trusses Barrie</td><td>Roofers</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">dead</span></td></tr>
-<tr><td>27</td><td>Fils Rest</td><td>Restaurant</td><td><a href="tel:705-726-7818" class="url">705-726-7818</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>28</td><td>ActRight Roofing</td><td>Roofing</td><td><a href="tel:705-999-9095" class="url">705-999-9095</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>29</td><td>Clearview Heating & Air</td><td>HVAC</td><td><a href="tel:705-428-3144" class="url">705-428-3144</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>19</td><td>Simcoe Tree Services</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>20</td><td>Tree Surgeons</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>21</td><td>Superior Grinderz</td><td>Stump Grinding</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>22</td><td>Lakeside Tree Experts</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>23</td><td>Ray's Tree Service Ltd.</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>24</td><td>Tree Removal Barrie</td><td>Tree Removal</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>25</td><td>Lotus Tree Care</td><td>Tree Service</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>26</td><td>Alpa Roof Trusses Barrie</td><td>Roofers</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
+<tr><td>27</td><td>Fils Rest</td><td>Restaurant</td><td><a href="tel:705-726-7818" class="url">705-726-7818</a></td><td>—</td><td>—</td><td><a href="http://yk8k7v8eluzwvorpjmia5t04.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">yk8k7v8eluzwvorpjmia5t04.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>28</td><td>ActRight Roofing</td><td>Roofing</td><td><a href="tel:705-999-9095" class="url">705-999-9095</a></td><td>—</td><td>—</td><td><a href="http://e7350adjlu78iwk8lex3e32g.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">e7350adjlu78iwk8lex3e32g.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>29</td><td>Clearview Heating & Air</td><td>HVAC</td><td><a href="tel:705-428-3144" class="url">705-428-3144</a></td><td>—</td><td>—</td><td><a href="http://m10w52jbvi6q1vporl3lhprt.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">m10w52jbvi6q1vporl3lhprt.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>30</td><td>Skinner Ink</td><td>Tattoo</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>31</td><td>Tattoo Emission</td><td>Tattoo</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>32</td><td>Best Pals Grooming</td><td>Pet Grooming</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>33</td><td>At The Five Resto</td><td>Restaurant</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>34</td><td>Express Country Style</td><td>Cafes</td><td><a href="tel:705-791-6925" class="url">705-791-6925</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>35</td><td>Bruno's Bakery &amp; Cafe</td><td>Cafes</td><td><a href="tel:705-735-2390" class="url">705-735-2390</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>34</td><td>Express Country Style</td><td>Cafes</td><td><a href="tel:705-791-6925" class="url">705-791-6925</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/express-country-style/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/express-country-style</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>35</td><td>Bruno's Bakery &amp; Cafe</td><td>Cafes</td><td><a href="tel:705-735-2390" class="url">705-735-2390</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/brunos-bakery-cafe/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/brunos-bakery-cafe</a></td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>36</td><td>B8's Deli &amp; Caf&eacute; Ole</td><td>Cafes</td><td><a href="tel:249-252-0148" class="url">249-252-0148</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>37</td><td>Coffee Culture Caf&eacute; &amp; Eatery</td><td>Cafes</td><td><a href="tel:705-458-8500" class="url">705-458-8500</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>38</td><td>Thornton Cafe &amp; Ice Cream</td><td>Cafes</td><td><a href="tel:705-718-7816" class="url">705-718-7816</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>39</td><td>Barrie Flooring Centre</td><td>Flooring</td><td><a href="tel:705-999-2238" class="url">705-999-2238</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>39</td><td>Barrie Flooring Centre</td><td>Flooring</td><td><a href="tel:705-999-2238" class="url">705-999-2238</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/barrie-flooring-centre/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/barrie-flooring-centre</a></td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>40</td><td>The Installer &amp; Co</td><td>Flooring</td><td><a href="tel:705-466-2244" class="url">705-466-2244</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>41</td><td>Desert Tile Canada</td><td>Flooring</td><td><a href="tel:705-466-2122" class="url">705-466-2122</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>42</td><td>Hamilton Bros Farm &amp; Building Supplies Ltd-TIM-BR Mart</td><td>Flooring</td><td><a href="tel:705-300-0992" class="url">705-300-0992</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
@@ -125,13 +126,13 @@ tr:hover{background:#1a1d2a}
 <tr><td>61</td><td>Barrie Sandblasting</td><td>Painters</td><td><a href="tel:705-794-8810" class="url">705-794-8810</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>62</td><td>Paints N Ladders</td><td>Painters</td><td><a href="tel:705-999-0836" class="url">705-999-0836</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>63</td><td>Island Mainland Painting Co</td><td>Painters</td><td><a href="tel:705-999-0915" class="url">705-999-0915</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>64</td><td>Dumex Painting</td><td>Painters</td><td><a href="tel:866-500-1734" class="url">866-500-1734</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>64</td><td>Dumex Painting</td><td>Painters</td><td><a href="tel:866-500-1734" class="url">866-500-1734</a></td><td>—</td><td>—</td><td><a href="http://g548v5yu4bhi0z3ozae0yybr.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">g548v5yu4bhi0z3ozae0yybr.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>65</td><td>Pattimore Painting</td><td>Painters</td><td><a href="tel:705-984-6097" class="url">705-984-6097</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>66</td><td>Chadwick&acute;s Painting</td><td>Painters</td><td><a href="tel:705-984-6097" class="url">705-984-6097</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>67</td><td>Vellinga Painting</td><td>Painters</td><td><a href="tel:705-896-3097" class="url">705-896-3097</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>68</td><td>Shacor Painting</td><td>Painters</td><td><a href="tel:647-836-7715" class="url">647-836-7715</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>69</td><td>Ritekote Painting</td><td>Painters</td><td><a href="tel:705-716-5857" class="url">705-716-5857</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>70</td><td>Cann-Paint</td><td>Painters</td><td><a href="tel:705-716-5857" class="url">705-716-5857</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>68</td><td>Shacor Painting</td><td>Painters</td><td><a href="tel:647-836-7715" class="url">647-836-7715</a></td><td>—</td><td>—</td><td><a href="http://sdw06xaomjfs7em1q26n6bve.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">sdw06xaomjfs7em1q26n6bve.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>69</td><td>Ritekote Painting</td><td>Painters</td><td><a href="tel:705-716-5857" class="url">705-716-5857</a></td><td>—</td><td>—</td><td><a href="http://kl1gu4uheyb6mq17j55sf4p0.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">kl1gu4uheyb6mq17j55sf4p0.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
+<tr><td>70</td><td>Cann-Paint</td><td>Painters</td><td><a href="tel:705-716-5857" class="url">705-716-5857</a></td><td>—</td><td>—</td><td><a href="http://m6u5zpdpro3b1bmxxze55f5w.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">m6u5zpdpro3b1bmxxze55f5w.178.156.135.237.sslip.io</a></td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>71</td><td>Ideal Landscape Services</td><td>Landscapers</td><td><a href="tel:705-896-0196" class="url">705-896-0196</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>72</td><td>Pattison Bros</td><td>Landscapers</td><td><a href="tel:705-896-0196" class="url">705-896-0196</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>73</td><td>Rocklandscapedesign Pool &amp; Spa</td><td>Landscapers</td><td><a href="tel:905-729-2031" class="url">905-729-2031</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
@@ -217,7 +218,7 @@ tr:hover{background:#1a1d2a}
 </table>
 </div>
 
-<p class="last-updated">Last updated: June 04, 2026 at 12:13 UTC · Generated by Hermes Agent · <a href="https://www.kumon.com/barrie-mapleview-on" target="_blank">Kumon Barrie Mapleview — Humberto Domingues</a></p>
+<p class="last-updated">Last updated: June 04, 2026 at 16:39 UTC · Generated by Hermes Agent · <a href="https://www.kumon.com/barrie-mapleview-on" target="_blank">Kumon Barrie Mapleview — Humberto Domingues</a></p>
 
 <script>
 function toggleDead() {
@@ -233,8 +234,6 @@ function toggleDead() {
   });
   document.getElementById('deadCount').textContent = count + ' dead ' + (hide ? 'hidden' : 'shown');
 }
-
-// Run on load
 toggleDead();
 </script>
 
