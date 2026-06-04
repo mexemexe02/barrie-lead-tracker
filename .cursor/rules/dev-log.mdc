@@ -1,0 +1,67 @@
+---
+description: Multi-agent coordination — dev log, claiming, state sync. Applies to all website-projects.
+alwaysApply: true
+---
+
+# Multi-Agent Coordination Protocol
+
+You are NOT the only agent working on this project. Hermes (another AI agent) may also be building sites, deploying, and modifying `leads.csv`. **Assume the state can change between your sessions.**
+
+## Session Start (MANDATORY — do this first)
+
+1. Read `C:\Users\Humberto\website-projects\AGENTS.md` — project rules, quality standards, pipeline
+2. Read `C:\Users\Humberto\website-projects\development_log.md` — what other agents did recently
+3. Read `C:\Users\Humberto\website-projects\leads.csv` — current lead statuses (may have changed)
+
+## CLAIMING Protocol — PREVENT DOUBLE-WORK
+
+Before building a site for ANY lead:
+
+1. **Check leads.csv** — if status is NOT `new`, skip it (someone already handled it)
+2. **Check development_log.md** — if another agent claimed it today, skip it
+3. **Mark as claimed** — update the lead's status in leads.csv from `new` to `in_progress` BEFORE starting work
+4. **Log the claim** — append to development_log.md: `### Claimed: [business name] ([slug])`
+
+If another agent already claimed it (status is `in_progress`), pick a different lead.
+
+## After Completing Work
+
+1. **Update leads.csv** — set status to `new` (demo built), add `demo_url`, update `notes`
+2. **Regenerate tracker** — run `cd C:\Users\Humberto\website-projects && python regenerate-tracker.py`
+3. **Append to development_log.md** — use this format:
+
+```markdown
+## YYYY-MM-DD — [Project Name]
+
+### Summary
+[One line — what was accomplished]
+
+### Actions
+- [Action with result]
+- [Action with result]
+
+### Key Decisions
+- [Decision and why]
+
+### Files Changed
+- `path` — what changed
+
+### Blockers / Notes
+- [Anything pending]
+```
+
+4. **Push to GitHub** — after CSV and tracker changes
+
+## Development Log Rules
+
+- **Append only** — never overwrite or delete previous entries
+- **Read fresh every session** — don't rely on memory
+- **One date block per day** — if you work on multiple projects, give each its own `### [Project]` subsection under the same date
+- **Log everything** — research, decisions, deployments, errors, blockers
+
+## Conflict Prevention Checklist
+
+Before touching any file, ask:
+- Did another agent modify this since I last read it? (check log + CSV timestamps)
+- Is the lead I want still `new`? (re-read CSV)
+- Am I about to overwrite someone else's work? (check git status, re-read files)

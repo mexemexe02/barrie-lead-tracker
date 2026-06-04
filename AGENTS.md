@@ -23,6 +23,7 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 | File | Purpose |
 |------|---------|
 | `leads.csv` | **Source of truth** — all leads, statuses, demo URLs |
+| `development_log.md` | **Session log** — every agent appends work done (auto-maintained via `.cursor/rules/dev-log.mdc`) |
 | `barrie-lead-tracker/index.html` | Public dashboard (GitHub Pages) |
 | `barrie-lead-tracker/leads.csv` | Tracker subset with Coolify URLs |
 | `<business-slug>/index.html` | Individual demo sites (34 local folders) |
@@ -57,9 +58,11 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 - Also deploy to Coolify if available (server: 178.156.135.237:8000)
 
 ### 5. Track
-- Append to `leads.csv` with demo_url, date, status="new"
+- **Claim first**: update lead status to `in_progress` in leads.csv BEFORE building (see Multi-Agent Coordination above)
+- After build: set status back to `new`, add `demo_url` and date
 - Run `python regenerate-tracker.py` to update the dashboard
-- Push to GitHub Pages
+- Append to `development_log.md` with full session entry
+- Push to GitHub
 
 ### 6. Pitch (DRAFT ONLY — Humberto approves before sending)
 - SMS template: "Hi, I'm Humberto — local Barrie biz owner (Kumon Mapleview). I noticed [Business] doesn't have a website yet. I put together a quick demo: [URL]. If you're interested, I can build you a proper professional site. No pressure. Worth a look?"
@@ -140,10 +143,35 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 | Status | Meaning |
 |--------|---------|
 | `new` | Verified no website, demo built or pending |
+| `in_progress` | ⚠️ Another agent is actively building this demo — **DO NOT TOUCH** |
 | `sent` | Outreach was delivered |
 | `pending` | Pitch drafted, awaiting Humberto to send |
 | `replied` | Business responded |
 | `dead` | Already has a website, or bad info |
+
+## ⚠️ Multi-Agent Coordination — READ BEFORE DOING ANYTHING
+
+**You are not alone.** Hermes and Cursor both work on this pipeline. They share the same files. Coordination is enforced by `.cursor/rules/dev-log.mdc`.
+
+### Before Building ANY Demo Site
+
+1. **Read leads.csv fresh** — another agent may have changed statuses
+2. **Read development_log.md** — see what was claimed today
+3. **CLAIM the lead** — update status from `new` → `in_progress` in leads.csv BEFORE starting
+4. **Log the claim** — append to development_log.md: `### Claimed: [business name] ([slug])`
+
+### After Building
+
+1. **Update leads.csv** — set status back to `new`, add `demo_url`, update `notes`
+2. **Regenerate tracker** — `python regenerate-tracker.py`
+3. **Log completion** — append full entry to development_log.md
+4. **Push to GitHub**
+
+### Never
+
+- ❌ Work on a lead with status `in_progress` — another agent has it
+- ❌ Change status from `in_progress` unless you're the one who set it
+- ❌ Skip reading the log at session start
 
 ## Common Pitfalls
 

@@ -1,0 +1,8 @@
+# Cursor Session Prompt — website-projects
+# Copy-paste into Cursor when starting a session in C:\Users\Humberto\website-projects\
+
+# SHORT (recommended — .cursor/rules/dev-log.mdc handles the rest):
+Follow the dev-log coordination rule.
+
+# LONG (if you want to be explicit):
+Read AGENTS.md, development_log.md, and leads.csv. Follow the CLAIMING protocol: mark lead as in_progress before building, update CSV after, regenerate tracker, append to log. Never touch a lead another agent has claimed (status=in_progress).
