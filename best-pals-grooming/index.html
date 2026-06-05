@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Pals Grooming - Premium pet grooming services in Barrie, Ontario. Professional grooming for dogs and cats with loving care.">
+    <title>Best Pals Grooming | Premium Pet Grooming in Barrie, Ontario</title>
+
+    <!-- ============================================================
+         GOOGLE FONTS: Poppins (headings) + Inter (body)
+         ============================================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ============================================================
+         FONT AWESOME 6 CDN (icons — no emoji)
+         ============================================================ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ============================================================
+         INLINE STYLESHEET
+         Dark premium pet-friendly theme
+         ============================================================ -->
+    <style>
+        /* =========================================================
+           CSS CUSTOM PROPERTIES (Design Tokens)
+           ========================================================= */
+        :root {
+            /* === PRIMARY PALETTE === */
+            --clr-slate-dark:    #263238;   /* Deep warm slate */
+            --clr-slate:         #37474F;   /* Medium warm slate */
+            --clr-slate-light:   #455A64;   /* Lighter warm slate */
+            --clr-cream:         #FFF8E1;   /* Soft warm cream */
+            --clr-cream-dim:     #F5E6C8;   /* Dimmed cream for subtle BGs */
+            --clr-sage:          #66BB6A;   /* Pet-friendly sage green */
+            --clr-sage-dark:     #4CAF50;   /* Darker sage for hover */
+            --clr-sage-glow:     rgba(102,187,106,0.25);
+            --clr-amber:         #FF8F00;   /* Warm amber accent */
+            --clr-amber-light:   #FFA726;   /* Lighter amber */
+            --clr-amber-glow:    rgba(255,143,0,0.25);
+
+            /* === NEUTRALS === */
+            --clr-white:         #FFFFFF;
+            --clr-off-white:     #ECEFF1;
+            --clr-gray-100:      #CFD8DC;
+            --clr-gray-200:      #B0BEC5;
+            --clr-gray-300:      #90A4AE;
+            --clr-gray-400:      #78909C;
+            --clr-gray-500:      #607D8B;
+            --clr-dark-bg:       #1A2024;   /* Page background */
+            --clr-card-bg:       #1E272C;   /* Card background */
+            --clr-card-border:   rgba(255,255,255,0.06);
+
+            /* === TYPOGRAPHY === */
+            --ff-heading:        'Poppins', sans-serif;
+            --ff-body:           'Inter', sans-serif;
+
+            /* === SPACING === */
+            --section-pad:       6rem;
+            --container-max:     1200px;
+            --card-radius:       16px;
+            --btn-radius:        50px;
+
+            /* === SHADOWS === */
+            --shadow-sm:         0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md:         0 8px 30px rgba(0,0,0,0.4);
+            --shadow-lg:         0 20px 60px rgba(0,0,0,0.5);
+            --shadow-glow-sage:  0 0 30px var(--clr-sage-glow);
+            --shadow-glow-amber: 0 0 30px var(--clr-amber-glow);
+
+            /* === TRANSITIONS === */
+            --ease-smooth:       cubic-bezier(0.4, 0, 0.2, 1);
+            --dur-fast:          200ms;
+            --dur-normal:        350ms;
+            --dur-slow:          500ms;
+        }
+
+        /* =========================================================
+           RESET & BASE
+           ========================================================= */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--ff-body);
+            background-color: var(--clr-dark-bg);
+            color: var(--clr-cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* === SELECTION === */
+        ::selection {
+            background-color: var(--clr-sage);
+            color: var(--clr-slate-dark);
+        }
+
+        /* === SCROLLBAR === */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--clr-dark-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--clr-slate-light);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--clr-sage);
+        }
+
+        /* === FOCUS RING === */
+        :focus-visible {
+            outline: 2px solid var(--clr-sage);
+            outline-offset: 3px;
+        }
+
+        /* =========================================================
+           UTILITY CLASSES
+           ========================================================= */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--ff-heading);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--clr-sage);
+            margin-bottom: 0.75rem;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 2px;
+            background: var(--clr-sage);
+            border-radius: 1px;
+        }
+
+        .section-title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--clr-cream);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-family: var(--ff-body);
+            font-size: 1.1rem;
+            color: var(--clr-gray-200);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================================
+           NAVIGATION
+           ========================================================= */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 32, 36, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .nav.scrolled {
+            background: rgba(26, 32, 36, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            text-decoration: none;
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--clr-cream);
+            transition: color var(--dur-fast) var(--ease-smooth);
+        }
+        .nav__logo i {
+            color: var(--clr-sage);
+            font-size: 1.5rem;
+            transition: transform var(--dur-normal) var(--ease-smooth);
+        }
+        .nav__logo:hover i {
+            transform: rotate(-10deg) scale(1.1);
+        }
+        .nav__logo:hover {
+            color: var(--clr-sage);
+        }
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav__links a {
+            text-decoration: none;
+            font-family: var(--ff-body);
+            font-weight: 500;
+            font-size: 0.925rem;
+            color: var(--clr-gray-200);
+            transition: color var(--dur-fast) var(--ease-smooth);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+        .nav__links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr-sage);
+            border-radius: 1px;
+            transition: width var(--dur-normal) var(--ease-smooth);
+        }
+        .nav__links a:hover,
+        .nav__links a.active {
+            color: var(--clr-cream);
+        }
+        .nav__links a:hover::after,
+        .nav__links a.active::after {
+            width: 100%;
+        }
+        .nav__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark) !important;
+            border-radius: var(--btn-radius);
+            font-weight: 600 !important;
+            font-family: var(--ff-heading) !important;
+            font-size: 0.875rem !important;
+            transition: all var(--dur-normal) var(--ease-smooth) !important;
+            box-shadow: 0 4px 14px var(--clr-sage-glow);
+        }
+        .nav__cta:hover {
+            background: var(--clr-sage-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--clr-sage-glow);
+        }
+        .nav__cta::after {
+            display: none !important;
+        }
+        .nav__toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--clr-cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color var(--dur-fast) var(--ease-smooth);
+        }
+        .nav__toggle:hover {
+            color: var(--clr-sage);
+        }
+
+        /* =========================================================
+           HERO SECTION
+           ========================================================= */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 6rem 2rem;
+        }
+        /* Hero background image with blend-mode multiply + dark overlay */
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1400&q=80');
+            background-size: cover;
+            background-position: center 35%;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-color: rgba(38, 50, 56, 0.65);
+            filter: brightness(0.55);
+            transform: scale(1.05);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+        @keyframes heroZoom {
+            0%   { transform: scale(1.05); }
+            100% { transform: scale(1.12); }
+        }
+        /* Additional gradient overlay for depth */
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(102,187,106,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 40%, rgba(255,143,0,0.1) 0%, transparent 55%),
+                linear-gradient(to bottom, rgba(26,32,36,0.3) 0%, rgba(26,32,36,0.7) 70%, var(--clr-dark-bg) 100%);
+            pointer-events: none;
+        }
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+        }
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(102,187,106,0.15);
+            border: 1px solid rgba(102,187,106,0.3);
+            color: var(--clr-sage);
+            font-family: var(--ff-heading);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--btn-radius);
+            margin-bottom: 1.75rem;
+            animation: fadeInUp 0.8s var(--ease-smooth) both;
+            animation-delay: 0.2s;
+        }
+        .hero__badge i {
+            font-size: 0.75rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.4; }
+        }
+        .hero__title {
+            font-family: var(--ff-heading);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: var(--clr-cream);
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.4);
+            animation: fadeInUp 0.8s var(--ease-smooth) both;
+            animation-delay: 0.3s;
+        }
+        .hero__title span {
+            color: var(--clr-sage);
+            position: relative;
+            display: inline-block;
+        }
+        .hero__title span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--clr-sage);
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+        .hero__desc {
+            font-family: var(--ff-body);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--clr-gray-100);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            line-height: 1.8;
+            animation: fadeInUp 0.8s var(--ease-smooth) both;
+            animation-delay: 0.4s;
+        }
+        .hero__actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s var(--ease-smooth) both;
+            animation-delay: 0.5s;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            font-family: var(--ff-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: var(--btn-radius);
+            cursor: pointer;
+            border: none;
+            transition: all var(--dur-normal) var(--ease-smooth);
+            white-space: nowrap;
+        }
+        .btn--primary {
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark);
+            box-shadow: 0 4px 20px var(--clr-sage-glow);
+        }
+        .btn--primary:hover {
+            background: var(--clr-sage-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--clr-sage-glow);
+        }
+        .btn--outline {
+            background: transparent;
+            color: var(--clr-cream);
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+        .btn--outline:hover {
+            border-color: var(--clr-sage);
+            color: var(--clr-sage);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .btn--amber {
+            background: var(--clr-amber);
+            color: var(--clr-slate-dark);
+            box-shadow: 0 4px 20px var(--clr-amber-glow);
+        }
+        .btn--amber:hover {
+            background: var(--clr-amber-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--clr-amber-glow);
+        }
+        .hero__scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--clr-gray-300);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* =========================================================
+           SERVICES SECTION
+           ========================================================= */
+        .services {
+            padding: var(--section-pad) 0;
+            position: relative;
+            background: var(--clr-dark-bg);
+        }
+        .services__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .service-card {
+            position: relative;
+            background: var(--clr-card-bg);
+            border: 1px solid var(--clr-card-border);
+            border-radius: var(--card-radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all var(--dur-normal) var(--ease-smooth);
+            overflow: hidden;
+            cursor: default;
+            z-index: 1;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity var(--dur-normal) var(--ease-smooth);
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(102,187,106,0.10),
+                transparent 40%);
+        }
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(102,187,106,0.25);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(102,187,106,0.15);
+        }
+        .service-card__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(102,187,106,0.1);
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            color: var(--clr-sage);
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .service-card:hover .service-card__icon {
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark);
+            transform: scale(1.1);
+            box-shadow: var(--shadow-glow-sage);
+        }
+        .service-card__title {
+            font-family: var(--ff-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--clr-cream);
+            margin-bottom: 0.75rem;
+        }
+        .service-card__desc {
+            font-family: var(--ff-body);
+            font-size: 0.925rem;
+            color: var(--clr-gray-300);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .service-card__price {
+            display: inline-block;
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--clr-amber);
+        }
+        .service-card__price span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--clr-gray-400);
+        }
+        .service-card__tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--clr-amber);
+            color: var(--clr-slate-dark);
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        /* =========================================================
+           ABOUT SECTION
+           ========================================================= */
+        .about {
+            padding: var(--section-pad) 0;
+            position: relative;
+            background: linear-gradient(180deg, var(--clr-dark-bg) 0%, #1E272C 50%, var(--clr-dark-bg) 100%);
+        }
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about__image-wrap {
+            position: relative;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+        }
+        .about__image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform var(--dur-slow) var(--ease-smooth);
+        }
+        .about__image-wrap:hover img {
+            transform: scale(1.05);
+        }
+        .about__image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid rgba(102,187,106,0.2);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+        .about__badge {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark);
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--btn-radius);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+            white-space: nowrap;
+        }
+        .about__text p {
+            color: var(--clr-gray-200);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.25rem;
+        }
+        .about__stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .about__stat {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .about__stat-number {
+            font-family: var(--ff-heading);
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--clr-sage);
+            line-height: 1;
+        }
+        .about__stat-label {
+            font-family: var(--ff-body);
+            font-size: 0.8rem;
+            color: var(--clr-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.35rem;
+        }
+
+        /* =========================================================
+           WHY CHOOSE US SECTION
+           ========================================================= */
+        .why-us {
+            padding: var(--section-pad) 0;
+            position: relative;
+            background: var(--clr-dark-bg);
+            overflow: hidden;
+        }
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(102,187,106,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .why-us__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .why-us__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .why-card {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: var(--card-radius);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .why-card:hover {
+            background: rgba(102,187,106,0.04);
+            border-color: rgba(102,187,106,0.2);
+            transform: translateX(6px);
+        }
+        .why-card__icon {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(102,187,106,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            color: var(--clr-sage);
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .why-card:hover .why-card__icon {
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark);
+        }
+        .why-card__title {
+            font-family: var(--ff-heading);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--clr-cream);
+            margin-bottom: 0.35rem;
+        }
+        .why-card__desc {
+            font-family: var(--ff-body);
+            font-size: 0.925rem;
+            color: var(--clr-gray-300);
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           TESTIMONIALS SECTION
+           ========================================================= */
+        .testimonials {
+            padding: var(--section-pad) 0;
+            position: relative;
+            background: linear-gradient(180deg, var(--clr-dark-bg) 0%, #1E272C 50%, var(--clr-dark-bg) 100%);
+        }
+        .testimonials__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .testimonial-card {
+            background: var(--clr-card-bg);
+            border: 1px solid var(--clr-card-border);
+            border-radius: var(--card-radius);
+            padding: 2.5rem 2rem 2rem;
+            position: relative;
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(102,187,106,0.2);
+        }
+        .testimonial-card__quote {
+            font-size: 5rem;
+            font-family: var(--ff-heading);
+            color: rgba(102,187,106,0.15);
+            line-height: 1;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+        .testimonial-card__text {
+            font-family: var(--ff-body);
+            font-size: 0.95rem;
+            color: var(--clr-gray-200);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-card__stars {
+            color: var(--clr-amber);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .testimonial-card__author {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+        .testimonial-card__avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-sage), var(--clr-sage-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--clr-slate-dark);
+            flex-shrink: 0;
+        }
+        .testimonial-card__name {
+            font-family: var(--ff-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--clr-cream);
+        }
+        .testimonial-card__pet {
+            font-family: var(--ff-body);
+            font-size: 0.8rem;
+            color: var(--clr-gray-400);
+        }
+
+        /* =========================================================
+           CONTACT SECTION
+           ========================================================= */
+        .contact {
+            padding: var(--section-pad) 0;
+            position: relative;
+            background: var(--clr-dark-bg);
+        }
+        .contact__grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .contact__info {
+            padding: 2rem;
+            background: var(--clr-card-bg);
+            border-radius: var(--card-radius);
+            border: 1px solid var(--clr-card-border);
+        }
+        .contact__info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .contact__info-item:last-child {
+            margin-bottom: 0;
+        }
+        .contact__info-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(102,187,106,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--clr-sage);
+        }
+        .contact__info-label {
+            font-family: var(--ff-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--clr-cream);
+            margin-bottom: 0.25rem;
+        }
+        .contact__info-value {
+            font-family: var(--ff-body);
+            font-size: 0.95rem;
+            color: var(--clr-gray-300);
+        }
+        .contact__info-value a {
+            color: var(--clr-sage);
+            text-decoration: none;
+            transition: color var(--dur-fast) var(--ease-smooth);
+        }
+        .contact__info-value a:hover {
+            color: var(--clr-amber);
+        }
+        .contact__social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .contact__social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-gray-300);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .contact__social a:hover {
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark);
+            transform: translateY(-3px);
+        }
+        .contact__form-wrap {
+            padding: 2.5rem;
+            background: var(--clr-card-bg);
+            border-radius: var(--card-radius);
+            border: 1px solid var(--clr-card-border);
+        }
+        .contact__form-title {
+            font-family: var(--ff-heading);
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--clr-cream);
+            margin-bottom: 1.75rem;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-label {
+            display: block;
+            font-family: var(--ff-body);
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--clr-gray-200);
+            margin-bottom: 0.5rem;
+        }
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: var(--clr-cream);
+            font-family: var(--ff-body);
+            font-size: 0.95rem;
+            transition: all var(--dur-normal) var(--ease-smooth);
+            outline: none;
+        }
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--clr-gray-500);
+        }
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--clr-sage);
+            background: rgba(102,187,106,0.04);
+            box-shadow: 0 0 0 4px rgba(102,187,106,0.08);
+        }
+        .form-textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-submit {
+            width: 100%;
+            padding: 0.95rem 2rem;
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark);
+            border: none;
+            border-radius: var(--btn-radius);
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--dur-normal) var(--ease-smooth);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px var(--clr-sage-glow);
+            margin-top: 0.5rem;
+        }
+        .form-submit:hover {
+            background: var(--clr-sage-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px var(--clr-sage-glow);
+        }
+        .form-submit:active {
+            transform: translateY(0);
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        .form-success.show {
+            display: block;
+        }
+        .form-success i {
+            font-size: 3rem;
+            color: var(--clr-sage);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .form-success h3 {
+            font-family: var(--ff-heading);
+            color: var(--clr-cream);
+            margin-bottom: 0.5rem;
+        }
+        .form-success p {
+            color: var(--clr-gray-300);
+        }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+        .footer {
+            padding: 3rem 0;
+            background: #141A1E;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer__logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--ff-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--clr-cream);
+            text-decoration: none;
+        }
+        .footer__logo i {
+            color: var(--clr-sage);
+        }
+        .footer__text {
+            font-family: var(--ff-body);
+            font-size: 0.85rem;
+            color: var(--clr-gray-400);
+        }
+        .footer__links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .footer__links a {
+            font-family: var(--ff-body);
+            font-size: 0.85rem;
+            color: var(--clr-gray-400);
+            text-decoration: none;
+            transition: color var(--dur-fast) var(--ease-smooth);
+        }
+        .footer__links a:hover {
+            color: var(--clr-sage);
+        }
+
+        /* =========================================================
+           MOBILE MENU OVERLAY
+           ========================================================= */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(26,32,36,0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--dur-normal) var(--ease-smooth);
+        }
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-menu a {
+            font-family: var(--ff-heading);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--clr-cream);
+            text-decoration: none;
+            transition: color var(--dur-fast) var(--ease-smooth);
+        }
+        .mobile-menu a:hover {
+            color: var(--clr-sage);
+        }
+        .mobile-menu__close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--clr-cream);
+            font-size: 1.75rem;
+            cursor: pointer;
+            transition: color var(--dur-fast);
+        }
+        .mobile-menu__close:hover {
+            color: var(--clr-sage);
+        }
+
+        /* =========================================================
+           BACK TO TOP BUTTON
+           ========================================================= */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 998;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--clr-sage);
+            color: var(--clr-slate-dark);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all var(--dur-normal) var(--ease-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--clr-sage-dark);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* =========================================================
+           RESPONSIVE: TABLET (max 1024px)
+           ========================================================= */
+        @media (max-width: 1024px) {
+            :root {
+                --section-pad: 4.5rem;
+            }
+            .services__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials__grid .testimonial-card:last-child {
+                grid-column: 1 / -1;
+                max-width: 400px;
+                justify-self: center;
+            }
+            .contact__grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about__grid {
+                gap: 2.5rem;
+            }
+            .why-us__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* =========================================================
+           RESPONSIVE: SMALL TABLET (max 768px)
+           ========================================================= */
+        @media (max-width: 768px) {
+            :root {
+                --section-pad: 3.5rem;
+            }
+            .nav__links {
+                display: none;
+            }
+            .nav__toggle {
+                display: block;
+            }
+            .services__grid {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            .testimonials__grid {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            .testimonials__grid .testimonial-card:last-child {
+                grid-column: auto;
+                max-width: none;
+                justify-self: auto;
+            }
+            .about__grid {
+                grid-template-columns: 1fr;
+            }
+            .about__image-wrap {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .about__badge {
+                bottom: -1rem;
+                right: -0.5rem;
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+            .about__stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .why-us__grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .hero__actions {
+                flex-direction: column;
+            }
+            .hero__actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .footer__inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer__links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* =========================================================
+           RESPONSIVE: MOBILE (max 480px)
+           ========================================================= */
+        @media (max-width: 480px) {
+            :root {
+                --section-pad: 2.5rem;
+            }
+            html {
+                font-size: 15px;
+            }
+            .container {
+                padding: 0 1.25rem;
+            }
+            .nav__inner {
+                height: 64px;
+            }
+            .nav__logo {
+                font-size: 1.15rem;
+            }
+            .hero {
+                min-height: 90vh;
+                padding: 5rem 1rem;
+            }
+            .hero__title {
+                font-size: clamp(2rem, 8vw, 2.5rem);
+            }
+            .hero__desc {
+                font-size: 0.95rem;
+            }
+            .hero__badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 1rem;
+            }
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+            .about__stats {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            .about__stat {
+                padding: 1rem;
+            }
+            .testimonial-card {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+            .contact__form-wrap {
+                padding: 1.75rem 1.25rem;
+            }
+            .contact__info {
+                padding: 1.5rem;
+            }
+            .back-to-top {
+                bottom: 1.25rem;
+                right: 1.25rem;
+                width: 42px;
+                height: 42px;
+                font-size: 1rem;
+            }
+            .why-card {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .why-card__icon {
+                margin: 0 auto;
+            }
+        }
+
+        /* =========================================================
+           ANIMATIONS (Intersection Observer trigger)
+           ========================================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         NAVIGATION
+         ============================================================ -->
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav__inner">
+            <a href="#hero" class="nav__logo" aria-label="Best Pals Grooming Home">
+                <i class="fa-solid fa-shield-dog"></i>
+                Best Pals
+            </a>
+            <ul class="nav__links" role="menubar">
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#why-us" role="menuitem">Why Us</a></li>
+                <li role="none"><a href="#testimonials" role="menuitem">Reviews</a></li>
+                <li role="none"><a href="#contact" role="menuitem" class="nav__cta">Book Now <i class="fa-solid fa-calendar-check"></i></a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="#hero" class="mobile-nav-link">Home</a>
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#why-us" class="mobile-nav-link">Why Us</a>
+        <a href="#testimonials" class="mobile-nav-link">Reviews</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero" id="hero" aria-label="Hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__content">
+            <div class="hero__badge">
+                <i class="fa-solid fa-location-dot"></i>
+                Barrie's Pet Groomers
+            </div>
+            <h1 class="hero__title">
+                Where Every Pet <span>Looks &amp; Feels</span> Their Best
+            </h1>
+            <p class="hero__desc">
+                Premium grooming services in the heart of Barrie, Ontario.
+                We treat your furry family members with the love, patience,
+                and professional care they deserve.
+            </p>
+            <div class="hero__actions">
+                <a href="#contact" class="btn btn--primary">
+                    <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+                </a>
+                <a href="#services" class="btn btn--outline">
+                    <i class="fa-solid fa-scissors"></i> Our Services
+                </a>
+            </div>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+         ============================================================ -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+        <div class="container">
+            <div class="services__header reveal">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title" id="services-heading">Grooming Services</h2>
+                <p class="section-subtitle mx-auto">
+                    From a quick nail trim to a full spa day, every service is
+                    tailored to your pet's breed, size, and temperament.
+                </p>
+            </div>
+            <div class="services__grid">
+                <!-- Card 1: Full Grooming -->
+                <div class="service-card reveal reveal-delay-1">
+                    <span class="service-card__tag">Popular</span>
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="service-card__title">Full Grooming</h3>
+                    <p class="service-card__desc">
+                        Complete spa experience: premium shampoo, conditioner, blow-dry,
+                        haircut, nail trim, ear cleaning, and a finishing spritz.
+                    </p>
+                    <div class="service-card__price">$65<span>+</span></div>
+                </div>
+
+                <!-- Card 2: Bath & Brush -->
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-shower"></i>
+                    </div>
+                    <h3 class="service-card__title">Bath &amp; Brush</h3>
+                    <p class="service-card__desc">
+                        Deep-cleansing bath with hypoallergenic products, thorough
+                        brushing to remove loose fur, and a gentle fluff dry.
+                    </p>
+                    <div class="service-card__price">$35<span>+</span></div>
+                </div>
+
+                <!-- Card 3: Nail Trimming -->
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-hand-scissors"></i>
+                    </div>
+                    <h3 class="service-card__title">Nail Trimming</h3>
+                    <p class="service-card__desc">
+                        Safe, stress-free nail clipping and filing. We use
+                        quiet tools and plenty of treats to keep your pet calm.
+                    </p>
+                    <div class="service-card__price">$15<span>+</span></div>
+                </div>
+
+                <!-- Card 4: Puppy Cuts -->
+                <div class="service-card reveal reveal-delay-4">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <h3 class="service-card__title">Puppy Cuts</h3>
+                    <p class="service-card__desc">
+                        Gentle introductory grooms designed for puppies under
+                        6 months. We build positive associations from day one.
+                    </p>
+                    <div class="service-card__price">$40<span>+</span></div>
+                </div>
+
+                <!-- Card 5: Senior Pet Care -->
+                <div class="service-card reveal reveal-delay-5">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="service-card__title">Senior Pet Care</h3>
+                    <p class="service-card__desc">
+                        Extra-gentle handling for older dogs and cats. Orthopedic
+                        mats, warm water, and extended breaks throughout.
+                    </p>
+                    <div class="service-card__price">$50<span>+</span></div>
+                </div>
+
+                <!-- Card 6: De-Shedding -->
+                <div class="service-card reveal reveal-delay-6">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <h3 class="service-card__title">De-Shedding</h3>
+                    <p class="service-card__desc">
+                        Specialized de-shedding treatment with high-velocity dryers
+                        and deshedding tools. Dramatically reduces loose hair at home.
+                    </p>
+                    <div class="service-card__price">$45<span>+</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__image-wrap reveal">
+                    <img
+                        src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&q=80"
+                        alt="Professional pet groomer carefully grooming a happy Golden Retriever at Best Pals Grooming in Barrie"
+                        loading="lazy"
+                    >
+                    <div class="about__badge">
+                        <i class="fa-solid fa-certificate"></i> Est. 2018
+                    </div>
+                </div>
+                <div class="about__text reveal reveal-delay-1">
+                    <span class="section-label">Who We Are</span>
+                    <h2 class="section-title" id="about-heading">Caring Hands,<br>Happy Tails</h2>
+                    <p>
+                        Best Pals Grooming was born from a simple belief: every pet
+                        deserves to feel pampered. Founded in 2018, our Barrie salon
+                        has grown into a trusted destination for pet parents across
+                        Simcoe County.
+                    </p>
+                    <p>
+                        Our certified groomers bring years of experience and a genuine
+                        love for animals. We use only premium, pet-safe products and
+                        stay current with the latest techniques. Whether your best pal
+                        is a tiny Yorkie or a majestic Great Dane, they'll receive
+                        individualized attention in our calm, welcoming space.
+                    </p>
+                    <div class="about__stats">
+                        <div class="about__stat">
+                            <div class="about__stat-number">5,000<span style="font-size:1rem;">+</span></div>
+                            <div class="about__stat-label">Happy Grooms</div>
+                        </div>
+                        <div class="about__stat">
+                            <div class="about__stat-number">6</div>
+                            <div class="about__stat-label">Years Serving</div>
+                        </div>
+                        <div class="about__stat">
+                            <div class="about__stat-number">4.9</div>
+                            <div class="about__stat-label">Star Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY CHOOSE US SECTION
+         ============================================================ -->
+    <section class="why-us" id="why-us" aria-labelledby="why-us-heading">
+        <div class="container">
+            <div class="why-us__header reveal">
+                <span class="section-label">The Difference</span>
+                <h2 class="section-title" id="why-us-heading">Why Barrie Chooses Us</h2>
+                <p class="section-subtitle mx-auto">
+                    It's not just about looking good — it's about how we make your
+                    pet feel during every visit.
+                </p>
+            </div>
+            <div class="why-us__grid">
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h3 class="why-card__title">Certified Groomers</h3>
+                        <p class="why-card__desc">
+                            Every stylist on our team holds professional certification
+                            and participates in ongoing education.
+                        </p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h3 class="why-card__title">Natural Products Only</h3>
+                        <p class="why-card__desc">
+                            We exclusively use hypoallergenic, cruelty-free shampoos
+                            and conditioners — gentle on all skin types.
+                        </p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-3">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3 class="why-card__title">One-on-One Appointments</h3>
+                        <p class="why-card__desc">
+                            No crowded waiting areas. Your pet gets our undivided
+                            attention from drop-off to pickup.
+                        </p>
+                    </div>
+                </div>
+                <div class="why-card reveal reveal-delay-4">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="why-card__title">Barrie Born &amp; Raised</h3>
+                        <p class="why-card__desc">
+                            We're proud members of the Barrie community and treat
+                            every client like a neighbor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS SECTION
+         ============================================================ -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <div class="testimonials__header reveal">
+                <span class="section-label">Kind Words</span>
+                <h2 class="section-title" id="testimonials-heading">What Pet Parents Say</h2>
+                <p class="section-subtitle mx-auto">
+                    Real reviews from real families in Barrie and beyond.
+                </p>
+            </div>
+            <div class="testimonials__grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-card__quote" aria-hidden="true">&ldquo;</div>
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        My Golden Retriever Cooper used to shake at the sight of
+                        clippers. Best Pals completely changed that — he actually
+                        pulls me through the door now! The team is unbelievably
+                        patient and talented.
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">SM</div>
+                        <div>
+                            <div class="testimonial-card__name">Sarah Mitchell</div>
+                            <div class="testimonial-card__pet">
+                                <i class="fa-solid fa-dog"></i> Cooper — Golden Retriever
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-card__quote" aria-hidden="true">&ldquo;</div>
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        I have a senior Persian cat who needs extra care, and Best Pals
+                        is the only place I trust. They're so gentle with her, and she
+                        comes home looking like a show cat every single time.
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">JD</div>
+                        <div>
+                            <div class="testimonial-card__name">James Dorsey</div>
+                            <div class="testimonial-card__pet">
+                                <i class="fa-solid fa-cat"></i> Duchess — Persian
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <div class="testimonial-card__quote" aria-hidden="true">&ldquo;</div>
+                    <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        Hands down the best groomer in Barrie. My Bichon Frise has
+                        never looked better. The de-shedding treatment is a
+                        game-changer — my couch actually stays clean now!
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">LK</div>
+                        <div>
+                            <div class="testimonial-card__name">Lisa Kwan</div>
+                            <div class="testimonial-card__pet">
+                                <i class="fa-solid fa-dog"></i> Snowball — Bichon Frise
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <div class="contact__header text-center reveal" style="margin-bottom:3rem;">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title" id="contact-heading">Book Your Visit</h2>
+                <p class="section-subtitle mx-auto">
+                    Ready to treat your best pal? Call us or fill out the form
+                    below — we'll get back to you within 24 hours.
+                </p>
+            </div>
+            <div class="contact__grid">
+                <div class="contact__info reveal reveal-delay-1">
+                    <div class="contact__info-item">
+                        <div class="contact__info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <div class="contact__info-label">Phone</div>
+                            <div class="contact__info-value">
+                                <a href="tel:+17055551234">(705) 555-1234</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__info-item">
+                        <div class="contact__info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div class="contact__info-label">Email</div>
+                            <div class="contact__info-value">
+                                <a href="mailto:hello@bestpalsgrooming.ca">hello@bestpalsgrooming.ca</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__info-item">
+                        <div class="contact__info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <div class="contact__info-label">Location</div>
+                            <div class="contact__info-value">
+                                123 Maple Avenue<br>Barrie, ON L4N 1R7
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__info-item">
+                        <div class="contact__info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <div class="contact__info-label">Hours</div>
+                            <div class="contact__info-value">
+                                Mon–Fri: 8 AM – 6 PM<br>
+                                Sat: 9 AM – 4 PM<br>
+                                Sun: Closed
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__social">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact__form-wrap reveal reveal-delay-2" id="contactFormWrap">
+                    <h3 class="contact__form-title">Send Us a Message</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="(705) 555-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="petName" class="form-label">Pet's Name &amp; Breed</label>
+                            <input type="text" id="petName" name="petName" class="form-input" placeholder="e.g., Buddy — Labrador">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceInterest" class="form-label">Service Interested In</label>
+                            <select id="serviceInterest" name="serviceInterest" class="form-input">
+                                <option value="">Select a service...</option>
+                                <option value="full-grooming">Full Grooming</option>
+                                <option value="bath-brush">Bath &amp; Brush</option>
+                                <option value="nail-trim">Nail Trimming</option>
+                                <option value="puppy-cut">Puppy Cut</option>
+                                <option value="senior-care">Senior Pet Care</option>
+                                <option value="de-shedding">De-Shedding</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your pet and any special needs..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. We'll get back to you within 24 hours — your best pal deserves it!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer__inner">
+            <a href="#hero" class="footer__logo">
+                <i class="fa-solid fa-shield-dog"></i> Best Pals Grooming
+            </a>
+            <p class="footer__text">
+                &copy; 2018–2026 Best Pals Grooming. Barrie, Ontario. All rights reserved.
+            </p>
+            <ul class="footer__links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================================
+         INLINE JAVASCRIPT
+         ============================================================ -->
+    <script>
+        (function () {
+            'use strict';
+
+            /* =====================================================
+               DOM REFERENCES
+               ===================================================== */
+            const navbar         = document.getElementById('navbar');
+            const navToggle      = document.getElementById('navToggle');
+            const mobileMenu     = document.getElementById('mobileMenu');
+            const mobileClose    = document.getElementById('mobileMenuClose');
+            const mobileLinks    = document.querySelectorAll('.mobile-nav-link');
+            const backToTop      = document.getElementById('backToTop');
+            const contactForm    = document.getElementById('contactForm');
+            const formSuccess    = document.getElementById('formSuccess');
+            const contactWrap    = document.getElementById('contactFormWrap');
+
+            /* =====================================================
+               NAVBAR SCROLL EFFECT
+               ===================================================== */
+            function handleScroll() {
+                const scrollY = window.scrollY;
+
+                // Navbar shadow on scroll
+                if (scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Back to top visibility
+                if (scrollY > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+
+                // Active nav link highlight
+                updateActiveNavLink();
+            }
+
+            /* =====================================================
+               ACTIVE NAV LINK HIGHLIGHT
+               ===================================================== */
+            function updateActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav__links a:not(.nav__cta)');
+                let current = '';
+
+                sections.forEach(function (section) {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(function (link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            /* =====================================================
+               MOBILE MENU TOGGLE
+               ===================================================== */
+            function openMobileMenu() {
+                mobileMenu.classList.add('open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                navToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('open');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            navToggle.addEventListener('click', openMobileMenu);
+            mobileClose.addEventListener('click', closeMobileMenu);
+
+            mobileLinks.forEach(function (link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // Close mobile menu on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            /* =====================================================
+               BACK TO TOP
+               ===================================================== */
+            backToTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            /* =====================================================
+               CONTACT FORM HANDLING
+               ===================================================== */
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Basic validation
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName  = document.getElementById('lastName').value.trim();
+                const email     = document.getElementById('email').value.trim();
+
+                if (!firstName || !lastName || !email) {
+                    // Find first empty required field and focus it
+                    if (!firstName) document.getElementById('firstName').focus();
+                    else if (!lastName) document.getElementById('lastName').focus();
+                    else document.getElementById('email').focus();
+
+                    // Brief shake animation
+                    contactWrap.style.animation = 'none';
+                    contactWrap.offsetHeight; // reflow
+                    contactWrap.style.animation = 'shake 0.5s ease';
+                    return;
+                }
+
+                // Simple email check
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    document.getElementById('email').focus();
+                    contactWrap.style.animation = 'none';
+                    contactWrap.offsetHeight;
+                    contactWrap.style.animation = 'shake 0.5s ease';
+                    return;
+                }
+
+                // Simulate submission (demo — no backend)
+                contactForm.style.display = 'none';
+                formSuccess.classList.add('show');
+                formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Log for demo purposes
+                console.log('%c🐾 Best Pals Grooming — Demo Form Submission %c(no data sent)',
+                    'color: #66BB6A; font-weight: bold;', 'color: #90A4AE;');
+                console.log('Name:', firstName, lastName);
+                console.log('Email:', email);
+                console.log('Phone:', document.getElementById('phone').value);
+                console.log('Pet:', document.getElementById('petName').value);
+                console.log('Service:', document.getElementById('serviceInterest').value);
+                console.log('Message:', document.getElementById('message').value);
+            });
+
+            /* =====================================================
+               SERVICE CARD MOUSE TRACKING (glow effect)
+               ===================================================== */
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(function (card) {
+                card.addEventListener('mousemove', function (e) {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    card.style.setProperty('--mouse-x', x + '%');
+                    card.style.setProperty('--mouse-y', y + '%');
+                });
+            });
+
+            /* =====================================================
+               INTERSECTION OBSERVER (scroll reveal animations)
+               ===================================================== */
+            const revealElements = document.querySelectorAll('.reveal');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                revealElements.forEach(function (el) {
+                    observer.observe(el);
+                });
+            } else {
+                // Fallback: show all immediately
+                revealElements.forEach(function (el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            /* =====================================================
+               SHAKE KEYFRAMES (injected for form validation)
+               ===================================================== */
+            const shakeStyle = document.createElement('style');
+            shakeStyle.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    10%, 50%, 90% { transform: translateX(-6px); }
+                    30%, 70% { transform: translateX(6px); }
+                }
+            `;
+            document.head.appendChild(shakeStyle);
+
+            /* =====================================================
+               EVENT LISTENERS
+               ===================================================== */
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            // Initial check
+            handleScroll();
+
+            console.log('%c🐾 Best Pals Grooming — Demo Site Ready %c| %cBarrie, Ontario',
+                'color: #66BB6A; font-size: 1.2em; font-weight: bold;',
+                '',
+                'color: #FF8F00;');
+            console.log('%cAll systems go! Scroll down to explore the demo.',
+                'color: #90A4AE;');
+        })();
+    </script>
+</body>
+</html>

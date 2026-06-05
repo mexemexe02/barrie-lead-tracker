@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thornton Cafe & Ice Cream — Thornton's sweet spot for artisan ice cream, fresh waffle cones, sundaes, milkshakes, coffee, and party catering. Located in Thornton, Ontario.">
+    <meta name="keywords" content="Thornton Cafe, ice cream, Thornton Ontario, artisan ice cream, waffle cones, sundaes, milkshakes, coffee, party catering, Barrie area">
+    <meta name="author" content="Thornton Cafe & Ice Cream">
+    <meta name="theme-color" content="#4A148C">
+    <title>Thornton Cafe & Ice Cream | Thornton's Sweet Spot</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        /* ============================================================
+           CSS CUSTOM PROPERTIES & RESET
+           ============================================================ */
+        :root {
+            /* Primary palette */
+            --purple-deep: #4A148C;
+            --purple-rich: #6A1B9A;
+            --purple-medium: #7B1FA2;
+            --purple-light: #9C27B0;
+            --purple-glow: #AB47BC;
+
+            /* Accents */
+            --strawberry: #E91E63;
+            --strawberry-light: #F06292;
+            --strawberry-dark: #C2185B;
+            --vanilla-cream: #FFF3E0;
+            --vanilla-warm: #FFE0B2;
+            --vanilla-soft: #FFF8F0;
+
+            /* Neutrals */
+            --dark-bg: #0D0D14;
+            --dark-surface: #151520;
+            --dark-card: #1A1A2E;
+            --dark-card-hover: #222240;
+            --dark-border: #2A2A40;
+            --text-primary: #F5F0EB;
+            --text-secondary: #C4B5A5;
+            --text-muted: #8A7A6A;
+            --text-on-dark: #E8E0D5;
+
+            /* Gradients */
+            --gradient-purple: linear-gradient(135deg, #4A148C 0%, #7B1FA2 50%, #6A1B9A 100%);
+            --gradient-hero: linear-gradient(180deg, rgba(13,13,20,0.2) 0%, rgba(13,13,20,0.7) 60%, rgba(13,13,20,0.95) 100%);
+            --gradient-card: linear-gradient(145deg, rgba(74,20,140,0.3) 0%, rgba(26,26,46,0.8) 100%);
+            --gradient-strawberry: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+            --gradient-button: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%);
+
+            /* Spacing */
+            --section-padding: 100px 0;
+            --container-max: 1200px;
+            --card-radius: 18px;
+            --button-radius: 50px;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 8px 32px rgba(0,0,0,0.4);
+            --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
+            --shadow-purple: 0 8px 32px rgba(74,20,140,0.3);
+            --shadow-strawberry: 0 8px 32px rgba(233,30,99,0.25);
+            --shadow-glow: 0 0 40px rgba(124,27,154,0.2);
+
+            /* Transitions */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================================
+           TYPOGRAPHY
+           ============================================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+        h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+        h4 { font-size: 1.25rem; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--vanilla-cream);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            font-weight: 300;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .accent-line {
+            width: 70px;
+            height: 4px;
+            background: var(--gradient-strawberry);
+            border-radius: 2px;
+            margin: 16px auto 0;
+        }
+
+        .accent-text {
+            color: var(--strawberry);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, var(--strawberry-light) 0%, var(--strawberry) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 13, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 243, 224, 0.08);
+            transition: all var(--transition-smooth);
+            padding: 0 24px;
+        }
+
+        .navbar.scrolled {
+            background: rgba(13, 13, 20, 0.95);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--vanilla-cream);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            transition: var(--transition-fast);
+        }
+
+        .nav-logo:hover {
+            color: var(--strawberry-light);
+        }
+
+        .nav-logo i {
+            font-size: 1.8rem;
+            color: var(--strawberry);
+            transition: transform var(--transition-bounce);
+        }
+
+        .nav-logo:hover i {
+            transform: rotate(-15deg) scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color var(--transition-fast);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--strawberry);
+            border-radius: 1px;
+            transition: width var(--transition-smooth);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--vanilla-cream);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-button);
+            color: #fff !important;
+            padding: 10px 24px !important;
+            border-radius: var(--button-radius);
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            transition: all var(--transition-smooth) !important;
+            box-shadow: var(--shadow-strawberry);
+            letter-spacing: 0.03em !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(233, 30, 99, 0.4);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--vanilla-cream);
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 8px;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-toggle:hover {
+            color: var(--strawberry-light);
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: var(--purple-deep);
+            background-blend-mode: multiply;
+        }
+
+        /* Dark overlay layers */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(74, 20, 140, 0.4) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(233, 30, 99, 0.3) 0%, transparent 50%),
+                linear-gradient(180deg,
+                    rgba(13, 13, 20, 0.3) 0%,
+                    rgba(13, 13, 20, 0.55) 40%,
+                    rgba(13, 13, 20, 0.82) 70%,
+                    rgba(13, 13, 20, 0.95) 100%
+                );
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 243, 224, 0.015) 2px,
+                    rgba(255, 243, 224, 0.015) 4px
+                );
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 850px;
+            padding: 0 24px;
+            animation: heroFadeIn 1s ease-out;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(233, 30, 99, 0.15);
+            border: 1px solid rgba(233, 30, 99, 0.3);
+            color: var(--strawberry-light);
+            padding: 10px 24px;
+            border-radius: var(--button-radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-badge i {
+            font-size: 1rem;
+        }
+
+        .hero-title {
+            color: var(--vanilla-cream);
+            margin-bottom: 20px;
+            text-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.6),
+                0 8px 24px rgba(0, 0, 0, 0.4),
+                0 0 80px rgba(74, 20, 140, 0.5);
+            line-height: 1.15;
+        }
+
+        .hero-title .brand-highlight {
+            display: block;
+            font-size: clamp(3.5rem, 7vw, 5.5rem);
+            background: linear-gradient(135deg, var(--vanilla-cream) 0%, var(--strawberry-light) 50%, var(--strawberry) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            filter: drop-shadow(0 4px 8px rgba(233, 30, 99, 0.3));
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 36px;
+            border-radius: var(--button-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-smooth);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gradient-button);
+            color: #fff;
+            box-shadow: var(--shadow-strawberry);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 44px rgba(233, 30, 99, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--vanilla-cream);
+            border: 2px solid rgba(255, 243, 224, 0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--strawberry);
+            color: var(--strawberry-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(233, 30, 99, 0.2);
+        }
+
+        /* Hero scroll indicator */
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .hero-scroll i {
+            font-size: 1.2rem;
+            color: var(--strawberry-light);
+        }
+
+        /* ============================================================
+           SERVICES SECTION
+           ============================================================ */
+        .services {
+            padding: var(--section-padding);
+            background: var(--dark-bg);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(124, 27, 154, 0.4), transparent);
+        }
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--card-radius);
+            padding: 40px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+            cursor: default;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-card);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+            z-index: -1;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233, 30, 99, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(233, 30, 99, 0.25);
+            box-shadow:
+                0 24px 56px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(233, 30, 99, 0.15) inset,
+                0 0 60px rgba(124, 27, 154, 0.1);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            position: relative;
+            transition: all var(--transition-bounce);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.08) rotate(-3deg);
+        }
+
+        .service-icon.purple {
+            background: linear-gradient(135deg, rgba(74, 20, 140, 0.4), rgba(106, 27, 154, 0.2));
+            color: var(--purple-glow);
+            box-shadow: 0 4px 20px rgba(74, 20, 140, 0.3);
+        }
+
+        .service-icon.pink {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.3), rgba(194, 24, 91, 0.15));
+            color: var(--strawberry-light);
+            box-shadow: 0 4px 20px rgba(233, 30, 99, 0.25);
+        }
+
+        .service-icon.amber {
+            background: linear-gradient(135deg, rgba(255, 179, 0, 0.3), rgba(255, 152, 0, 0.15));
+            color: #FFB74D;
+            box-shadow: 0 4px 20px rgba(255, 152, 0, 0.25);
+        }
+
+        .service-card h3 {
+            color: var(--vanilla-cream);
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 18px;
+        }
+
+        .service-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .service-features li i {
+            color: var(--strawberry);
+            font-size: 0.75rem;
+        }
+
+        /* ============================================================
+           ABOUT SECTION
+           ============================================================ */
+        .about {
+            padding: var(--section-padding);
+            background: var(--dark-surface);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            background: var(--gradient-purple);
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: rgba(255, 243, 224, 0.2);
+            background:
+                radial-gradient(circle at 30% 40%, rgba(233, 30, 99, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(74, 20, 140, 0.2) 0%, transparent 50%);
+        }
+
+        .about-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid rgba(255, 243, 224, 0.08);
+            border-radius: var(--card-radius);
+            pointer-events: none;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 24px;
+            right: -12px;
+            background: var(--gradient-strawberry);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            box-shadow: var(--shadow-strawberry);
+            z-index: 2;
+        }
+
+        .about-content h2 {
+            color: var(--vanilla-cream);
+            margin-bottom: 20px;
+        }
+
+        .about-content .lead {
+            font-size: 1.15rem;
+            color: var(--strawberry-light);
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--dark-card);
+            border-radius: 14px;
+            border: 1px solid var(--dark-border);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--strawberry-light);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ============================================================
+           WHY CHOOSE US SECTION
+           ============================================================ */
+        .why-us {
+            padding: var(--section-padding);
+            background: var(--dark-bg);
+            position: relative;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 36px 24px;
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--card-radius);
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--gradient-strawberry);
+            border-radius: 0 0 2px 2px;
+            transition: width var(--transition-smooth);
+        }
+
+        .why-card:hover::before {
+            width: 60%;
+        }
+
+        .why-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(233, 30, 99, 0.2);
+            box-shadow: var(--shadow-md);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.2), rgba(74, 20, 140, 0.2));
+            color: var(--strawberry-light);
+            transition: all var(--transition-bounce);
+        }
+
+        .why-card:hover .why-icon {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(233, 30, 99, 0.3);
+        }
+
+        .why-card h3 {
+            color: var(--vanilla-cream);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .why-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ============================================================
+           TESTIMONIALS SECTION
+           ============================================================ */
+        .testimonials {
+            padding: var(--section-padding);
+            background: var(--dark-surface);
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--card-radius);
+            padding: 36px 30px;
+            position: relative;
+            transition: all var(--transition-smooth);
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(233, 30, 99, 0.2);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-stars {
+            color: #FFB74D;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 16px;
+            border-left: 3px solid var(--strawberry);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .avatar-1 { background: linear-gradient(135deg, #E91E63, #9C27B0); }
+        .avatar-2 { background: linear-gradient(135deg, #6A1B9A, #AB47BC); }
+        .avatar-3 { background: linear-gradient(135deg, #C2185B, #7B1FA2); }
+
+        .testimonial-name {
+            color: var(--vanilla-cream);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .testimonial-role {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ============================================================
+           CONTACT SECTION
+           ============================================================ */
+        .contact {
+            padding: var(--section-padding);
+            background: var(--dark-bg);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 48px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .contact-info h2 {
+            color: var(--vanilla-cream);
+            margin-bottom: 8px;
+        }
+
+        .contact-info > p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: var(--dark-card);
+            border-radius: 14px;
+            border: 1px solid var(--dark-border);
+            transition: all var(--transition-smooth);
+        }
+
+        .contact-detail:hover {
+            border-color: rgba(233, 30, 99, 0.2);
+            box-shadow: var(--shadow-purple);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.25), rgba(74, 20, 140, 0.2));
+            color: var(--strawberry-light);
+            flex-shrink: 0;
+        }
+
+        .contact-detail-text h4 {
+            color: var(--vanilla-cream);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .contact-detail-text p,
+        .contact-detail-text a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--strawberry-light);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            background: var(--strawberry);
+            color: #fff;
+            border-color: var(--strawberry);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strawberry);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--card-radius);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-strawberry);
+        }
+
+        .contact-form-wrapper h3 {
+            color: var(--vanilla-cream);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-wrapper > p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .form-group label .required {
+            color: var(--strawberry);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: var(--dark-bg);
+            border: 1px solid var(--dark-border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all var(--transition-smooth);
+            outline: none;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--strawberry);
+            box-shadow: 0 0 0 4px rgba(233, 30, 99, 0.1);
+            background: rgba(26, 26, 46, 0.8);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(138, 122, 106, 0.5);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 130px;
+            line-height: 1.6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-button);
+            color: #fff;
+            border: none;
+            border-radius: var(--button-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: all var(--transition-smooth);
+            box-shadow: var(--shadow-strawberry);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 44px rgba(233, 30, 99, 0.45);
+        }
+
+        .form-submit i {
+            transition: transform var(--transition-smooth);
+        }
+
+        .form-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            background: var(--dark-surface);
+            border-top: 1px solid var(--dark-border);
+            padding: 48px 24px 32px;
+        }
+
+        .footer-grid {
+            max-width: var(--container-max);
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--vanilla-cream);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h4 {
+            color: var(--vanilla-cream);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--strawberry-light);
+        }
+
+        .footer-bottom {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--dark-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .heart {
+            color: var(--strawberry);
+        }
+
+        /* ============================================================
+           SCROLL TO TOP
+           ============================================================ */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-button);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-strawberry);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all var(--transition-smooth);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 44px rgba(233, 30, 99, 0.45);
+        }
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           MOBILE RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image-wrapper {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 76px;
+                left: 0;
+                right: 0;
+                background: rgba(13, 13, 20, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 24px;
+                border-bottom: 1px solid var(--dark-border);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-smooth);
+                z-index: 999;
+            }
+
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero-content {
+                padding: 0 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 28px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --section-padding: 64px 0;
+            }
+
+            .hero-badge {
+                font-size: 0.78rem;
+                padding: 8px 18px;
+            }
+
+            .service-card {
+                padding: 28px 20px;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                max-width: 250px;
+                margin: 24px auto 0;
+            }
+
+            .contact-detail {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         NAVIGATION
+         ============================================================ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" aria-label="Thornton Cafe & Ice Cream Home">
+                <i class="fa-solid fa-ice-cream"></i>
+                Thornton Cafe
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks" role="menubar">
+                <li role="none"><a href="#home" role="menuitem" class="active">Home</a></li>
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#why-us" role="menuitem">Why Us</a></li>
+                <li role="none"><a href="#testimonials" role="menuitem">Reviews</a></li>
+                <li role="none"><a href="#contact" role="menuitem" class="nav-cta">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero" id="home" aria-label="Hero banner">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-star"></i>
+                Thornton's Sweet Spot
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <h1 class="hero-title">
+                Welcome to
+                <span class="brand-highlight">Thornton Cafe</span>
+                &amp; Ice Cream
+            </h1>
+
+            <p class="hero-description">
+                Where every scoop tells a story. Handcrafted artisan ice cream, fresh-baked waffle cones, 
+                and rich espresso — served with a smile in the heart of Thornton, Ontario.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">
+                    <i class="fa-solid fa-list-check"></i>
+                    Explore Our Menu
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+         ============================================================ -->
+    <section class="services" id="services" aria-label="Our services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">What We <span class="accent-text">Serve</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    From classic scoops to custom party catering — discover the full range of treats 
+                    that make Thornton Cafe the sweetest stop in town.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Service Card 1: Artisan Ice Cream -->
+                <article class="service-card fade-in">
+                    <div class="service-icon purple">
+                        <i class="fa-solid fa-ice-cream"></i>
+                    </div>
+                    <h3>Artisan Ice Cream</h3>
+                    <p>Small-batch, handcrafted ice cream made with premium ingredients and a whole lot of love. Over 24 rotating flavours.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> 24+ flavours daily</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Made fresh in-store</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Dairy-free & vegan options</li>
+                    </ul>
+                </article>
+
+                <!-- Service Card 2: Fresh Waffle Cones -->
+                <article class="service-card fade-in">
+                    <div class="service-icon pink">
+                        <i class="fa-solid fa-waffle"></i>
+                    </div>
+                    <h3>Fresh Waffle Cones</h3>
+                    <p>Baked right before your eyes — the irresistible aroma of warm, golden waffle cones fills our shop every day.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Baked fresh daily</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Classic, chocolate & sprinkle</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Gluten-free available</li>
+                    </ul>
+                </article>
+
+                <!-- Service Card 3: Sundaes & Splits -->
+                <article class="service-card fade-in">
+                    <div class="service-icon amber">
+                        <i class="fa-solid fa-martini-glass-citrus"></i>
+                    </div>
+                    <h3>Sundaes &amp; Splits</h3>
+                    <p>Over-the-top creations loaded with hot fudge, caramel drizzle, fresh whipped cream, and all the toppings you crave.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Signature banana splits</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Build-your-own sundaes</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Seasonal specials</li>
+                    </ul>
+                </article>
+
+                <!-- Service Card 4: Milkshakes -->
+                <article class="service-card fade-in">
+                    <div class="service-icon pink">
+                        <i class="fa-solid fa-blender"></i>
+                    </div>
+                    <h3>Thick Milkshakes</h3>
+                    <p>Extra-thick, spoon-worthy milkshakes blended with our premium ice cream. Topped with whipped cream and a cherry.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> 16 flavour combinations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Add malt for extra richness</li>
+                        <li><i class="fa-solid fa-circle-check"></i> To-go friendly cups</li>
+                    </ul>
+                </article>
+
+                <!-- Service Card 5: Coffee & Espresso -->
+                <article class="service-card fade-in">
+                    <div class="service-icon purple">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3>Coffee &amp; Espresso</h3>
+                    <p>Locally roasted beans, expertly pulled espresso, and creamy lattes — the perfect pairing for any dessert.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Locally sourced beans</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Affogato with our ice cream</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Iced & hot options</li>
+                    </ul>
+                </article>
+
+                <!-- Service Card 6: Party Catering -->
+                <article class="service-card fade-in">
+                    <div class="service-icon amber">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3>Party Catering</h3>
+                    <p>Bring the Thornton Cafe experience to your event! Custom ice cream bars, sundae stations, and full-service catering.</p>
+                    <ul class="service-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Birthday parties</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Corporate events</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Custom packages available</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+    <section class="about" id="about" aria-label="About Thornton Cafe">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper fade-in">
+                    <div class="about-image-placeholder">
+                        <i class="fa-solid fa-ice-cream"></i>
+                    </div>
+                    <div class="about-badge">
+                        <i class="fa-solid fa-heart"></i> Since 2018
+                    </div>
+                </div>
+
+                <div class="about-content fade-in">
+                    <h2>Our <span class="accent-text">Story</span></h2>
+                    <p class="lead">From a family dream to Thornton's favourite sweet destination.</p>
+                    <p>
+                        Thornton Cafe &amp; Ice Cream was born from a simple idea: that every small town deserves 
+                        a place where families gather, friends reconnect, and everyone leaves with a smile. 
+                        Nestled in the heart of Thornton, Ontario, we've been serving up handcrafted ice cream 
+                        and warm hospitality since our doors first opened.
+                    </p>
+                    <p>
+                        Every batch of our ice cream is churned with care using locally sourced dairy and the 
+                        finest ingredients we can find. Our waffle cones are baked fresh throughout the day — 
+                        you'll smell them before you see them. And our coffee? It's the kind that makes you 
+                        want to stay for a second cup.
+                    </p>
+                    <p>
+                        Whether you're stopping by after soccer practice, celebrating a birthday, or just 
+                        treating yourself on a summer afternoon — you're family here at Thornton Cafe.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">24+</span>
+                            <span class="stat-label">Ice Cream Flavours</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5 <small style="font-size:1rem;">★</small></span>
+                            <span class="stat-label">Community Rated</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">300+</span>
+                            <span class="stat-label">Events Catered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY CHOOSE US SECTION
+         ============================================================ -->
+    <section class="why-us" id="why-us" aria-label="Why choose Thornton Cafe">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Why <span class="accent-text">Choose Us</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    We're not just another ice cream shop — we're a community gathering place 
+                    built on quality, care, and a genuine love for what we do.
+                </p>
+            </div>
+
+            <div class="why-us-grid">
+
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3>Premium Ingredients</h3>
+                    <p>We source local dairy, real fruit, and premium chocolate. No artificial shortcuts — just honest, delicious ice cream.</p>
+                </div>
+
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Family-Owned</h3>
+                    <p>A true local business run by people who live in Thornton. When you support us, you support the community.</p>
+                </div>
+
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-cookie-bite"></i>
+                    </div>
+                    <h3>Fresh Daily</h3>
+                    <p>Our ice cream and waffle cones are made fresh every single day. Taste the difference that freshness makes.</p>
+                </div>
+
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3>Community Hub</h3>
+                    <p>More than a cafe — we're a gathering spot for families, friends, and neighbours. Everyone is welcome here.</p>
+                </div>
+
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <h3>Custom Catering</h3>
+                    <p>From birthday parties to corporate events, we create custom ice cream experiences tailored to your celebration.</p>
+                </div>
+
+                <div class="why-card fade-in">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Dietary Friendly</h3>
+                    <p>Dairy-free, vegan, and gluten-free options available so everyone can enjoy a sweet treat without compromise.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS SECTION
+         ============================================================ -->
+    <section class="testimonials" id="testimonials" aria-label="Customer reviews">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">What Our <span class="accent-text">Customers Say</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    Don't just take our word for it — hear from the people who make Thornton Cafe 
+                    their go-to spot for sweet treats.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The salted caramel ice cream is hands down the best I've ever had. My kids love 
+                        the waffle cones — they're still warm when you get them! This place has become 
+                        our Sunday afternoon tradition."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar avatar-1">SJ</div>
+                        <div>
+                            <div class="testimonial-name">Sarah Johnson</div>
+                            <div class="testimonial-role">Thornton Resident &bull; Mom of Three</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "We hired Thornton Cafe for our daughter's birthday party and they were incredible. 
+                        The sundae bar was a huge hit — the kids (and adults!) couldn't get enough. 
+                        Professional, friendly, and the ice cream was out of this world."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar avatar-2">MR</div>
+                        <div>
+                            <div class="testimonial-name">Mike Richardson</div>
+                            <div class="testimonial-role">Local Business Owner</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I'm a bit of a coffee snob and their espresso is legitimately excellent. Paired 
+                        with a scoop of their vanilla bean — absolute perfection. The atmosphere is warm 
+                        and welcoming. My favourite spot to work for an afternoon."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar avatar-3">EL</div>
+                        <div>
+                            <div class="testimonial-name">Emily Laurent</div>
+                            <div class="testimonial-role">Barrie Commuter &bull; Coffee Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section class="contact" id="contact" aria-label="Contact us">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Get in <span class="accent-text">Touch</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    Ready to satisfy your sweet tooth? Drop by, give us a call, or send us a message — 
+                    we'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h2>Contact <span class="accent-text">Info</span></h2>
+                    <p>We're here to help — reach out anytime!</p>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Phone</h4>
+                            <a href="tel:+17057187816">(705) 718-7816</a>
+                            <p style="font-size:0.8rem;margin-top:2px;">Call for orders &amp; catering inquiries</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Location</h4>
+                            <p>Thornton, Ontario</p>
+                            <p style="font-size:0.8rem;margin-top:2px;">Barrie area &bull; 705 region</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Hours</h4>
+                            <p>Mon–Thu: 11 AM – 9 PM</p>
+                            <p>Fri–Sat: 11 AM – 10 PM</p>
+                            <p>Sun: 12 PM – 8 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Google Maps">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper fade-in">
+                    <h3>Send Us a <span class="accent-text">Message</span></h3>
+                    <p>Fill out the form below and we'll get back to you faster than you can say "extra sprinkles."</p>
+
+                    <form id="contactForm" action="#" method="post" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    class="form-input"
+                                    placeholder="Your first name"
+                                    required
+                                    autocomplete="given-name"
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    class="form-input"
+                                    placeholder="Your last name"
+                                    required
+                                    autocomplete="family-name"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="you@example.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-input"
+                                    placeholder="(705) 555-0123"
+                                    autocomplete="tel"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                class="form-input"
+                                placeholder="How can we help?"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message <span class="required">*</span></label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-textarea"
+                                placeholder="Tell us about your inquiry, event, or just say hello! We read every message."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer" role="contentinfo" aria-label="Site footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3><i class="fa-solid fa-ice-cream"></i> Thornton Cafe</h3>
+                <p>
+                    Thornton's sweet spot for artisan ice cream, fresh waffle cones, 
+                    handcrafted coffee, and unforgettable celebrations. Proudly serving 
+                    the Thornton and Barrie community.
+                </p>
+                <div class="contact-social">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Treats</h4>
+                <ul>
+                    <li><a href="#services">Artisan Ice Cream</a></li>
+                    <li><a href="#services">Waffle Cones</a></li>
+                    <li><a href="#services">Sundaes &amp; Splits</a></li>
+                    <li><a href="#services">Milkshakes</a></li>
+                    <li><a href="#services">Coffee &amp; Espresso</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+17057187816"><i class="fa-solid fa-phone"></i> (705) 718-7816</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-location-dot"></i> Thornton, Ontario</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Send a Message</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-calendar-check"></i> Book Catering</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Thornton Cafe &amp; Ice Cream. All rights reserved.</p>
+            <p>Made with <span class="heart"><i class="fa-solid fa-heart"></i></span> in Thornton, Ontario</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SCROLL TO TOP BUTTON
+         ============================================================ -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // --- DOM Elements ---
+            const navbar = document.getElementById('navbar');
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const contactForm = document.getElementById('contactForm');
+            const allNavLinks = navLinks.querySelectorAll('a');
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const toggleIcon = navToggle.querySelector('i');
+
+            // --- Navbar scroll effect ---
+            function handleScroll() {
+                const scrollY = window.scrollY;
+
+                // Navbar shadow
+                if (scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Scroll-to-top button
+                if (scrollY > 600) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+
+                // Active nav link based on scroll position
+                updateActiveNavLink();
+            }
+
+            // --- Update active nav link ---
+            function updateActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollY = window.scrollY + 120;
+
+                let currentSection = '';
+
+                sections.forEach(function(section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                allNavLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (href && href.substring(1) === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // --- Mobile nav toggle ---
+            function toggleMobileNav() {
+                const isOpen = navLinks.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', isOpen);
+
+                if (isOpen) {
+                    toggleIcon.className = 'fa-solid fa-xmark';
+                } else {
+                    toggleIcon.className = 'fa-solid fa-bars';
+                }
+            }
+
+            // Close mobile nav when a link is clicked
+            function closeMobileNav() {
+                navLinks.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                toggleIcon.className = 'fa-solid fa-bars';
+            }
+
+            // --- Scroll to top ---
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // --- Intersection Observer for fade-in animations ---
+            function setupFadeAnimations() {
+                if (!('IntersectionObserver' in window)) {
+                    // Fallback: show all elements immediately
+                    fadeElements.forEach(function(el) {
+                        el.classList.add('visible');
+                    });
+                    return;
+                }
+
+                const observer = new IntersectionObserver(
+                    function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    {
+                        threshold: 0.15,
+                        rootMargin: '0px 0px -50px 0px'
+                    }
+                );
+
+                fadeElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            }
+
+            // --- Contact form handling ---
+            function handleFormSubmit(e) {
+                e.preventDefault();
+
+                const form = e.target;
+                const submitBtn = form.querySelector('.form-submit');
+                const originalHTML = submitBtn.innerHTML;
+
+                // Basic validation
+                const firstName = form.querySelector('#firstName');
+                const lastName = form.querySelector('#lastName');
+                const email = form.querySelector('#email');
+                const message = form.querySelector('#message');
+
+                let isValid = true;
+
+                // Reset all inputs
+                form.querySelectorAll('.form-input, .form-textarea').forEach(function(input) {
+                    input.style.borderColor = '';
+                });
+
+                // Validate required fields
+                [firstName, lastName, email, message].forEach(function(field) {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = '#E91E63';
+                        isValid = false;
+                    }
+                });
+
+                // Validate email format
+                if (email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+                    email.style.borderColor = '#E91E63';
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    // Shake effect on submit button
+                    submitBtn.style.animation = 'none';
+                    submitBtn.offsetHeight; // trigger reflow
+                    submitBtn.style.animation = 'shake 0.5s ease-in-out';
+                    return;
+                }
+
+                // Simulate submission
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Sending...</span>';
+
+                setTimeout(function() {
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>Message Sent!</span>';
+                    submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
+
+                    form.reset();
+
+                    setTimeout(function() {
+                        submitBtn.innerHTML = originalHTML;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, 1500);
+            }
+
+            // Add shake animation
+            const shakeStyle = document.createElement('style');
+            shakeStyle.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    25% { transform: translateX(-6px); }
+                    50% { transform: translateX(6px); }
+                    75% { transform: translateX(-4px); }
+                }
+            `;
+            document.head.appendChild(shakeStyle);
+
+            // --- Event Listeners ---
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            navToggle.addEventListener('click', toggleMobileNav);
+
+            allNavLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    closeMobileNav();
+
+                    // Smooth scroll for anchor links
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('#') && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const navHeight = navbar.offsetHeight;
+                            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            scrollTopBtn.addEventListener('click', scrollToTop);
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleFormSubmit);
+            }
+
+            // --- Initialize ---
+            handleScroll();
+            setupFadeAnimations();
+
+            // Trigger fade-in for elements already in view on load
+            setTimeout(function() {
+                fadeElements.forEach(function(el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+
+            console.log('%c Thornton Cafe & Ice Cream %c Demo Website Ready ',
+                'background:#4A148C;color:#FFF3E0;padding:8px 12px;border-radius:6px 0 0 6px;font-weight:bold;',
+                'background:#E91E63;color:#fff;padding:8px 12px;border-radius:0 6px 6px 0;');
+            console.log('%c Built with love for the Thornton community. %c (705) 718-7816',
+                'color:#C4B5A5;', 'color:#F06292;font-weight:bold;');
+        })();
+    </script>
+
+</body>
+</html>

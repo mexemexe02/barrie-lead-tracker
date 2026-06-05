@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Giant Carpet — Barrie & Bradford's Flooring Superstore. Premium residential & commercial flooring, hardwood, vinyl, area rugs, and professional installation.">
+    <title>Giant Carpet | Flooring Superstore — Barrie & Bradford, Ontario</title>
+
+    <!-- Google Fonts: Playfair Display + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-5tNiK5fYx8UYlHHzHsRREg1jzPiDQOLd1OFT6iKzuIhFpPqzhSBwT+KpFQeJpANBk6FRNuqThhSqHMZ5YwF1pw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ============================================================
+           GIANT CARPET — PREMIUM DARK THEME
+           Barrie & Bradford, Ontario | Flooring Superstore
+           ============================================================ */
+
+        :root {
+            /* Core palette */
+            --burgundy-deep: #3A0D0D;
+            --burgundy: #4E1A1A;
+            --burgundy-mid: #6D2323;
+            --burgundy-light: #8B3333;
+            --cream: #FFF8E1;
+            --cream-soft: #FFF3CD;
+            --gold: #FFB300;
+            --gold-dark: #C68A00;
+            --gold-light: #FFCA40;
+            --gold-pale: rgba(255, 179, 0, 0.12);
+
+            /* Surfaces */
+            --surface-dark: #1A0A0A;
+            --surface-mid: #251010;
+            --surface-card: #2D1515;
+            --surface-card-hover: #351A1A;
+
+            /* Text */
+            --text-primary: #FFF8E1;
+            --text-secondary: #D4C5A0;
+            --text-muted: #A89878;
+
+            /* Borders */
+            --border-subtle: rgba(255, 179, 0, 0.15);
+            --border-accent: rgba(255, 179, 0, 0.35);
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
+            --shadow-gold: 0 4px 20px rgba(255, 179, 0, 0.12);
+
+            /* Spacing */
+            --section-pad: clamp(60px, 8vw, 120px);
+            --container-max: 1240px;
+            --radius: 8px;
+            --radius-lg: 16px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base
+           ============================================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--surface-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--gold);
+            color: var(--surface-dark);
+        }
+
+        /* Focus */
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        /* Links */
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--text-primary);
+        }
+
+        h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+        h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        /* Paragraphs */
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 clamp(16px, 3vw, 40px);
+        }
+
+        /* Section base */
+        .section {
+            padding: var(--section-pad) 0;
+            position: relative;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin-bottom: 2rem;
+            border-radius: 2px;
+        }
+
+        .section-divider.centered {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 10, 10, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all var(--transition);
+            height: 72px;
+        }
+
+        .nav.scrolled {
+            background: rgba(26, 10, 10, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--cream);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .nav-logo i {
+            color: var(--gold);
+            font-size: 1.6rem;
+        }
+
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: color var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width var(--transition);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--cream);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--surface-dark) !important;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: all var(--transition) !important;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 18px rgba(255, 179, 0, 0.3);
+            color: var(--surface-dark) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--cream);
+            border-radius: 2px;
+            transition: all var(--transition);
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 72px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-color: #1A0A0A;
+            filter: brightness(0.55);
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(26, 10, 10, 0.85) 0%,
+                rgba(62, 13, 13, 0.7) 35%,
+                rgba(26, 10, 10, 0.9) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 179, 0, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 179, 0, 0.03) 0%, transparent 40%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 179, 0, 0.15);
+            border: 1px solid var(--border-accent);
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .hero-badge i {
+            font-size: 0.75rem;
+        }
+
+        .hero h1 {
+            color: var(--cream);
+            margin-bottom: 1.25rem;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 0 60px rgba(0, 0, 0, 0.4);
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--gold);
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-top: 0.25rem;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--surface-dark);
+            box-shadow: var(--shadow-gold);
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(255, 179, 0, 0.3);
+            color: var(--surface-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid rgba(255, 248, 225, 0.4);
+        }
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(255, 179, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            animation: heroBounce 2s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .hero-scroll-indicator span {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .hero-scroll-indicator i {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        @keyframes heroBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ============================================================
+           SERVICES SECTION
+           ============================================================ */
+        .services {
+            background: var(--surface-mid);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0% 0%, rgba(255, 179, 0, 0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(255, 179, 0, 0.06);
+            background: var(--surface-card-hover);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 179, 0, 0.1);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            transition: all var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-card-icon {
+            background: rgba(255, 179, 0, 0.18);
+            transform: scale(1.05);
+        }
+
+        .service-card-icon i {
+            font-size: 1.8rem;
+            color: var(--gold);
+            transition: transform var(--transition);
+        }
+
+        .service-card:hover .service-card-icon i {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+            line-height: 1.65;
+        }
+
+        .service-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+            transition: gap var(--transition);
+        }
+
+        .service-card-link i {
+            font-size: 0.7rem;
+            transition: transform var(--transition);
+        }
+
+        .service-card:hover .service-card-link i {
+            transform: translateX(4px);
+        }
+
+        /* ============================================================
+           ABOUT SECTION
+           ============================================================ */
+        .about {
+            background: var(--surface-dark);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 8vw, 80px);
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image-wrapper:hover img {
+            transform: scale(1.04);
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            background: var(--gold);
+            color: var(--surface-dark);
+            padding: 14px 22px;
+            border-radius: var(--radius);
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            line-height: 1.2;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-image-badge small {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        .about-text .section-label {
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-stat {
+            text-align: center;
+            padding: 1.25rem 0.75rem;
+            background: var(--surface-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .about-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            display: block;
+            line-height: 1.1;
+        }
+
+        .about-stat-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-top: 0.35rem;
+            display: block;
+        }
+
+        /* ============================================================
+           WHY CHOOSE US
+           ============================================================ */
+        .why-us {
+            background: var(--surface-mid);
+            position: relative;
+        }
+
+        .why-us::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 179, 0, 0.04), transparent 60%);
+            pointer-events: none;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 3rem;
+        }
+
+        .why-us-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            transition: transform var(--transition);
+        }
+
+        .why-us-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .why-us-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface-card);
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+            transition: all var(--transition);
+        }
+
+        .why-us-item:hover .why-us-icon {
+            border-color: var(--gold);
+            background: rgba(255, 179, 0, 0.1);
+            box-shadow: 0 0 24px rgba(255, 179, 0, 0.08);
+        }
+
+        .why-us-icon i {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+
+        .why-us-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .why-us-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* ============================================================
+           TESTIMONIALS
+           ============================================================ */
+        .testimonials {
+            background: var(--surface-dark);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            position: relative;
+            transition: all var(--transition);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-card blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 1.75rem;
+            border: none;
+            padding: 0;
+            position: relative;
+        }
+
+        .testimonial-card blockquote::before {
+            content: '\201C';
+            position: absolute;
+            top: -24px;
+            left: -8px;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 1.25rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--burgundy-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--cream);
+            font-size: 1rem;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--cream);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        /* ============================================================
+           CONTACT SECTION
+           ============================================================ */
+        .contact {
+            background: var(--surface-mid);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: clamp(40px, 8vw, 80px);
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-info-icon {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 179, 0, 0.1);
+            border-radius: 14px;
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        .contact-info-text h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .contact-info-text p,
+        .contact-info-text a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .contact-info-text a:hover {
+            color: var(--gold);
+        }
+
+        .contact-phone-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 16px 24px;
+            margin-top: 0.5rem;
+            transition: all var(--transition);
+        }
+
+        .contact-phone-highlight:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .contact-phone-highlight i {
+            color: var(--gold);
+            font-size: 1.4rem;
+        }
+
+        .contact-phone-highlight a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cream);
+            text-decoration: none;
+        }
+
+        .contact-phone-highlight a:hover {
+            color: var(--gold);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-form .form-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.03em;
+        }
+
+        .form-group label .required {
+            color: var(--gold);
+            margin-left: 2px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            background: var(--surface-mid);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 13px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--cream);
+            transition: all var(--transition);
+            outline: none;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(168, 152, 120, 0.5);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(255, 179, 0, 0.1);
+            background: var(--surface-dark);
+        }
+
+        .form-input.error,
+        .form-textarea.error {
+            border-color: #D32F2F;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            justify-content: center;
+            font-size: 1rem;
+            padding: 16px 32px;
+            margin-top: 0.5rem;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(46, 125, 50, 0.15);
+            border: 1px solid rgba(46, 125, 50, 0.3);
+            border-radius: var(--radius-lg);
+        }
+
+        .form-success.visible {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .form-success i {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .form-success h3 {
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-success p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            background: var(--surface-dark);
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-about p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .footer h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cream);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .footer-links a {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .footer-bottom a {
+            color: var(--gold);
+        }
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger children */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.19s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.26s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.33s; opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           BACK TO TOP
+           ============================================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: var(--surface-dark);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: all var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(255, 179, 0, 0.35);
+        }
+
+        /* ============================================================
+           MOBILE NAV OVERLAY
+           ============================================================ */
+        .mobile-nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 10, 10, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-overlay a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: color var(--transition);
+        }
+
+        .mobile-nav-overlay a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-nav-cta {
+            background: var(--gold);
+            color: var(--surface-dark) !important;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 1rem !important;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        /* ============================================================
+           RESPONSIVE STYLES
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .footer-about {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image-wrapper {
+                max-width: 500px;
+                margin: 0 auto;
+                order: -1;
+            }
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .why-us-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+                max-width: 280px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.75rem;
+            }
+            .about-stat {
+                padding: 1rem 0.5rem;
+            }
+            .about-stat-number {
+                font-size: 1.5rem;
+            }
+            .about-stat-label {
+                font-size: 0.7rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .about-image-badge {
+                bottom: 12px;
+                right: 12px;
+                padding: 10px 16px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         NAVIGATION
+         ============================================================ -->
+    <nav class="nav" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo">
+                <i class="fa-solid fa-layer-group"></i>
+                Giant <span>Carpet</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta"><i class="fa-solid fa-phone"></i> 905-775-5901</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <a href="#home" data-nav-close>Home</a>
+        <a href="#services" data-nav-close>Services</a>
+        <a href="#about" data-nav-close>About</a>
+        <a href="#why-us" data-nav-close>Why Us</a>
+        <a href="#testimonials" data-nav-close>Reviews</a>
+        <a href="#contact" class="mobile-nav-cta" data-nav-close><i class="fa-solid fa-phone"></i> 905-775-5901</a>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-star"></i> Flooring Superstore
+            </div>
+            <h1>
+                Premium Flooring
+                <span>for Homes &amp; Businesses Across Simcoe County</span>
+            </h1>
+            <p>
+                From luxurious residential carpet to durable commercial flooring, Giant Carpet has been
+                Barrie and Bradford's trusted flooring destination for over 25 years. Quality materials,
+                expert installation, and unmatched service — all under one roof.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">
+                    <i class="fa-solid fa-grid-2"></i> Explore Our Services
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fa-solid fa-envelope"></i> Get a Free Quote
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+         ============================================================ -->
+    <section class="section services" id="services">
+        <div class="container">
+            <span class="section-label">What We Offer</span>
+            <h2 class="section-title">Our Flooring Services</h2>
+            <div class="section-divider"></div>
+            <p style="max-width: 600px;">
+                Every floor tells a story. Whether you're renovating a single room or outfitting an entire
+                commercial property, our expert team delivers premium materials and flawless installation.
+            </p>
+
+            <div class="services-grid stagger-children" id="servicesGrid">
+                <!-- Card 1: Residential Carpet -->
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3>Residential Carpet</h3>
+                    <p>
+                        Transform your home with plush, stain-resistant carpets in hundreds of colors and textures.
+                        From cozy bedroom broadloom to durable family-room berber, we carry top brands like
+                        Shaw, Mohawk, and Dream Weaver.
+                    </p>
+                    <a href="#contact" class="service-card-link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Commercial Flooring -->
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Commercial Flooring</h3>
+                    <p>
+                        High-traffic solutions engineered to last. Carpet tiles, broadloom, luxury vinyl plank,
+                        and epoxy coatings for offices, retail spaces, healthcare facilities, and educational
+                        institutions across the GTA.
+                    </p>
+                    <a href="#contact" class="service-card-link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Hardwood & Laminate -->
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3>Hardwood &amp; Laminate</h3>
+                    <p>
+                        Solid and engineered hardwood in oak, maple, walnut, and exotic species. Premium laminate
+                        alternatives that deliver the look of real wood with enhanced scratch and moisture resistance.
+                    </p>
+                    <a href="#contact" class="service-card-link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4: Vinyl & Luxury Plank -->
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3>Vinyl &amp; Luxury Plank</h3>
+                    <p>
+                        100% waterproof luxury vinyl plank and tile — perfect for basements, bathrooms, kitchens,
+                        and busy family homes. Realistic wood and stone visuals with click-lock or glue-down installation.
+                    </p>
+                    <a href="#contact" class="service-card-link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5: Area Rugs -->
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-rug"></i>
+                    </div>
+                    <h3>Area Rugs</h3>
+                    <p>
+                        Hand-tufted, hand-knotted, and machine-made area rugs from around the world. Custom sizing
+                        available. Add warmth, color, and definition to any room with our curated collection.
+                    </p>
+                    <a href="#contact" class="service-card-link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 6: Professional Installation -->
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3>Professional Installation</h3>
+                    <p>
+                        Certified installers with decades of combined experience. We handle furniture moving, old
+                        flooring removal, subfloor preparation, and meticulous installation — all backed by our
+                        satisfaction guarantee.
+                    </p>
+                    <a href="#contact" class="service-card-link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img
+                        src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+                        alt="Giant Carpet showroom interior with premium flooring displays"
+                        loading="lazy"
+                    >
+                    <div class="about-image-badge">
+                        <small>Est.</small> 1998
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title">Trusted in Simcoe County Since 1998</h2>
+                    <div class="section-divider"></div>
+                    <p>
+                        Giant Carpet opened its doors over 25 years ago with a simple mission: give every customer
+                        a beautiful, durable floor at a fair price — and back it with service that turns first-time
+                        buyers into lifelong clients.
+                    </p>
+                    <p>
+                        Today, we're one of the largest independently owned flooring retailers in the Barrie-Bradford
+                        region. Our 12,000-square-foot showroom showcases thousands of samples, from budget-friendly
+                        laminates to bespoke hardwood and imported area rugs.
+                    </p>
+                    <p>
+                        We measure success not by square footage sold, but by the number of homeowners and business
+                        owners who trust us year after year. When you walk into Giant Carpet, you're family.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="about-stat-number">25+</span>
+                            <span class="about-stat-label">Years Experience</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-number">5,000+</span>
+                            <span class="about-stat-label">Projects Complete</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-number">12k</span>
+                            <span class="about-stat-label">Sq. Ft. Showroom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY CHOOSE US
+         ============================================================ -->
+    <section class="section why-us" id="why-us">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">The Giant Difference</span>
+                <h2 class="section-title">Why Choose Giant Carpet</h2>
+                <div class="section-divider centered"></div>
+                <p style="max-width: 650px; margin-left: auto; margin-right: auto;">
+                    We don't just sell flooring — we deliver peace of mind. Here's what sets us apart from
+                    the big-box stores and online retailers.
+                </p>
+            </div>
+
+            <div class="why-us-grid stagger-children" id="whyUsGrid">
+                <div class="why-us-item">
+                    <div class="why-us-icon">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>
+                        We source only from industry-leading manufacturers with proven durability records.
+                        Every product in our showroom meets our rigorous standards.
+                    </p>
+                </div>
+
+                <div class="why-us-item">
+                    <div class="why-us-icon">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h3>Fair Pricing</h3>
+                    <p>
+                        Direct relationships with mills and distributors mean lower prices for you —
+                        without sacrificing quality or service.
+                    </p>
+                </div>
+
+                <div class="why-us-item">
+                    <div class="why-us-icon">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>
+                        Our installers are certified, insured, and passionate about their craft.
+                        Average tenure of 12+ years on our crew.
+                    </p>
+                </div>
+
+                <div class="why-us-item">
+                    <div class="why-us-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>
+                        If you're not completely satisfied with your installation, we'll make it right.
+                        That's the Giant Carpet promise.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS
+         ============================================================ -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Client Love</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="section-divider centered"></div>
+            </div>
+
+            <div class="testimonials-grid stagger-children" id="testimonialsGrid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote>
+                        Giant Carpet completely transformed our basement. The luxury vinyl plank they recommended
+                        is gorgeous and waterproof — exactly what we needed for a family rec room. The installers
+                        were courteous, fast, and cleaned up perfectly.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div>
+                            <span class="testimonial-name">Sarah Mitchell</span>
+                            <span class="testimonial-role">Homeowner, Barrie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote>
+                        We've used Giant Carpet for three office build-outs now. Their commercial carpet tiles
+                        hold up beautifully in high-traffic areas, and the project management is seamless.
+                        They work around our schedule every time.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DR</div>
+                        <div>
+                            <span class="testimonial-name">David Reynolds</span>
+                            <span class="testimonial-role">Property Manager, Bradford</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote>
+                        The selection at Giant Carpet is unbelievable — way better than any big-box store.
+                        We found the perfect hardwood for our entire main floor, and the price beat
+                        three other quotes. Can't recommend them enough!
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JL</div>
+                        <div>
+                            <span class="testimonial-name">Jennifer &amp; Tom Lawson</span>
+                            <span class="testimonial-role">Homeowners, Innisfil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's Talk Flooring</h2>
+                <div class="section-divider centered"></div>
+                <p style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Ready to transform your space? Visit our showroom, give us a call, or send us a message —
+                    we'll respond within one business day.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Visit Our Showroom</h4>
+                            <p>Giant Carpet<br>123 Flooring Drive<br>Barrie, Ontario L4N 8X2</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Showroom Hours</h4>
+                            <p>
+                                Mon–Fri: 8:00 AM – 6:00 PM<br>
+                                Saturday: 9:00 AM – 4:00 PM<br>
+                                Sunday: Closed
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-text">
+                            <h4>Email Us</h4>
+                            <a href="mailto:info@giantcarpet.ca">info@giantcarpet.ca</a>
+                        </div>
+                    </div>
+
+                    <!-- Phone Highlight -->
+                    <div class="contact-phone-highlight">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <h4 style="font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 2px;">CALL US TODAY</h4>
+                            <a href="tel:+19057755901">905-775-5901</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form" id="contactFormWrapper">
+                    <h3>Request a Free Quote</h3>
+                    <p class="form-subtitle">Tell us about your project and we'll get back to you promptly.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    class="form-input"
+                                    placeholder="Your first name"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    class="form-input"
+                                    placeholder="Your last name"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="you@example.com"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-input"
+                                    placeholder="(705) 555-0123"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" class="form-input">
+                                <option value="">— Select a service —</option>
+                                <option value="residential-carpet">Residential Carpet</option>
+                                <option value="commercial-flooring">Commercial Flooring</option>
+                                <option value="hardwood-laminate">Hardwood &amp; Laminate</option>
+                                <option value="vinyl-luxury-plank">Vinyl &amp; Luxury Plank</option>
+                                <option value="area-rugs">Area Rugs</option>
+                                <option value="installation">Professional Installation</option>
+                                <option value="other">Other / Multiple Services</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Details <span class="required">*</span></label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-textarea"
+                                placeholder="Tell us about your space, square footage, timeline, and any specific needs..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Send My Free Quote Request
+                        </button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="formSuccess">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h3>Thank You for Reaching Out!</h3>
+                        <p>
+                            We've received your quote request. One of our flooring specialists will
+                            get back to you within one business day. In the meantime, feel free to
+                            call us at <strong style="color: var(--gold);">905-775-5901</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-brand">
+                        <i class="fa-solid fa-layer-group" style="color: var(--gold);"></i>
+                        Giant <span>Carpet</span>
+                    </div>
+                    <p>
+                        Barrie and Bradford's premier flooring superstore since 1998. Residential and
+                        commercial flooring, hardwood, vinyl, area rugs, and professional installation.
+                        Proudly serving Simcoe County and the Greater Toronto Area.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Residential Carpet</a></li>
+                        <li><a href="#services">Commercial Flooring</a></li>
+                        <li><a href="#services">Hardwood &amp; Laminate</a></li>
+                        <li><a href="#services">Vinyl &amp; Luxury Plank</a></li>
+                        <li><a href="#services">Area Rugs</a></li>
+                        <li><a href="#services">Installation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="tel:+19057755901">
+                                <i class="fa-solid fa-phone" style="margin-right: 6px; font-size: 0.75rem;"></i>
+                                905-775-5901
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@giantcarpet.ca">
+                                <i class="fa-solid fa-envelope" style="margin-right: 6px; font-size: 0.75rem;"></i>
+                                info@giantcarpet.ca
+                            </a>
+                        </li>
+                        <li>
+                            <span style="color: var(--text-muted); font-size: 0.88rem;">
+                                <i class="fa-solid fa-location-dot" style="margin-right: 6px; font-size: 0.75rem;"></i>
+                                123 Flooring Drive<br>
+                                <span style="margin-left: 22px;">Barrie, ON L4N 8X2</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Giant Carpet</strong>. All rights reserved. | Proudly serving Barrie &amp; Bradford, Ontario.</p>
+                <p>Demo website — created to showcase digital possibilities.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // DOM elements
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
+            const backToTop = document.getElementById('backToTop');
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            const contactFormWrapper = document.getElementById('contactFormWrapper');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const mobileNavLinks = document.querySelectorAll('[data-nav-close]');
+            const sections = document.querySelectorAll('section[id]');
+
+            // ======================================================
+            // SCROLL EFFECTS
+            // ======================================================
+
+            // Navbar shadow on scroll
+            function handleScroll() {
+                const scrollY = window.scrollY;
+
+                // Navbar state
+                if (scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Back to top visibility
+                if (scrollY > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+
+                // Active nav link tracking
+                let currentSection = '';
+                sections.forEach(function(section) {
+                    const sectionTop = section.offsetTop - 120;
+                    if (scrollY >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // ======================================================
+            // SCROLL ANIMATIONS (Intersection Observer)
+            // ======================================================
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animate-on-scroll and stagger-children elements
+            document.querySelectorAll('.animate-on-scroll, .stagger-children').forEach(function(el) {
+                observer.observe(el);
+            });
+
+            // Also observe service cards and testimonial cards individually for staggered effect
+            document.querySelectorAll('.service-card, .testimonial-card, .why-us-item, .about-stat').forEach(function(el, index) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(24px)';
+                el.style.transition = 'opacity 0.55s ease, transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)';
+                el.style.transitionDelay = (index % 4) * 0.08 + 's';
+
+                const cardObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            cardObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+                cardObserver.observe(el);
+            });
+
+            // ======================================================
+            // MOBILE NAVIGATION
+            // ======================================================
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileNavLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close mobile nav on backdrop click
+            mobileNav.addEventListener('click', function(e) {
+                if (e.target === mobileNav) {
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // ======================================================
+            // BACK TO TOP
+            // ======================================================
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ======================================================
+            // CONTACT FORM
+            // ======================================================
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                let isValid = true;
+                const inputs = contactForm.querySelectorAll('[required]');
+
+                // Validate required fields
+                inputs.forEach(function(input) {
+                    const value = input.value.trim();
+                    const formGroup = input.closest('.form-group');
+
+                    if (!value) {
+                        isValid = false;
+                        input.classList.add('error');
+
+                        // Add error message if not present
+                        let errorMsg = formGroup.querySelector('.form-error');
+                        if (!errorMsg) {
+                            errorMsg = document.createElement('span');
+                            errorMsg.className = 'form-error';
+                            errorMsg.style.cssText = 'display: block; color: #D32F2F; font-size: 0.75rem; margin-top: 4px; font-weight: 500;';
+                            formGroup.appendChild(errorMsg);
+                        }
+                        errorMsg.textContent = 'This field is required.';
+                    } else {
+                        input.classList.remove('error');
+                        const errorMsg = formGroup.querySelector('.form-error');
+                        if (errorMsg) errorMsg.remove();
+                    }
+                });
+
+                // Email validation
+                const emailInput = document.getElementById('email');
+                if (emailInput.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailInput.value.trim())) {
+                        isValid = false;
+                        emailInput.classList.add('error');
+                        const formGroup = emailInput.closest('.form-group');
+                        let errorMsg = formGroup.querySelector('.form-error');
+                        if (!errorMsg) {
+                            errorMsg = document.createElement('span');
+                            errorMsg.className = 'form-error';
+                            errorMsg.style.cssText = 'display: block; color: #D32F2F; font-size: 0.75rem; margin-top: 4px; font-weight: 500;';
+                            formGroup.appendChild(errorMsg);
+                        }
+                        errorMsg.textContent = 'Please enter a valid email address.';
+                    }
+                }
+
+                if (isValid) {
+                    // Simulate form submission
+                    const submitBtn = contactForm.querySelector('.btn-submit');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+
+                    setTimeout(function() {
+                        contactForm.style.display = 'none';
+                        formSuccess.classList.add('visible');
+
+                        // Reset form
+                        contactForm.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+
+                        // Scroll to success message
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 1500);
+                } else {
+                    // Scroll to first error
+                    const firstError = contactForm.querySelector('.error');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstError.focus();
+                    }
+                }
+            });
+
+            // Clear errors on input
+            contactForm.querySelectorAll('.form-input, .form-textarea').forEach(function(input) {
+                input.addEventListener('input', function() {
+                    input.classList.remove('error');
+                    const formGroup = input.closest('.form-group');
+                    const errorMsg = formGroup.querySelector('.form-error');
+                    if (errorMsg) errorMsg.remove();
+                });
+
+                input.addEventListener('blur', function() {
+                    if (input.hasAttribute('required') && !input.value.trim()) {
+                        input.classList.add('error');
+                        const formGroup = input.closest('.form-group');
+                        let errorMsg = formGroup.querySelector('.form-error');
+                        if (!errorMsg) {
+                            errorMsg = document.createElement('span');
+                            errorMsg.className = 'form-error';
+                            errorMsg.style.cssText = 'display: block; color: #D32F2F; font-size: 0.75rem; margin-top: 4px; font-weight: 500;';
+                            formGroup.appendChild(errorMsg);
+                        }
+                        errorMsg.textContent = 'This field is required.';
+                    }
+                });
+            });
+
+            // ======================================================
+            // SMOOTH SCROLL FOR ALL ANCHOR LINKS
+            // ======================================================
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                    }
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // ======================================================
+            // INITIALIZATION
+            // ======================================================
+            // Trigger initial scroll state
+            handleScroll();
+
+            console.log('%c Giant Carpet %c Demo Website Ready ',
+                'background: #4E1A1A; color: #FFB300; padding: 8px 12px; font-family: serif; font-size: 1.1rem; font-weight: bold; border-radius: 4px 0 0 4px;',
+                'background: #FFB300; color: #1A0A0A; padding: 8px 12px; font-family: sans-serif; font-size: 0.85rem; border-radius: 0 4px 4px 0;'
+            );
+            console.log('%c📍 Barrie & Bradford, Ontario | 📞 905-775-5901 | 🌐 giantcarpet.ca',
+                'color: #D4C5A0; font-size: 0.8rem;');
+
+        })();
+    </script>
+
+</body>
+</html>

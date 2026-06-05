@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Island Mainland Painting Co — Barrie's trusted painting contractors. Premium interior & exterior painting, cabinet refinishing, deck staining, commercial painting in Barrie, Ontario. Call 705-999-0915.">
+    <meta name="keywords" content="painting contractors Barrie, interior painting Barrie, exterior painting Barrie, cabinet refinishing, deck staining, commercial painting Ontario">
+    <title>Island Mainland Painting Co | Barrie's Painting Company</title>
+
+    <!-- Google Fonts: Cormorant Garamond + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ============================================================
+           ISLAND MAINLAND PAINTING CO — CSS RESET & BASE
+           ============================================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary palette — deep ocean blues */
+            --ocean-deep: #0A2E5C;
+            --ocean-primary: #0D47A1;
+            --ocean-mid: #1565C0;
+            --ocean-light: #1E88E5;
+            --ocean-glow: #42A5F5;
+
+            /* Sandy / coastal neutrals */
+            --sand-dark: #8D6E63;
+            --sand-mid: #A1887F;
+            --sand-beige: #BCAAA4;
+            --sand-light: #D7CCC8;
+            --sand-cream: #EFEBE9;
+
+            /* Accent — sunset coral */
+            --coral-deep: #E64A19;
+            --coral-primary: #FF7043;
+            --coral-light: #FF8A65;
+            --coral-glow: #FFAB91;
+
+            /* Surfaces */
+            --white-crisp: #ECEFF1;
+            --white-soft: #F5F7F8;
+            --surface-dark: #0D1B2A;
+            --surface-card: #112233;
+            --surface-elevated: #162D44;
+            --surface-input: #1A334D;
+
+            /* Text */
+            --text-primary: #ECEFF1;
+            --text-secondary: #B0BEC5;
+            --text-muted: #78909C;
+            --text-inverse: #0D1B2A;
+
+            /* Borders & Dividers */
+            --border-subtle: rgba(236, 239, 241, 0.08);
+            --border-medium: rgba(236, 239, 241, 0.14);
+            --border-accent: rgba(255, 112, 67, 0.4);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.5);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.6);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.7);
+            --shadow-glow: 0 0 30px rgba(21, 101, 192, 0.25), 0 0 60px rgba(255, 112, 67, 0.12);
+            --shadow-coral: 0 4px 20px rgba(255, 112, 67, 0.3);
+
+            /* Transitions */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --duration-fast: 180ms;
+            --duration-normal: 300ms;
+            --duration-slow: 500ms;
+
+            /* Layout */
+            --nav-height: 80px;
+            --max-width: 1200px;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--surface-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: var(--coral-primary);
+            color: var(--surface-dark);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--surface-dark); }
+        ::-webkit-scrollbar-thumb {
+            background: var(--ocean-mid);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ocean-light); }
+
+        /* ============================================================
+           TYPOGRAPHY
+           ============================================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        h1 { font-size: clamp(2.8rem, 5vw, 4.8rem); }
+        h2 { font-size: clamp(2rem, 3.5vw, 3.2rem); }
+        h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
+        h4 { font-size: clamp(1.1rem, 1.5vw, 1.4rem); }
+
+        p { margin-bottom: 1rem; color: var(--text-secondary); }
+        a { text-decoration: none; color: inherit; transition: color var(--duration-fast) ease; }
+        ul { list-style: none; }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--coral-primary);
+            margin-bottom: 1rem;
+        }
+        .section-label::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--coral-primary);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            margin-bottom: 1rem;
+            color: var(--white-crisp);
+        }
+        .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* ============================================================
+           UTILITY CLASSES
+           ============================================================ */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center { text-align: center; }
+        .text-coral { color: var(--coral-primary); }
+        .text-ocean { color: var(--ocean-light); }
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0);
+            transition: background var(--duration-fast) ease;
+            border-radius: inherit;
+        }
+        .btn:hover::after { background: rgba(255,255,255,0.08); }
+        .btn:active { transform: scale(0.97); }
+
+        .btn-primary {
+            background: var(--coral-primary);
+            color: var(--surface-dark);
+            box-shadow: var(--shadow-coral);
+        }
+        .btn-primary:hover {
+            background: var(--coral-light);
+            box-shadow: 0 6px 28px rgba(255, 112, 67, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white-crisp);
+            border: 2px solid var(--border-medium);
+        }
+        .btn-outline:hover {
+            border-color: var(--coral-primary);
+            color: var(--coral-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255, 112, 67, 0.2);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 10px 20px;
+        }
+        .btn-ghost:hover { color: var(--white-crisp); }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 1000;
+            background: rgba(13, 27, 42, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all var(--duration-normal) ease;
+        }
+        .nav.scrolled {
+            background: rgba(10, 22, 38, 0.94);
+            border-bottom-color: var(--border-medium);
+            box-shadow: var(--shadow-md);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--white-crisp);
+            letter-spacing: 0.02em;
+        }
+        .nav-logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--ocean-primary), var(--coral-primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white-crisp);
+            box-shadow: 0 2px 10px rgba(255, 112, 67, 0.3);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            transition: color var(--duration-fast) ease;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coral-primary);
+            border-radius: 2px;
+            transition: width var(--duration-normal) var(--ease-out-expo);
+        }
+        .nav-link:hover {
+            color: var(--white-crisp);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-cta {
+            margin-left: 0.5rem;
+        }
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--coral-primary);
+        }
+        .nav-phone i { font-size: 0.85rem; }
+
+        /* Hamburger menu */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--white-crisp);
+            border-radius: 2px;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+            transform-origin: center;
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
+
+        /* Mobile menu */
+        .nav-mobile {
+            display: none;
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            width: 100%;
+            background: rgba(10, 22, 38, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-medium);
+            padding: 2rem;
+            z-index: 999;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+        .nav-mobile.open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .nav-mobile a {
+            display: block;
+            padding: 14px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: color var(--duration-fast) ease;
+        }
+        .nav-mobile a:hover { color: var(--coral-primary); }
+        .nav-mobile .btn {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: calc(var(--nav-height) + 3rem) 2rem 4rem;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=1920&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-color: rgba(8, 20, 36, 0.72);
+            z-index: 0;
+            transform: scale(1.05);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+        @keyframes heroZoom {
+            0% { transform: scale(1.05); }
+            100% { transform: scale(1.12); }
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(13, 27, 42, 0.4) 0%,
+                rgba(10, 22, 38, 0.55) 30%,
+                rgba(8, 18, 32, 0.78) 70%,
+                var(--surface-dark) 100%
+            );
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-grain {
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 850px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            background: rgba(255, 112, 67, 0.15);
+            border: 1px solid rgba(255, 112, 67, 0.3);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--coral-primary);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.1s both;
+        }
+        .hero-badge i { font-size: 0.75rem; }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            font-weight: 700;
+            color: var(--white-crisp);
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+            text-shadow:
+                0 2px 4px rgba(0,0,0,0.5),
+                0 8px 24px rgba(0,0,0,0.4),
+                0 0 80px rgba(13, 71, 161, 0.3);
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.2s both;
+        }
+        .hero-title span {
+            display: block;
+            color: var(--coral-primary);
+            font-style: italic;
+            font-weight: 500;
+            font-size: 0.7em;
+        }
+
+        .hero-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.35s both;
+        }
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.5s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s var(--ease-out-expo) 0.65s both;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--white-crisp);
+            line-height: 1;
+        }
+        .hero-stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .hero-stat-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--border-medium);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll indicator */
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.6;
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+        .hero-scroll span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+        }
+        .hero-scroll i {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ============================================================
+           SERVICES SECTION
+           ============================================================ */
+        .services {
+            position: relative;
+            padding: 6rem 2rem;
+            background: var(--surface-dark);
+        }
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+        }
+        .services-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .services-header .section-subtitle {
+            margin: 0 auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.75rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            overflow: hidden;
+            transition: all var(--duration-slow) var(--ease-out-expo);
+            cursor: default;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--ocean-primary), var(--coral-primary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--duration-slow) var(--ease-out-expo);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-glow);
+            background: var(--surface-elevated);
+        }
+        .service-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, rgba(13, 71, 161, 0.25), rgba(21, 101, 192, 0.15));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--ocean-light);
+            margin-bottom: 1.5rem;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+        .service-card:hover .service-card-icon {
+            background: linear-gradient(135deg, var(--ocean-primary), var(--coral-primary));
+            color: var(--white-crisp);
+            box-shadow: 0 4px 20px rgba(255, 112, 67, 0.25);
+            transform: scale(1.08) rotate(-3deg);
+        }
+        .service-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--white-crisp);
+            margin-bottom: 0.75rem;
+            transition: color var(--duration-fast) ease;
+        }
+        .service-card:hover h3 { color: var(--coral-primary); }
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+        .service-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--coral-primary);
+            transition: gap var(--duration-normal) var(--ease-out-expo);
+        }
+        .service-card:hover .service-card-link { gap: 14px; }
+        .service-card-link i { font-size: 0.75rem; transition: transform var(--duration-fast) ease; }
+
+        /* ============================================================
+           ABOUT SECTION
+           ============================================================ */
+        .about {
+            position: relative;
+            padding: 6rem 2rem;
+            background: var(--surface-dark);
+        }
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .about-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            transition: transform var(--duration-slow) var(--ease-out-expo);
+        }
+        .about-image-wrapper:hover .about-image {
+            transform: scale(1.04);
+        }
+        .about-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13,71,161,0.2), rgba(255,112,67,0.12));
+            border-radius: var(--radius-xl);
+            pointer-events: none;
+        }
+        .about-accent-box {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--coral-primary);
+            color: var(--surface-dark);
+            padding: 1.25rem 1.75rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-coral);
+            z-index: 2;
+        }
+        .about-accent-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .about-accent-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .about-text .section-label { margin-bottom: 0.75rem; }
+        .about-text h2 { margin-bottom: 1.25rem; }
+        .about-text p {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .about-feature i {
+            color: var(--coral-primary);
+            font-size: 0.85rem;
+        }
+
+        /* ============================================================
+           WHY CHOOSE US
+           ============================================================ */
+        .why-us {
+            position: relative;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--surface-dark) 0%, #0B1A2E 50%, var(--surface-dark) 100%);
+        }
+        .why-us-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .why-us-header .section-subtitle {
+            margin: 0 auto 0;
+        }
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .why-card {
+            text-align: center;
+            padding: 2.5rem 1.75rem;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+        .why-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-6px);
+        }
+        .why-card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(13,71,161,0.2), rgba(21,101,192,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--ocean-light);
+            margin: 0 auto 1.25rem;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+        .why-card:hover .why-card-icon {
+            background: var(--ocean-primary);
+            color: var(--white-crisp);
+            box-shadow: 0 4px 20px rgba(13,71,161,0.4);
+        }
+        .why-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+            color: var(--white-crisp);
+        }
+        .why-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ============================================================
+           TESTIMONIALS SECTION
+           ============================================================ */
+        .testimonials {
+            position: relative;
+            padding: 6rem 2rem;
+            background: var(--surface-dark);
+        }
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .testimonials-header .section-subtitle {
+            margin: 0 auto 0;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            position: relative;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem 2rem;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+        .testimonial-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-4px);
+        }
+        .testimonial-stars {
+            color: #FFB74D;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--coral-primary);
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-mid));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--white-crisp);
+        }
+        .testimonial-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white-crisp);
+        }
+        .testimonial-role {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================================
+           CONTACT SECTION
+           ============================================================ */
+        .contact {
+            position: relative;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--surface-dark) 0%, #0B1A2E 100%);
+        }
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .contact-info .section-label { margin-bottom: 0.75rem; }
+        .contact-info h2 { margin-bottom: 1rem; }
+        .contact-info > p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: rgba(13, 71, 161, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--ocean-light);
+            flex-shrink: 0;
+        }
+        .contact-detail-text h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 2px;
+        }
+        .contact-detail-text p, .contact-detail-text a {
+            font-size: 0.95rem;
+            color: var(--white-crisp);
+            font-weight: 500;
+            transition: color var(--duration-fast) ease;
+        }
+        .contact-detail-text a:hover { color: var(--coral-primary); }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 0.5rem;
+        }
+        .contact-social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: all var(--duration-normal) var(--ease-out-expo);
+            font-size: 1rem;
+        }
+        .contact-social a:hover {
+            border-color: var(--coral-primary);
+            color: var(--coral-primary);
+            background: rgba(255, 112, 67, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+        .contact-form-wrapper h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            color: var(--white-crisp);
+        }
+        .contact-form-wrapper > p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 13px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            color: var(--white-crisp);
+            background: var(--surface-input);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            transition: all var(--duration-fast) ease;
+            outline: none;
+        }
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            border-color: var(--coral-primary);
+            box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.12);
+            background: #1C3852;
+        }
+        .form-textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .form-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2378909C' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+        .form-select option {
+            background: var(--surface-elevated);
+            color: var(--white-crisp);
+        }
+        .form-submit {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        /* ============================================================
+           CTA BANNER
+           ============================================================ */
+        .cta-banner {
+            position: relative;
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--ocean-deep), var(--ocean-primary), var(--ocean-mid));
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255,112,67,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-banner-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .cta-banner h2 {
+            color: var(--white-crisp);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .cta-banner p {
+            color: var(--sand-cream);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            background: #060F1A;
+            border-top: 1px solid var(--border-subtle);
+            padding: 4rem 2rem 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .footer-brand .nav-logo {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .footer-brand p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+        .footer-heading {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--white-crisp);
+            margin-bottom: 1.25rem;
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-links a {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            transition: color var(--duration-fast) ease;
+        }
+        .footer-links a:hover { color: var(--coral-primary); }
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: var(--max-width);
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .footer-bottom-links a {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: color var(--duration-fast) ease;
+        }
+        .footer-bottom-links a:hover { color: var(--coral-primary); }
+
+        /* ============================================================
+           BACK TO TOP
+           ============================================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--coral-primary);
+            color: var(--surface-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-coral);
+            z-index: 998;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+            border: none;
+            cursor: pointer;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(255, 112, 67, 0.5);
+        }
+
+        /* ============================================================
+           INTERSECTION OBSERVER ANIMATIONS
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ============================================================
+           RESPONSIVE DESIGN
+           ============================================================ */
+
+        /* Tablet & smaller laptops (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .about-image-wrapper {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .about-accent-box {
+                bottom: -12px;
+                right: -12px;
+                padding: 1rem 1.25rem;
+            }
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .hero-stats {
+                gap: 2rem;
+            }
+        }
+
+        /* Mobile (max-width: 768px) */
+        @media (max-width: 768px) {
+            html { font-size: 15px; }
+
+            .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+            .nav-mobile { display: block; }
+
+            .hero { min-height: 90vh; padding: calc(var(--nav-height) + 2rem) 1rem 3rem; }
+            .hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.25rem;
+                margin-top: 2.5rem;
+            }
+            .hero-stat-divider {
+                width: 60px;
+                height: 1px;
+            }
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services { padding: 4rem 1rem; }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .about { padding: 4rem 1rem; }
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us { padding: 4rem 1rem; }
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .testimonials { padding: 4rem 1rem; }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .contact { padding: 4rem 1rem; }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-wrapper {
+                padding: 1.75rem;
+            }
+
+            .cta-banner { padding: 3.5rem 1rem; }
+
+            .footer { padding: 3rem 1rem 1.5rem; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .back-to-top {
+                bottom: 1.25rem;
+                right: 1.25rem;
+                width: 42px;
+                height: 42px;
+            }
+
+            .section-label { font-size: 0.72rem; }
+            .section-subtitle { margin-bottom: 2rem; }
+        }
+
+        /* Small phones (max-width: 480px) */
+        @media (max-width: 480px) {
+            html { font-size: 14px; }
+            .container { padding: 0 1rem; }
+            .nav-inner { padding: 0 1rem; }
+            .hero { padding: calc(var(--nav-height) + 1.5rem) 0.75rem 2.5rem; }
+            .hero-badge { padding: 6px 14px; font-size: 0.7rem; }
+            .about-accent-box {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1rem;
+                text-align: center;
+            }
+            .footer-grid { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         NAVIGATION
+         ============================================================ -->
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Island Mainland Painting Co Home">
+                <div class="nav-logo-icon">
+                    <i class="fa-solid fa-paint-roller"></i>
+                </div>
+                Island Mainland
+            </a>
+            <div class="nav-links">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#why-us" class="nav-link">Why Us</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <span class="nav-phone">
+                    <i class="fa-solid fa-phone"></i> 705-999-0915
+                </span>
+                <a href="#contact" class="btn btn-primary nav-cta">Get a Quote</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+17059990915" class="btn btn-primary">
+            <i class="fa-solid fa-phone"></i> Call 705-999-0915
+        </a>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-grain" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-location-dot"></i>
+                Barrie's Painting Company
+            </div>
+            <h1 class="hero-title" id="hero-title">
+                Crafting Beautiful
+                <span>Spaces Across Barrie</span>
+            </h1>
+            <p class="hero-desc">
+                From island retreats to mainland estates, Island Mainland Painting Co brings
+                premium craftsmanship to every surface. Licensed, insured, and trusted by
+                homeowners &amp; businesses across Simcoe County.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-paintbrush"></i> Get Your Free Estimate
+                </a>
+                <a href="#services" class="btn btn-outline btn-lg">
+                    <i class="fa-solid fa-arrow-down"></i> Explore Our Services
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">15+</div>
+                    <div class="hero-stat-label">Years Experience</div>
+                </div>
+                <div class="hero-stat-divider" aria-hidden="true"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">2,400+</div>
+                    <div class="hero-stat-label">Projects Completed</div>
+                </div>
+                <div class="hero-stat-divider" aria-hidden="true"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">98%</div>
+                    <div class="hero-stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+         ============================================================ -->
+    <section class="services" id="services" aria-labelledby="services-title">
+        <div class="services-header reveal">
+            <span class="section-label">What We Do</span>
+            <h2 class="section-title" id="services-title">Premium Painting Services</h2>
+            <p class="section-subtitle">
+                From a single accent wall to entire commercial complexes — we deliver
+                exceptional results with the highest-quality paints and meticulous attention to detail.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1: Interior Painting -->
+            <article class="service-card reveal reveal-delay-1">
+                <div class="service-card-icon">
+                    <i class="fa-solid fa-house-chimney"></i>
+                </div>
+                <h3>Interior Painting</h3>
+                <p>
+                    Transform your living spaces with flawless walls, ceilings, and trim.
+                    We use low-VOC, eco-friendly paints for a healthier home environment
+                    and a stunning finish that lasts for years.
+                </p>
+                <span class="service-card-link">
+                    Learn more <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </article>
+
+            <!-- Service 2: Exterior Painting -->
+            <article class="service-card reveal reveal-delay-2">
+                <div class="service-card-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <h3>Exterior Painting</h3>
+                <p>
+                    Protect and beautify your property's exterior with weather-resistant
+                    coatings. We handle siding, stucco, brick, and trim — prepped and
+                    painted to withstand Ontario's harsh seasons.
+                </p>
+                <span class="service-card-link">
+                    Learn more <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </article>
+
+            <!-- Service 3: Residential Projects -->
+            <article class="service-card reveal reveal-delay-3">
+                <div class="service-card-icon">
+                    <i class="fa-solid fa-home"></i>
+                </div>
+                <h3>Residential Projects</h3>
+                <p>
+                    Whether it's a single room refresh or a whole-home transformation,
+                    our residential painting services are tailored to your style,
+                    schedule, and budget — with zero mess and zero stress.
+                </p>
+                <span class="service-card-link">
+                    Learn more <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </article>
+
+            <!-- Service 4: Commercial Painting -->
+            <article class="service-card reveal reveal-delay-4">
+                <div class="service-card-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <h3>Commercial Painting</h3>
+                <p>
+                    Keep your business looking professional. We work around your hours
+                    to minimize disruption — serving offices, retail spaces, restaurants,
+                    and industrial facilities across Barrie.
+                </p>
+                <span class="service-card-link">
+                    Learn more <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </article>
+
+            <!-- Service 5: Cabinet Refinishing -->
+            <article class="service-card reveal reveal-delay-5">
+                <div class="service-card-icon">
+                    <i class="fa-solid fa-couch"></i>
+                </div>
+                <h3>Cabinet Refinishing</h3>
+                <p>
+                    Give your kitchen or bathroom a dramatic facelift without the cost of
+                    full replacement. Our cabinet refinishing process delivers factory-smooth
+                    results at a fraction of the price.
+                </p>
+                <span class="service-card-link">
+                    Learn more <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </article>
+
+            <!-- Service 6: Deck & Fence Staining -->
+            <article class="service-card reveal reveal-delay-6">
+                <div class="service-card-icon">
+                    <i class="fa-solid fa-tree"></i>
+                </div>
+                <h3>Deck &amp; Fence Staining</h3>
+                <p>
+                    Extend the life of your outdoor wood surfaces with professional
+                    staining and sealing. We prep, restore, and protect decks and fences
+                    to keep them beautiful through every season.
+                </p>
+                <span class="service-card-link">
+                    Learn more <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+    <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about-inner">
+            <div class="about-image-wrapper reveal">
+                <img
+                    class="about-image"
+                    src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80"
+                    alt="Professional painter working on a residential interior wall in Barrie"
+                    loading="lazy"
+                >
+                <div class="about-image-overlay" aria-hidden="true"></div>
+                <div class="about-accent-box">
+                    <div class="about-accent-number">15+</div>
+                    <div class="about-accent-label">Years Serving Barrie</div>
+                </div>
+            </div>
+            <div class="about-text reveal">
+                <span class="section-label">About Our Company</span>
+                <h2 id="about-title">Barrie's Trusted Painting Professionals</h2>
+                <p>
+                    Island Mainland Painting Co was built on a simple belief: every space
+                    deserves to look its absolute best. Founded and operated right here in
+                    Barrie, Ontario, we've spent over 15 years transforming homes and
+                    businesses across Simcoe County.
+                </p>
+                <p>
+                    From the shores of Kempenfelt Bay to the neighbourhoods of south-end
+                    Barrie, our name reflects the breadth of our service — island cottages,
+                    mainland homes, downtown storefronts, and everything in between. We
+                    take pride in arriving on time, communicating clearly, and leaving
+                    every job site cleaner than we found it.
+                </p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Licensed &amp; Fully Insured
+                    </div>
+                    <div class="about-feature">
+                        <i class="fa-solid fa-circle-check"></i>
+                        WSIB Covered
+                    </div>
+                    <div class="about-feature">
+                        <i class="fa-solid fa-circle-check"></i>
+                        5-Year Workmanship Warranty
+                    </div>
+                    <div class="about-feature">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Premium Benjamin Moore &amp; Sherwin-Williams Paints
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fa-solid fa-calendar-check"></i> Schedule a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY CHOOSE US
+         ============================================================ -->
+    <section class="why-us" id="why-us" aria-labelledby="why-us-title">
+        <div class="why-us-header reveal">
+            <span class="section-label">The Difference</span>
+            <h2 class="section-title" id="why-us-title">Why Choose Island Mainland</h2>
+            <p class="section-subtitle">
+                We don't just paint walls — we build lasting relationships through
+                quality workmanship, transparency, and genuine care for our clients.
+            </p>
+        </div>
+
+        <div class="why-us-grid">
+            <div class="why-card reveal reveal-delay-1">
+                <div class="why-card-icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <h3>Premium Materials</h3>
+                <p>
+                    We exclusively use top-tier paints from Benjamin Moore and
+                    Sherwin-Williams. No watered-down contractor-grade shortcuts — ever.
+                </p>
+            </div>
+            <div class="why-card reveal reveal-delay-2">
+                <div class="why-card-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3>On Time, Every Time</h3>
+                <p>
+                    We respect your schedule. Our crews arrive when promised, work
+                    efficiently, and complete projects within the agreed timeline.
+                </p>
+            </div>
+            <div class="why-card reveal reveal-delay-3">
+                <div class="why-card-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Fully Licensed &amp; Insured</h3>
+                <p>
+                    Peace of mind comes standard. We carry full liability insurance and
+                    WSIB coverage — so you're protected from start to finish.
+                </p>
+            </div>
+            <div class="why-card reveal reveal-delay-4">
+                <div class="why-card-icon">
+                    <i class="fa-solid fa-broom"></i>
+                </div>
+                <h3>Spotless Cleanup</h3>
+                <p>
+                    The only trace we leave behind is a beautiful new paint job.
+                    We treat your home or business with the same respect we'd give our own.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS SECTION
+         ============================================================ -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="testimonials-header reveal">
+            <span class="section-label">Client Stories</span>
+            <h2 class="section-title" id="testimonials-title">What Our Clients Say</h2>
+            <p class="section-subtitle">
+                Real feedback from real Barrie homeowners and business owners
+                who trust us with their painting projects.
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card reveal reveal-delay-1">
+                <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <blockquote class="testimonial-quote">
+                    "Island Mainland transformed our entire main floor — walls, ceilings,
+                    and trim. The crew was punctual, tidy, and the attention to detail
+                    was incredible. Our home has never looked this good."
+                </blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SM</div>
+                    <div>
+                        <div class="testimonial-name">Sarah Mitchell</div>
+                        <div class="testimonial-role">Homeowner, South-End Barrie</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card reveal reveal-delay-2">
+                <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <blockquote class="testimonial-quote">
+                    "We needed our restaurant repainted over a long weekend and they
+                    delivered flawlessly. Zero disruption to our operations and the
+                    new colour scheme completely elevated the dining atmosphere."
+                </blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DR</div>
+                    <div>
+                        <div class="testimonial-name">David Reynolds</div>
+                        <div class="testimonial-role">Owner, The Lakeview Bistro</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card reveal reveal-delay-3">
+                <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <blockquote class="testimonial-quote">
+                    "Our kitchen cabinets were dated and worn — Island Mainland refinished
+                    them and they look brand new. Saved us thousands compared to replacing.
+                    Couldn't be happier with the results."
+                </blockquote>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JK</div>
+                    <div>
+                        <div class="testimonial-name">Jennifer Kowalski</div>
+                        <div class="testimonial-role">Homeowner, Ardagh Bluffs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner">
+            <div class="contact-info reveal">
+                <span class="section-label">Get In Touch</span>
+                <h2 id="contact-title">Let's Discuss Your Project</h2>
+                <p>
+                    Ready to transform your space? Reach out for a free, no-obligation
+                    estimate. We'll visit your property, discuss your vision, and provide
+                    a detailed quote — usually within 48 hours.
+                </p>
+
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Phone</h4>
+                            <a href="tel:+17059990915">705-999-0915</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Email</h4>
+                            <a href="mailto:info@islandmainlandpainting.ca">info@islandmainlandpainting.ca</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Service Area</h4>
+                            <p>Barrie, Innisfil, Oro-Medonte &amp; Simcoe County</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="contact-detail-text">
+                            <h4>Hours</h4>
+                            <p>Mon–Fri: 7am–6pm &bull; Sat: 8am–4pm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-social">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper reveal">
+                <h3>Request a Free Estimate</h3>
+                <p>Fill out the form below and we'll get back to you shortly.</p>
+
+                <form class="contact-form" id="contactForm" action="#" method="POST" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="firstName">First Name *</label>
+                            <input
+                                type="text"
+                                class="form-input"
+                                id="firstName"
+                                name="firstName"
+                                placeholder="Your first name"
+                                required
+                                autocomplete="given-name"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lastName">Last Name *</label>
+                            <input
+                                type="text"
+                                class="form-input"
+                                id="lastName"
+                                name="lastName"
+                                placeholder="Your last name"
+                                required
+                                autocomplete="family-name"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address *</label>
+                            <input
+                                type="email"
+                                class="form-input"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input
+                                type="tel"
+                                class="form-input"
+                                id="phone"
+                                name="phone"
+                                placeholder="(705) 555-0123"
+                                autocomplete="tel"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service Interested In</label>
+                        <select class="form-select" id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="interior">Interior Painting</option>
+                            <option value="exterior">Exterior Painting</option>
+                            <option value="residential">Residential Projects</option>
+                            <option value="commercial">Commercial Painting</option>
+                            <option value="cabinets">Cabinet Refinishing</option>
+                            <option value="deck-fence">Deck &amp; Fence Staining</option>
+                            <option value="other">Other / Multiple Services</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Project Details</label>
+                        <textarea
+                            class="form-textarea"
+                            id="message"
+                            name="message"
+                            placeholder="Tell us about your project — approximate square footage, preferred timeline, paint colours you're considering, and any special requirements..."
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">
+                        <i class="fa-solid fa-paper-plane"></i> Send My Estimate Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BANNER
+         ============================================================ -->
+    <section class="cta-banner" aria-labelledby="cta-title">
+        <div class="cta-banner-inner reveal">
+            <h2 id="cta-title">Ready to Love Your Space Again?</h2>
+            <p>
+                Whether it's a single room or an entire commercial building,
+                Island Mainland Painting Co delivers quality you can see and
+                service you can trust. Let's make it happen.
+            </p>
+            <a href="tel:+17059990915" class="btn btn-outline">
+                <i class="fa-solid fa-phone"></i> Call 705-999-0915 Now
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">
+                    <div class="nav-logo-icon">
+                        <i class="fa-solid fa-paint-roller"></i>
+                    </div>
+                    Island Mainland
+                </a>
+                <p>
+                    Barrie's trusted painting contractors — delivering premium
+                    interior, exterior, and commercial painting services across
+                    Simcoe County since 2010.
+                </p>
+                <div class="contact-social">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Services</h4>
+                <div class="footer-links">
+                    <a href="#services">Interior Painting</a>
+                    <a href="#services">Exterior Painting</a>
+                    <a href="#services">Residential Projects</a>
+                    <a href="#services">Commercial Painting</a>
+                    <a href="#services">Cabinet Refinishing</a>
+                    <a href="#services">Deck &amp; Fence Staining</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Company</h4>
+                <div class="footer-links">
+                    <a href="#about">About Us</a>
+                    <a href="#why-us">Why Choose Us</a>
+                    <a href="#testimonials">Client Reviews</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#contact">Free Estimate</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contact</h4>
+                <div class="footer-links">
+                    <a href="tel:+17059990915">
+                        <i class="fa-solid fa-phone"></i> 705-999-0915
+                    </a>
+                    <a href="mailto:info@islandmainlandpainting.ca">
+                        <i class="fa-solid fa-envelope"></i> Email Us
+                    </a>
+                    <span style="color:var(--text-muted);font-size:0.85rem;">
+                        <i class="fa-solid fa-map-pin"></i> Barrie, Ontario
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Island Mainland Painting Co. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ---- DOM references ----
+            const navbar = document.getElementById('navbar');
+            const navToggle = document.getElementById('navToggle');
+            const navMobile = document.getElementById('navMobile');
+            const backToTop = document.getElementById('backToTop');
+            const contactForm = document.getElementById('contactForm');
+            const navLinks = document.querySelectorAll('.nav-link, .nav-mobile a[href^="#"]');
+
+            // ---- Scroll state ----
+            let lastScrollY = 0;
+            let scrollTicking = false;
+
+            function updateScrollState() {
+                const scrollY = window.scrollY;
+
+                // Navbar shadow on scroll
+                if (scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Back-to-top visibility
+                if (scrollY > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+
+                lastScrollY = scrollY;
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(updateScrollState);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // ---- Mobile menu toggle ----
+            function closeMobileMenu() {
+                navMobile.classList.remove('open');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navMobile.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            function openMobileMenu() {
+                navMobile.classList.add('open');
+                navToggle.classList.add('active');
+                navToggle.setAttribute('aria-expanded', 'true');
+                navMobile.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            navToggle.addEventListener('click', function() {
+                if (navMobile.classList.contains('open')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+
+            // Close mobile menu when a nav link is clicked
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (navMobile.classList.contains('open')) {
+                        closeMobileMenu();
+                    }
+                });
+            });
+
+            // Close mobile menu on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navMobile.classList.contains('open')) {
+                    closeMobileMenu();
+                    navToggle.focus();
+                }
+            });
+
+            // ---- Back to top ----
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ---- Smooth scroll for nav links ----
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        var navHeight = navbar.offsetHeight;
+                        var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // ---- Intersection Observer for reveal animations ----
+            var revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window && revealElements.length > 0) {
+                var revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: '0px 0px -60px 0px',
+                    threshold: 0.1
+                });
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Fallback: show all reveals immediately
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // ---- Contact form submission ----
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Simple validation
+                var firstName = document.getElementById('firstName');
+                var lastName = document.getElementById('lastName');
+                var email = document.getElementById('email');
+                var isValid = true;
+
+                // Reset validation styles
+                [firstName, lastName, email].forEach(function(field) {
+                    field.style.borderColor = '';
+                });
+
+                if (!firstName.value.trim()) {
+                    firstName.style.borderColor = '#FF7043';
+                    isValid = false;
+                }
+                if (!lastName.value.trim()) {
+                    lastName.style.borderColor = '#FF7043';
+                    isValid = false;
+                }
+                if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                    email.style.borderColor = '#FF7043';
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    // Scroll to first invalid field
+                    var firstInvalid = document.querySelector('.form-input[style*="border-color"]');
+                    if (firstInvalid) {
+                        firstInvalid.focus();
+                    }
+                    return;
+                }
+
+                // Simulate submission
+                var submitBtn = contactForm.querySelector('.form-submit');
+                var originalHTML = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.pointerEvents = 'none';
+
+                setTimeout(function() {
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Estimate Request Sent!';
+                    submitBtn.style.background = '#2E7D32';
+                    submitBtn.style.boxShadow = '0 4px 20px rgba(46,125,50,0.3)';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.pointerEvents = 'auto';
+                    contactForm.reset();
+
+                    // Reset button after 3 seconds
+                    setTimeout(function() {
+                        submitBtn.innerHTML = originalHTML;
+                        submitBtn.style.background = '';
+                        submitBtn.style.boxShadow = '';
+                    }, 3000);
+                }, 1500);
+            });
+
+            // ---- Real-time validation reset ----
+            var formInputs = contactForm.querySelectorAll('.form-input');
+            formInputs.forEach(function(input) {
+                input.addEventListener('input', function() {
+                    this.style.borderColor = '';
+                });
+            });
+
+            // ---- Initial state ----
+            updateScrollState();
+        })();
+    </script>
+
+</body>
+</html>

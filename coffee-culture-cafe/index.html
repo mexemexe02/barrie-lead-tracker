@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coffee Culture Café & Eatery — Barrie's local café serving handcrafted espresso, fresh pastries, lunch, and catering in a cozy, welcoming atmosphere.">
+    <title>Coffee Culture Café & Eatery | Barrie, Ontario</title>
+
+    <!-- Google Fonts: Bebas Neue + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ============================================================
+           CSS VARIABLES
+           ============================================================ */
+        :root {
+            /* Core palette — dark premium café */
+            --clr-deep-espresso: #1B0E0A;
+            --clr-dark-bean: #2C1810;
+            --clr-roast: #3E2723;
+            --clr-warm-brown: #5D4037;
+            --clr-mocha: #795548;
+            --clr-toffee: #8D6E63;
+            --clr-cream: #FFF8E1;
+            --clr-warm-cream: #F5E6CC;
+            --clr-gold: #D4A574;
+            --clr-amber: #C79A6E;
+            --clr-bronze: #B8860B;
+            --clr-honey: #E8B960;
+            --clr-caramel: #C68E58;
+
+            /* Surfaces */
+            --clr-surface-dark: #1A1410;
+            --clr-surface-card: #231B15;
+            --clr-surface-elevated: #2D231C;
+            --clr-border: rgba(212, 165, 116, 0.15);
+            --clr-border-active: rgba(212, 165, 116, 0.4);
+            --clr-divider: rgba(255, 248, 225, 0.08);
+
+            /* Text */
+            --clr-text-primary: #F5F0E8;
+            --clr-text-secondary: #C4B8A8;
+            --clr-text-muted: #8A7E72;
+            --clr-text-accent: var(--clr-gold);
+
+            /* Typography */
+            --font-heading: 'Bebas Neue', 'Impact', sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            /* Spacing */
+            --section-pad: clamp(4rem, 8vw, 7rem);
+            --container-max: 1200px;
+            --card-radius: 12px;
+            --btn-radius: 6px;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+            --shadow-gold: 0 4px 20px rgba(212, 165, 116, 0.15);
+
+            /* Transitions */
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --dur-fast: 150ms;
+            --dur-normal: 300ms;
+            --dur-slow: 500ms;
+
+            /* Nav height */
+            --nav-height: 80px;
+        }
+
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--clr-text-primary);
+            background-color: var(--clr-surface-dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background-color: var(--clr-gold);
+            color: var(--clr-deep-espresso);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--clr-surface-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--clr-warm-brown);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--clr-toffee);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: var(--clr-gold);
+            text-decoration: none;
+            transition: color var(--dur-fast) var(--ease-smooth);
+        }
+        a:hover {
+            color: var(--clr-honey);
+        }
+
+        /* ============================================================
+           TYPOGRAPHY
+           ============================================================ */
+        h1, h2, h3, h4, .heading {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-bottom: 1rem;
+        }
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--clr-gold);
+            border-radius: 1px;
+        }
+
+        .section-title {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            margin-bottom: 1rem;
+            color: var(--clr-cream);
+        }
+        .section-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--clr-text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        /* ============================================================
+           UTILITY CLASSES
+           ============================================================ */
+        .container {
+            width: min(var(--container-max), 100% - 2rem);
+            margin-inline: auto;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        .text-accent {
+            color: var(--clr-gold);
+        }
+        .text-center {
+            text-align: center;
+        }
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.9rem 2rem;
+            border-radius: var(--btn-radius);
+            border: none;
+            cursor: pointer;
+            transition: all var(--dur-normal) var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.08);
+            transform: translateX(-100%);
+            transition: transform var(--dur-normal) var(--ease-smooth);
+        }
+        .btn:hover::after {
+            transform: translateX(0);
+        }
+
+        .btn-primary {
+            background: var(--clr-gold);
+            color: var(--clr-deep-espresso);
+            box-shadow: var(--shadow-gold);
+        }
+        .btn-primary:hover {
+            background: var(--clr-honey);
+            color: var(--clr-deep-espresso);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 165, 116, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--clr-cream);
+            border: 2px solid var(--clr-border-active);
+        }
+        .btn-outline:hover {
+            background: var(--clr-gold);
+            color: var(--clr-deep-espresso);
+            border-color: var(--clr-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--clr-gold);
+            padding: 0.5rem 1rem;
+        }
+        .btn-ghost:hover {
+            background: rgba(212, 165, 116, 0.1);
+        }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            transition: all var(--dur-normal) var(--ease-smooth);
+            background: transparent;
+        }
+        .nav.scrolled {
+            background: rgba(26, 20, 16, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 var(--clr-border), 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding: 0 2rem;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 1001;
+        }
+        .nav__logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--clr-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-deep-espresso);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .nav__logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+            color: var(--clr-cream);
+            line-height: 1;
+        }
+        .nav__logo-text span {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-top: 2px;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+        .nav__links a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--clr-text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--btn-radius);
+            transition: all var(--dur-fast) var(--ease-smooth);
+            position: relative;
+        }
+        .nav__links a:hover,
+        .nav__links a.active {
+            color: var(--clr-cream);
+            background: rgba(212, 165, 116, 0.08);
+        }
+
+        .nav__cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .nav__phone {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--clr-cream);
+            white-space: nowrap;
+        }
+        .nav__phone i {
+            color: var(--clr-gold);
+            font-size: 0.75rem;
+        }
+
+        .nav__toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .nav__toggle span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--clr-cream);
+            border-radius: 1px;
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .nav__toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav__toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav__toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--clr-dark-bean);
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(0.35);
+            transform: scale(1.05);
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(62, 39, 35, 0.5) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 30%, rgba(212, 165, 116, 0.08) 0%, transparent 60%),
+                linear-gradient(180deg, rgba(26, 20, 16, 0.7) 0%, rgba(26, 20, 16, 0.4) 50%, rgba(26, 20, 16, 0.9) 100%);
+            background-blend-mode: multiply;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 850px;
+            padding: 0 1.5rem;
+            animation: fadeUp 1s var(--ease-smooth);
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            background: rgba(212, 165, 116, 0.12);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1.4rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            backdrop-filter: blur(4px);
+        }
+        .hero__badge i {
+            font-size: 0.85rem;
+        }
+
+        .hero__title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            line-height: 0.95;
+            color: var(--clr-cream);
+            text-shadow:
+                0 2px 10px rgba(0,0,0,0.6),
+                0 0 60px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .hero__title em {
+            font-style: normal;
+            color: var(--clr-gold);
+            display: block;
+            font-size: 0.55em;
+            letter-spacing: 0.06em;
+            margin-top: 0.25rem;
+            text-shadow:
+                0 2px 8px rgba(0,0,0,0.5),
+                0 0 30px rgba(212, 165, 116, 0.25);
+        }
+
+        .hero__desc {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--clr-text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero__actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero__scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+        .hero__scroll span {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--clr-text-muted);
+        }
+        .hero__scroll i {
+            color: var(--clr-gold);
+            font-size: 0.9rem;
+        }
+
+        /* Hero decorative grain overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ============================================================
+           SERVICES SECTION
+           ============================================================ */
+        .services {
+            padding: var(--section-pad) 0;
+            background: var(--clr-surface-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .services::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                var(--clr-border-active) 20%,
+                var(--clr-border-active) 80%,
+                transparent 100%);
+        }
+
+        .services__header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .services__header .section-subtitle {
+            margin-inline: auto;
+        }
+
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--clr-surface-card);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--card-radius);
+            padding: 2.5rem 2rem;
+            transition: all var(--dur-slow) var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(212, 165, 116, 0.04) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity var(--dur-slow) var(--ease-smooth);
+        }
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--clr-border-active);
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.4),
+                0 0 0 1px rgba(212, 165, 116, 0.1) inset;
+        }
+
+        .service-card__icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .service-card:nth-child(1) .service-card__icon {
+            background: rgba(199, 121, 94, 0.2);
+            color: #E8A87C;
+            box-shadow: 0 4px 15px rgba(199, 121, 94, 0.15);
+        }
+        .service-card:nth-child(2) .service-card__icon {
+            background: rgba(212, 165, 116, 0.2);
+            color: #D4A574;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.15);
+        }
+        .service-card:nth-child(3) .service-card__icon {
+            background: rgba(144, 190, 109, 0.2);
+            color: #90BE6D;
+            box-shadow: 0 4px 15px rgba(144, 190, 109, 0.15);
+        }
+        .service-card:nth-child(4) .service-card__icon {
+            background: rgba(130, 160, 200, 0.2);
+            color: #82A0C8;
+            box-shadow: 0 4px 15px rgba(130, 160, 200, 0.15);
+        }
+        .service-card:nth-child(5) .service-card__icon {
+            background: rgba(220, 160, 140, 0.2);
+            color: #DCA08C;
+            box-shadow: 0 4px 15px rgba(220, 160, 140, 0.15);
+        }
+        .service-card:nth-child(6) .service-card__icon {
+            background: rgba(160, 200, 180, 0.2);
+            color: #A0C8B4;
+            box-shadow: 0 4px 15px rgba(160, 200, 180, 0.15);
+        }
+
+        .service-card:hover .service-card__icon {
+            transform: scale(1.08);
+        }
+
+        .service-card__title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            color: var(--clr-cream);
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card__desc {
+            font-size: 0.9rem;
+            color: var(--clr-text-secondary);
+            line-height: 1.65;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        .service-card__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-top: 1.25rem;
+            position: relative;
+            z-index: 1;
+            transition: gap var(--dur-fast) var(--ease-smooth);
+        }
+        .service-card__link i {
+            font-size: 0.65rem;
+            transition: transform var(--dur-fast) var(--ease-smooth);
+        }
+        .service-card:hover .service-card__link {
+            gap: 0.7rem;
+        }
+        .service-card:hover .service-card__link i {
+            transform: translateX(3px);
+        }
+
+        /* ============================================================
+           ABOUT SECTION
+           ============================================================ */
+        .about {
+            padding: var(--section-pad) 0;
+            background: var(--clr-surface-card);
+            position: relative;
+        }
+        .about::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 80% 20%, rgba(212, 165, 116, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about__image-wrapper {
+            position: relative;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .about__image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(62, 39, 35, 0.3) 0%, transparent 60%);
+            z-index: 1;
+            border-radius: var(--card-radius);
+        }
+        .about__image-wrapper img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 8s var(--ease-smooth);
+        }
+        .about__image-wrapper:hover img {
+            transform: scale(1.06);
+        }
+        .about__image-badge {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            background: rgba(26, 20, 16, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--clr-border-active);
+            border-radius: var(--card-radius);
+            padding: 1.25rem 1.5rem;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .about__image-badge .number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--clr-gold);
+            line-height: 1;
+        }
+        .about__image-badge .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--clr-text-secondary);
+            line-height: 1.4;
+        }
+
+        .about__content .section-title {
+            margin-bottom: 1.25rem;
+        }
+        .about__text {
+            font-size: 1rem;
+            color: var(--clr-text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+        .about__features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .about__features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--clr-text-primary);
+            line-height: 1.5;
+        }
+        .about__features li i {
+            color: var(--clr-gold);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           WHY CHOOSE US SECTION
+           ============================================================ */
+        .why-us {
+            padding: var(--section-pad) 0;
+            background: var(--clr-surface-dark);
+            position: relative;
+        }
+        .why-us__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .why-us__header .section-subtitle {
+            margin-inline: auto;
+        }
+
+        .why-us__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .why-card {
+            background: var(--clr-surface-card);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--card-radius);
+            padding: 2rem 1.75rem;
+            text-align: center;
+            transition: all var(--dur-normal) var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        .why-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--clr-gold);
+            border-radius: 0 0 var(--card-radius) var(--card-radius);
+            transition: width var(--dur-slow) var(--ease-smooth);
+        }
+        .why-card:hover {
+            border-color: var(--clr-border-active);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .why-card:hover::after {
+            width: 60%;
+        }
+
+        .why-card__icon {
+            font-size: 2rem;
+            color: var(--clr-gold);
+            margin-bottom: 1.25rem;
+            display: inline-block;
+            transition: transform var(--dur-normal) var(--ease-bounce);
+        }
+        .why-card:hover .why-card__icon {
+            transform: scale(1.2);
+        }
+
+        .why-card__title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            letter-spacing: 0.05em;
+            color: var(--clr-cream);
+            margin-bottom: 0.5rem;
+        }
+        .why-card__desc {
+            font-size: 0.85rem;
+            color: var(--clr-text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ============================================================
+           TESTIMONIALS SECTION
+           ============================================================ */
+        .testimonials {
+            padding: var(--section-pad) 0;
+            background: var(--clr-surface-card);
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .testimonials__header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonials__header .section-subtitle {
+            margin-inline: auto;
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background: var(--clr-surface-dark);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--card-radius);
+            padding: 2.25rem;
+            transition: all var(--dur-normal) var(--ease-smooth);
+            position: relative;
+        }
+        .testimonial-card:hover {
+            border-color: var(--clr-border-active);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-card__quote {
+            font-size: 1.5rem;
+            color: var(--clr-gold);
+            margin-bottom: 0.75rem;
+            line-height: 0.5;
+        }
+        .testimonial-card__text {
+            font-size: 0.95rem;
+            color: var(--clr-text-secondary);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-card__author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--clr-divider);
+        }
+        .testimonial-card__avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--clr-warm-brown), var(--clr-toffee));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--clr-cream);
+            flex-shrink: 0;
+        }
+        .testimonial-card__name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--clr-cream);
+            margin-bottom: 0.15rem;
+        }
+        .testimonial-card__role {
+            font-size: 0.78rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 0.25rem;
+        }
+        .testimonial-card__stars {
+            color: var(--clr-gold);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* ============================================================
+           CONTACT SECTION
+           ============================================================ */
+        .contact {
+            padding: var(--section-pad) 0;
+            background: var(--clr-surface-dark);
+            position: relative;
+        }
+
+        .contact__grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact__info .section-title {
+            margin-bottom: 1rem;
+        }
+        .contact__info .section-subtitle {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact__details {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .contact__details li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+        .contact__details .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(212, 165, 116, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-gold);
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: all var(--dur-normal) var(--ease-smooth);
+        }
+        .contact__details li:hover .icon {
+            background: var(--clr-gold);
+            color: var(--clr-deep-espresso);
+        }
+        .contact__details .info-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--clr-text-muted);
+            margin-bottom: 0.2rem;
+        }
+        .contact__details .info-value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--clr-cream);
+        }
+        .contact__details .info-value a {
+            color: var(--clr-cream);
+        }
+        .contact__details .info-value a:hover {
+            color: var(--clr-gold);
+        }
+
+        .contact__hours {
+            background: var(--clr-surface-card);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--card-radius);
+            padding: 1.75rem;
+        }
+        .contact__hours-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            letter-spacing: 0.05em;
+            color: var(--clr-cream);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .contact__hours-title i {
+            color: var(--clr-gold);
+        }
+        .contact__hours-list {
+            list-style: none;
+        }
+        .contact__hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.55rem 0;
+            font-size: 0.88rem;
+            color: var(--clr-text-secondary);
+            border-bottom: 1px solid var(--clr-divider);
+        }
+        .contact__hours-list li:last-child {
+            border-bottom: none;
+        }
+        .contact__hours-list li .day {
+            font-weight: 500;
+        }
+        .contact__hours-list li .time {
+            color: var(--clr-cream);
+            font-weight: 500;
+        }
+
+        /* Contact Form */
+        .contact__form-wrapper {
+            background: var(--clr-surface-card);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--card-radius);
+            padding: 2.5rem;
+            position: relative;
+        }
+        .contact__form-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 0%, rgba(212, 165, 116, 0.04) 0%, transparent 50%);
+            border-radius: var(--card-radius);
+            pointer-events: none;
+        }
+
+        .contact__form-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            color: var(--clr-cream);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .contact__form-subtitle {
+            font-size: 0.9rem;
+            color: var(--clr-text-secondary);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form {
+            position: relative;
+            z-index: 1;
+        }
+        .form__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .form__group {
+            margin-bottom: 1rem;
+        }
+        .form__label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--clr-text-secondary);
+            margin-bottom: 0.4rem;
+        }
+        .form__label .required {
+            color: #E07050;
+            margin-left: 0.2rem;
+        }
+        .form__input,
+        .form__textarea,
+        .form__select {
+            width: 100%;
+            background: var(--clr-surface-dark);
+            border: 1px solid var(--clr-border);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--clr-cream);
+            transition: all var(--dur-fast) var(--ease-smooth);
+            outline: none;
+        }
+        .form__input::placeholder,
+        .form__textarea::placeholder {
+            color: var(--clr-text-muted);
+            opacity: 0.7;
+        }
+        .form__input:focus,
+        .form__textarea:focus,
+        .form__select:focus {
+            border-color: var(--clr-gold);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+            background: var(--clr-surface-elevated);
+        }
+        .form__textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .form__select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%23D4A574'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+            cursor: pointer;
+        }
+        .form__select option {
+            background: var(--clr-surface-dark);
+            color: var(--clr-cream);
+        }
+        .form__submit {
+            width: 100%;
+            margin-top: 0.5rem;
+            justify-content: center;
+            font-size: 0.9rem;
+            padding: 1rem;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            background: var(--clr-deep-espresso);
+            border-top: 1px solid var(--clr-border);
+            padding: 4rem 0 1.5rem;
+            position: relative;
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer__brand .nav__logo {
+            margin-bottom: 1rem;
+        }
+        .footer__brand p {
+            font-size: 0.88rem;
+            color: var(--clr-text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .footer__social {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .footer__social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--clr-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-text-muted);
+            font-size: 0.9rem;
+            transition: all var(--dur-fast) var(--ease-smooth);
+        }
+        .footer__social a:hover {
+            background: var(--clr-gold);
+            border-color: var(--clr-gold);
+            color: var(--clr-deep-espresso);
+        }
+
+        .footer__col-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            letter-spacing: 0.06em;
+            color: var(--clr-cream);
+            margin-bottom: 1.25rem;
+        }
+        .footer__links {
+            list-style: none;
+        }
+        .footer__links li {
+            margin-bottom: 0.7rem;
+        }
+        .footer__links a {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+            transition: all var(--dur-fast) var(--ease-smooth);
+        }
+        .footer__links a:hover {
+            color: var(--clr-gold);
+            padding-left: 0.3rem;
+        }
+
+        .footer__newsletter-text {
+            font-size: 0.85rem;
+            color: var(--clr-text-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .footer__newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .footer__newsletter-form input {
+            flex: 1;
+            background: var(--clr-surface-dark);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--btn-radius);
+            padding: 0.7rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--clr-cream);
+            outline: none;
+            transition: border-color var(--dur-fast) var(--ease-smooth);
+        }
+        .footer__newsletter-form input:focus {
+            border-color: var(--clr-gold);
+        }
+        .footer__newsletter-form input::placeholder {
+            color: var(--clr-text-muted);
+        }
+        .footer__newsletter-form button {
+            flex-shrink: 0;
+            background: var(--clr-gold);
+            border: none;
+            border-radius: var(--btn-radius);
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-deep-espresso);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all var(--dur-fast) var(--ease-smooth);
+        }
+        .footer__newsletter-form button:hover {
+            background: var(--clr-honey);
+            transform: translateY(-2px);
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--clr-divider);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--clr-text-muted);
+        }
+        .footer__bottom-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .footer__bottom-links a {
+            color: var(--clr-text-muted);
+            font-size: 0.8rem;
+        }
+        .footer__bottom-links a:hover {
+            color: var(--clr-gold);
+        }
+        .footer__heart {
+            color: #E07050;
+        }
+
+        /* ============================================================
+           ANIMATIONS
+           ============================================================ */
+        @keyframes heroZoom {
+            from { transform: scale(1.05); }
+            to { transform: scale(1.12); }
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s var(--ease-smooth);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+           MEDIA QUERIES — Tablet (≤1024px)
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .services__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .why-us__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials__grid .testimonial-card:last-child {
+                grid-column: 1 / -1;
+                max-width: 50%;
+                margin: 0 auto;
+            }
+            .about__grid {
+                gap: 2.5rem;
+            }
+            .contact__grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .footer__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer__grid > *:first-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* ============================================================
+           MEDIA QUERIES — Small Tablet (≤768px)
+           ============================================================ */
+        @media (max-width: 768px) {
+            :root {
+                --nav-height: 64px;
+            }
+
+            /* Mobile nav */
+            .nav__toggle {
+                display: flex;
+            }
+            .nav__links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                justify-content: center;
+                gap: 0.5rem;
+                background: rgba(26, 20, 16, 0.98);
+                backdrop-filter: blur(20px);
+                padding: 2rem;
+                transition: right var(--dur-normal) var(--ease-smooth);
+                box-shadow: -8px 0 30px rgba(0,0,0,0.4);
+            }
+            .nav__links.open {
+                right: 0;
+            }
+            .nav__links a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .nav__cta .btn {
+                display: none;
+            }
+            .nav__phone {
+                font-size: 0.75rem;
+            }
+
+            /* Hero */
+            .hero__title {
+                font-size: clamp(2.2rem, 7vw, 3.5rem);
+            }
+
+            /* Services */
+            .services__grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            /* About */
+            .about__grid {
+                grid-template-columns: 1fr;
+            }
+            .about__image-wrapper img {
+                height: 350px;
+            }
+            .about__features {
+                grid-template-columns: 1fr;
+            }
+            .about__image-badge {
+                bottom: 1rem;
+                left: 1rem;
+            }
+
+            /* Why Us */
+            .why-us__grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Testimonials */
+            .testimonials__grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials__grid .testimonial-card:last-child {
+                max-width: 100%;
+            }
+
+            /* Contact */
+            .form__row {
+                grid-template-columns: 1fr;
+            }
+
+            /* Footer */
+            .footer__grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer__bottom-links {
+                justify-content: center;
+            }
+        }
+
+        /* ============================================================
+           MEDIA QUERIES — Mobile (≤480px)
+           ============================================================ */
+        @media (max-width: 480px) {
+            .hero__actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero__actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .service-card {
+                padding: 1.75rem 1.5rem;
+            }
+            .contact__form-wrapper {
+                padding: 1.75rem 1.25rem;
+            }
+            .footer__newsletter-form {
+                flex-direction: column;
+            }
+            .about__image-badge {
+                position: static;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    NAVIGATION
+    ============================================================ -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="#home" class="nav__logo" aria-label="Coffee Culture Café — Home">
+                <div class="nav__logo-icon">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <div class="nav__logo-text">
+                    Coffee Culture
+                    <span>Café &amp; Eatery</span>
+                </div>
+            </a>
+
+            <ul class="nav__links" id="navLinks" role="menubar">
+                <li role="none"><a href="#home" role="menuitem" class="active">Home</a></li>
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#why-us" role="menuitem">Why Us</a></li>
+                <li role="none"><a href="#testimonials" role="menuitem">Reviews</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+
+            <div class="nav__cta">
+                <a href="tel:+17054588500" class="nav__phone" aria-label="Call us at 705-458-8500">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(705) 458-8500</span>
+                </a>
+                <a href="#contact" class="btn btn-primary">Order Now</a>
+            </div>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+    HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <div class="hero__content">
+            <div class="hero__badge">
+                <i class="fa-solid fa-location-dot"></i>
+                Barrie's Local Café
+            </div>
+            <h1 class="hero__title" id="heroTitle">
+                Where Barrie
+                <em>Meets for Coffee</em>
+            </h1>
+            <p class="hero__desc">
+                Handcrafted espresso, scratch-made pastries, and chef-driven lunch in the heart of Barrie.
+                A warm, welcoming space where every cup tells a story.
+            </p>
+            <div class="hero__actions">
+                <a href="#services" class="btn btn-primary">
+                    Explore Our Menu
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES SECTION
+    ============================================================ -->
+    <section class="services" id="services" aria-labelledby="servicesTitle">
+        <div class="container">
+            <header class="services__header">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title" id="servicesTitle">Crafted With Passion</h2>
+                <p class="section-subtitle">
+                    From our signature espresso drinks to chef-prepared lunches, every item is made with care
+                    using locally sourced ingredients whenever possible.
+                </p>
+            </header>
+
+            <div class="services__grid">
+
+                <!-- Card 1: Espresso Bar -->
+                <article class="service-card reveal">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3 class="service-card__title">Espresso Bar</h3>
+                    <p class="service-card__desc">
+                        Expertly pulled shots, velvety lattes, and bold pour-overs using our house-roasted beans.
+                        Every drink is crafted to order by trained baristas.
+                    </p>
+                    <span class="service-card__link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </article>
+
+                <!-- Card 2: Fresh Pastries -->
+                <article class="service-card reveal">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-croissant"></i>
+                    </div>
+                    <h3 class="service-card__title">Fresh Pastries</h3>
+                    <p class="service-card__desc">
+                        Buttery croissants, flaky scones, and decadent muffins baked in-house every morning.
+                        The perfect companion to your favourite coffee.
+                    </p>
+                    <span class="service-card__link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </article>
+
+                <!-- Card 3: Lunch Menu -->
+                <article class="service-card reveal">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="service-card__title">Lunch Menu</h3>
+                    <p class="service-card__desc">
+                        Gourmet sandwiches, crisp salads, and hearty soups prepared fresh daily.
+                        Seasonal ingredients, bold flavours, generous portions.
+                    </p>
+                    <span class="service-card__link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </article>
+
+                <!-- Card 4: Catering -->
+                <article class="service-card reveal">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="service-card__title">Catering</h3>
+                    <p class="service-card__desc">
+                        Office meetings, celebrations, or community events — we bring the Café experience to you
+                        with custom catering packages for groups of all sizes.
+                    </p>
+                    <span class="service-card__link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </article>
+
+                <!-- Card 5: Private Events -->
+                <article class="service-card reveal">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3 class="service-card__title">Private Events</h3>
+                    <p class="service-card__desc">
+                        Host your next gathering in our warm, inviting space. Perfect for birthdays, book clubs,
+                        baby showers, or corporate mixers — we'll make it memorable.
+                    </p>
+                    <span class="service-card__link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </article>
+
+                <!-- Card 6: Free WiFi -->
+                <article class="service-card reveal">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="service-card__title">Free WiFi</h3>
+                    <p class="service-card__desc">
+                        Stay connected with fast, reliable WiFi in a comfortable setting.
+                        Your go-to spot for remote work, studying, or catching up online.
+                    </p>
+                    <span class="service-card__link">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ABOUT SECTION
+    ============================================================ -->
+    <section class="about" id="about" aria-labelledby="aboutTitle">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__image-wrapper">
+                    <img
+                        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80"
+                        alt="Warm and inviting interior of Coffee Culture Café with ambient lighting and cozy seating"
+                        loading="lazy"
+                    >
+                    <div class="about__image-badge">
+                        <span class="number">10+</span>
+                        <span class="label">Years Serving<br>the Barrie Community</span>
+                    </div>
+                </div>
+
+                <div class="about__content">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title" id="aboutTitle">More Than Just<br>Great Coffee</h2>
+                    <p class="about__text">
+                        Coffee Culture Café &amp; Eatery was born from a simple idea: that every neighbourhood
+                        deserves a place where people can slow down, connect, and savour something exceptional.
+                        Since opening our doors in Barrie, we've been dedicated to sourcing the finest beans,
+                        baking from scratch, and creating an atmosphere that feels like a second living room.
+                    </p>
+                    <p class="about__text">
+                        Our team is family. From our baristas who remember your order to our chefs who pour
+                        heart into every dish, we're here because we love what we do — and we love this community.
+                    </p>
+
+                    <ul class="about__features">
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Locally roasted, ethically sourced coffee beans</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Scratch kitchen — nothing frozen, nothing fake</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Community-first: hosting local events &amp; fundraisers</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Inclusive menu with vegan &amp; gluten-free options</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Visit Us Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    WHY CHOOSE US SECTION
+    ============================================================ -->
+    <section class="why-us" id="why-us" aria-labelledby="whyUsTitle">
+        <div class="container">
+            <header class="why-us__header">
+                <span class="section-label">The Difference</span>
+                <h2 class="section-title" id="whyUsTitle">Why Barrie Chooses Us</h2>
+                <p class="section-subtitle">
+                    We don't just serve coffee — we create experiences. Here's what sets Coffee Culture apart
+                    from the ordinary.
+                </p>
+            </header>
+
+            <div class="why-us__grid">
+
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="why-card__title">Premium Beans</h3>
+                    <p class="why-card__desc">
+                        Single-origin and signature blends roasted by artisans who treat coffee as craft,
+                        not commodity.
+                    </p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="why-card__title">Scratch Kitchen</h3>
+                    <p class="why-card__desc">
+                        Every pastry, soup, and sandwich is made from scratch daily. No shortcuts, ever.
+                    </p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="why-card__title">Community Roots</h3>
+                    <p class="why-card__desc">
+                        Proudly Barrie-owned. We support local artists, host open mics, and give back.
+                    </p>
+                </div>
+
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="why-card__title">Cozy Atmosphere</h3>
+                    <p class="why-card__desc">
+                        Warm lighting, comfortable seating, and the perfect soundtrack for work or relaxation.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    TESTIMONIALS SECTION
+    ============================================================ -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonialsTitle">
+        <div class="container">
+            <header class="testimonials__header">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title" id="testimonialsTitle">What Our Guests Say</h2>
+                <p class="section-subtitle">
+                    Don't take our word for it — hear from the people who make Coffee Culture their daily ritual.
+                </p>
+            </header>
+
+            <div class="testimonials__grid">
+
+                <!-- Testimonial 1 -->
+                <blockquote class="testimonial-card reveal">
+                    <div class="testimonial-card__quote" aria-hidden="true">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        "The best latte in Barrie, hands down. The baristas actually care about the craft,
+                        and the atmosphere makes you want to stay all afternoon. My go-to spot for client meetings."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar" aria-hidden="true">SR</div>
+                        <div>
+                            <div class="testimonial-card__name">Sarah Reynolds</div>
+                            <div class="testimonial-card__role">Local Business Owner</div>
+                            <div class="testimonial-card__stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </blockquote>
+
+                <!-- Testimonial 2 -->
+                <blockquote class="testimonial-card reveal">
+                    <div class="testimonial-card__quote" aria-hidden="true">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        "We hired Coffee Culture to cater our office holiday party, and they knocked it out of the park.
+                        The food was incredible, presentation was gorgeous, and the team was so easy to work with."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar" aria-hidden="true">MT</div>
+                        <div>
+                            <div class="testimonial-card__name">Michael Torres</div>
+                            <div class="testimonial-card__role">Office Manager, TechBarrie</div>
+                            <div class="testimonial-card__stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </blockquote>
+
+                <!-- Testimonial 3 -->
+                <blockquote class="testimonial-card reveal">
+                    <div class="testimonial-card__quote" aria-hidden="true">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-card__text">
+                        "Their Saturday morning croissants are pure butter-bliss. My kids love the hot chocolate,
+                        and I love that I can get a genuinely great pour-over. It's become our weekend tradition."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar" aria-hidden="true">JK</div>
+                        <div>
+                            <div class="testimonial-card__name">Jennifer Kwon</div>
+                            <div class="testimonial-card__role">Barrie Resident &amp; Regular</div>
+                            <div class="testimonial-card__stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </blockquote>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACT SECTION
+    ============================================================ -->
+    <section class="contact" id="contact" aria-labelledby="contactTitle">
+        <div class="container">
+            <div class="contact__grid">
+
+                <!-- Contact Info -->
+                <div class="contact__info">
+                    <span class="section-label">Get in Touch</span>
+                    <h2 class="section-title" id="contactTitle">Let's Talk Coffee</h2>
+                    <p class="section-subtitle">
+                        Whether you're planning an event, need catering, or just want to say hello —
+                        we'd love to hear from you.
+                    </p>
+
+                    <ul class="contact__details">
+                        <li>
+                            <div class="icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="info-label">Phone</span>
+                                <span class="info-value">
+                                    <a href="tel:+17054588500">(705) 458-8500</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">
+                                    <a href="mailto:hello@coffeeculturebarrie.ca">hello@coffeeculturebarrie.ca</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Downtown Barrie, Ontario</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Hours -->
+                    <div class="contact__hours">
+                        <h4 class="contact__hours-title">
+                            <i class="fa-solid fa-clock"></i>
+                            Hours of Operation
+                        </h4>
+                        <ul class="contact__hours-list">
+                            <li><span class="day">Monday – Friday</span><span class="time">7:00 AM – 8:00 PM</span></li>
+                            <li><span class="day">Saturday</span><span class="time">8:00 AM – 9:00 PM</span></li>
+                            <li><span class="day">Sunday</span><span class="time">8:00 AM – 6:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact__form-wrapper">
+                    <h3 class="contact__form-title">Send Us a Message</h3>
+                    <p class="contact__form-subtitle">
+                        Fill out the form below and we'll get back to you within 24 hours.
+                    </p>
+
+                    <form class="form" id="contactForm" action="#" method="POST" novalidate>
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label" for="firstName">
+                                    First Name <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    placeholder="Your first name"
+                                    required
+                                    autocomplete="given-name"
+                                >
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="lastName">
+                                    Last Name <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Your last name"
+                                    required
+                                    autocomplete="family-name"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label class="form__label" for="email">
+                                    Email Address <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <input
+                                    class="form__input"
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="phone">
+                                    Phone Number
+                                </label>
+                                <input
+                                    class="form__input"
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="(705) 555-0000"
+                                    autocomplete="tel"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="subject">
+                                Subject
+                            </label>
+                            <select class="form__select" id="subject" name="subject">
+                                <option value="">Select a topic...</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="events">Private Event Booking</option>
+                                <option value="general">General Question</option>
+                                <option value="feedback">Feedback / Suggestion</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="message">
+                                Your Message <span class="required" aria-hidden="true">*</span>
+                            </label>
+                            <textarea
+                                class="form__textarea"
+                                id="message"
+                                name="message"
+                                placeholder="Tell us how we can help..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form__submit">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <div class="nav__logo">
+                        <div class="nav__logo-icon">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <div class="nav__logo-text">
+                            Coffee Culture
+                            <span>Café &amp; Eatery</span>
+                        </div>
+                    </div>
+                    <p>
+                        Barrie's neighbourhood café — handcrafted coffee, scratch-made food,
+                        and a warm space to call your own. Proudly independent since day one.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Follow us on Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Find us on Yelp"><i class="fa-brands fa-yelp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="footer__col-title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="footer__col-title">Services</h4>
+                    <ul class="footer__links">
+                        <li><a href="#services">Espresso Bar</a></li>
+                        <li><a href="#services">Fresh Pastries</a></li>
+                        <li><a href="#services">Lunch Menu</a></li>
+                        <li><a href="#services">Catering</a></li>
+                        <li><a href="#services">Private Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="footer__col-title">Stay in the Loop</h4>
+                    <p class="footer__newsletter-text">
+                        Get updates on seasonal specials, events, and new menu items delivered to your inbox.
+                    </p>
+                    <form class="footer__newsletter-form" action="#" method="POST">
+                        <label for="footerEmail" class="sr-only">Email address</label>
+                        <input
+                            type="email"
+                            id="footerEmail"
+                            name="email"
+                            placeholder="your@email.com"
+                            required
+                            autocomplete="email"
+                        >
+                        <button type="submit" aria-label="Subscribe to newsletter">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 Coffee Culture Café &amp; Eatery. All rights reserved.</p>
+                <ul class="footer__bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+                <p>Made with <span class="footer__heart"><i class="fa-solid fa-heart"></i></span> in Barrie, Ontario</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ── DOM references ──────────────────────────────────
+            const nav = document.getElementById('nav');
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            const navLinkItems = navLinks.querySelectorAll('a');
+            const contactForm = document.getElementById('contactForm');
+
+            // ── Sticky nav on scroll ──────────────────────────
+            function handleScroll() {
+                const scrolled = window.scrollY > 60;
+                if (scrolled) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+
+                // Update active nav link based on scroll position
+                updateActiveNavLink();
+            }
+
+            function updateActiveNavLink() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPos = window.scrollY + nav.offsetHeight + 20;
+
+                let currentSection = '';
+                sections.forEach(function(section) {
+                    const sectionTop = section.offsetTop;
+                    if (scrollPos >= sectionTop) {
+                        currentSection = '#' + section.getAttribute('id');
+                    }
+                });
+
+                navLinkItems.forEach(function(link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll(); // initial check
+
+            // ── Mobile nav toggle ─────────────────────────────
+            navToggle.addEventListener('click', function() {
+                const isOpen = navLinks.classList.toggle('open');
+                navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+
+            // Close mobile nav when a link is clicked
+            navLinkItems.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('open')) {
+                        navLinks.classList.remove('open');
+                        navToggle.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            // ── Scroll reveal animation ───────────────────────
+            function setupRevealAnimations() {
+                const revealElements = document.querySelectorAll('.reveal');
+
+                if (!('IntersectionObserver' in window)) {
+                    // Fallback: show all immediately
+                    revealElements.forEach(function(el) {
+                        el.classList.add('visible');
+                    });
+                    return;
+                }
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+            }
+
+            setupRevealAnimations();
+
+            // ── Contact form handling ─────────────────────────
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    // Basic validation feedback
+                    const requiredFields = contactForm.querySelectorAll('[required]');
+                    let isValid = true;
+
+                    requiredFields.forEach(function(field) {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.style.borderColor = '#E07050';
+                            field.style.boxShadow = '0 0 0 3px rgba(224, 112, 80, 0.15)';
+
+                            // Remove error state on input
+                            field.addEventListener('input', function clearError() {
+                                field.style.borderColor = '';
+                                field.style.boxShadow = '';
+                                field.removeEventListener('input', clearError);
+                            }, { once: true });
+                        }
+                    });
+
+                    if (!isValid) {
+                        // Scroll to first invalid field
+                        const firstInvalid = contactForm.querySelector('[required]:invalid, [style*="border-color: #E07050"]');
+                        if (firstInvalid) {
+                            firstInvalid.focus();
+                        }
+                        return;
+                    }
+
+                    // Email validation
+                    const emailField = contactForm.querySelector('input[type="email"]');
+                    if (emailField && emailField.value.trim()) {
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(emailField.value.trim())) {
+                            emailField.style.borderColor = '#E07050';
+                            emailField.focus();
+                            emailField.addEventListener('input', function clearEmailError() {
+                                emailField.style.borderColor = '';
+                                emailField.removeEventListener('input', clearEmailError);
+                            }, { once: true });
+                            return;
+                        }
+                    }
+
+                    // Simulate submission (demo site)
+                    const submitBtn = contactForm.querySelector('.form__submit');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+
+                    setTimeout(function() {
+                        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+                        submitBtn.style.background = '#4CAF50';
+                        contactForm.reset();
+
+                        setTimeout(function() {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.style.background = '';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    }, 1500);
+                });
+            }
+
+            // ── Smooth scroll for all anchor links ────────────
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(event) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        event.preventDefault();
+                        const navHeight = nav.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // ── Nav background on page load ───────────────────
+            // If page loads already scrolled, apply scrolled class
+            if (window.scrollY > 60) {
+                nav.classList.add('scrolled');
+            }
+        })();
+    </script>
+</body>
+</html>
