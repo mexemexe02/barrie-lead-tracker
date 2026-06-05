@@ -46,3 +46,25 @@ Established multi-agent coordination protocol (Cursor + Hermes). Created claimin
 
 ### Blockers / Notes
 - None. Protocol is live. Both agents should now follow the claiming workflow.
+
+## 2026-06-05 00:03 — Batch: 10 Demo Sites
+
+Built and deployed 10 demo websites for Barrie businesses with NO existing websites.
+
+| # | Slug | Business | Category | Lines | URL |
+|---|------|----------|----------|-------|-----|
+| 1 | coffee-culture-cafe | Coffee Culture Café & Eatery | Cafe | 2,438 | https://mexemexe02.github.io/coffee-culture-cafe/ |
+| 2 | thornton-cafe | Thornton Cafe & Ice Cream | Cafe | 2,281 | https://mexemexe02.github.io/thornton-cafe/ |
+| 3 | the-installer-co | The Installer & Co | Flooring | 2,029 | https://mexemexe02.github.io/the-installer-co/ |
+| 4 | desert-tile-canada | Desert Tile Canada | Flooring | 2,424 | https://mexemexe02.github.io/desert-tile-canada/ |
+| 5 | giant-carpet | Giant Carpet | Flooring | 2,359 | https://mexemexe02.github.io/giant-carpet/ |
+| 6 | prestige-classic-painting | Prestige Classic Painting | Painters | 1,751 | https://mexemexe02.github.io/prestige-classic-painting/ |
+| 7 | paints-n-ladders | Paints N Ladders | Painters | 2,366 | https://mexemexe02.github.io/paints-n-ladders/ |
+| 8 | island-mainland-painting | Island Mainland Painting Co | Painters | 2,291 | https://mexemexe02.github.io/island-mainland-painting/ |
+| 9 | skinner-ink | Skinner Ink | Tattoo | 2,353 | https://mexemexe02.github.io/skinner-ink/ |
+| 10 | best-pals-grooming | Best Pals Grooming | Pet Grooming | 2,144 | https://mexemexe02.github.io/best-pals-grooming/ |
+
+**Method:** 4 parallel subagent batches (3+3+3+1). All verified no existing website via Google Maps/Bing before building.
+**Stack:** GitHub Pages (10 separate repos under mexemexe02), Unsplash images, Font Awesome 6, Google Fonts.
+**Design:** All dark premium themes, unique per category, multiply blend hero, 3 breakpoints, contact forms.
+**Status:** All 10 LIVE (HTTP 200 confirmed).
