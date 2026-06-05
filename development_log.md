@@ -68,3 +68,19 @@ Built and deployed 10 demo websites for Barrie businesses with NO existing websi
 **Stack:** GitHub Pages (10 separate repos under mexemexe02), Unsplash images, Font Awesome 6, Google Fonts.
 **Design:** All dark premium themes, unique per category, multiply blend hero, 3 breakpoints, contact forms.
 **Status:** All 10 LIVE (HTTP 200 confirmed).
+
+---
+
+## 2026-06-05 — ActRight Roofing & Clearview HVAC (2 new demo sites)
+
+Built and deployed 2 demo websites for Barrie-area businesses. Both verified no website via Google/Bing/domain check.
+
+| # | Slug | Business | Category | Lines | URL |
+|---|------|----------|----------|-------|-----|
+| 1 | actright-roofing | ActRight Roofing & Resellers | Roofing | 2,218 | https://mexemexe02.github.io/actright-roofing/ |
+| 2 | clearview-hvac | Clearview Heating & Air | HVAC | 2,826 | https://mexemexe02.github.io/clearview-hvac/ |
+
+**Research:** ActRight Roofing — found on YP with phone 705-999-9095, address 178 North St Flesherton, confirmed no website. Clearview Heating & Air — found on YP with phone 705-428-3144, staysafe.org profile, confirmed no website.
+**Design:** Dark premium themes with category-appropriate accents (orange/amber for roofing, teal for HVAC). Multiply blend hero backgrounds, Font Awesome 6 icons, 3 responsive breakpoints, contact forms.
+**Images:** Unsplash — roofing contractors shot (photo-1600585152220) for ActRight, HVAC technician (photo-1632883394638) for Clearview.
+**Status:** Both LIVE (HTTP 200 confirmed). Leads updated in `leads.csv`, tracker regenerated.
