@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Regenerate the Barrie Demo Drop tracker HTML from leads.csv and push to GitHub Pages.
 V2: Added SMS/Email copy buttons with outreach templates."""
-import csv, os, subprocess
+import csv, html, os, subprocess
 from datetime import datetime, timezone
 
 PROJ_DIR = os.path.expanduser("~/website-projects")
@@ -141,17 +141,19 @@ def format_actions(lead):
     
     # SMS button (if phone exists)
     if phone not in ("—", "") and is_textable_phone(raw_phone):
-        sms_msg = sms_template(business, category, demo_url, phone, contact_name).replace("\\", "\\\\").replace("'", "\\'").replace('"', '&quot;').replace("\n", "\\n").replace("\r", "")
+        sms_msg = sms_template(business, category, demo_url, phone, contact_name)
+        sms_attr = html.escape(sms_msg, quote=True)
         buttons.append(
-            f'<button class="copy-btn copy-sms" onclick="copyMsg(\'{sms_msg}\',this)" '
+            f'<button type="button" class="copy-btn copy-sms" data-copy-msg="{sms_attr}" '
             f'title="Copy SMS for {business}">📱 SMS</button>'
         )
     
     # Email button (if email exists)
     if email_addr not in ("—", ""):
-        email_msg = email_template(business, category, demo_url, contact_name).replace("'", "\\'").replace('"', '&quot;').replace('\n', '\\n')
+        email_msg = email_template(business, category, demo_url, contact_name)
+        email_attr = html.escape(email_msg, quote=True)
         buttons.append(
-            f'<button class="copy-btn copy-email" onclick="copyMsg(\'{email_msg}\',this)" '
+            f'<button type="button" class="copy-btn copy-email" data-copy-msg="{email_attr}" '
             f'title="Copy Email for {business}">✉️ Email</button>'
         )
     
@@ -217,7 +219,8 @@ def generate_html(leads):
         ready_default = "1" if is_ready_outreach(lead) else "0"
 
         rows += (
-            f'<tr data-ready-default="{ready_default}"><td>{i}</td><td>{business}</td><td>{category}</td>'
+            f'<tr data-ready-default="{ready_default}" data-csv-status="{html.escape(status)}">'
+            f'<td>{i}</td><td>{business}</td><td>{category}</td>'
             f'<td>{phone}</td><td>{email}</td><td>{social}</td>'
             f'<td>{demo}</td><td>{badge(status_display, key)}</td>'
             f'<td class="actions-col">{actions}</td></tr>\n'
@@ -275,6 +278,18 @@ tr:hover{{background:#1a1d2a}}
 .tracker-controls select{{background:#1a1d2a;color:#e0e0e0;border:1px solid #2a2d3a;border-radius:6px;padding:6px 10px;font-size:0.85rem}}
 .filter-count{{color:#888;font-size:0.8rem}}
 .dead-count{{color:#666;font-size:0.8rem}}
+/* Default view: Ready outreach — works even if JavaScript fails */
+body.filter-ready tbody tr{{display:none}}
+body.filter-ready tbody tr[data-ready-default="1"]{{display:table-row}}
+body.filter-ready.hide-dead tbody tr[data-csv-status="dead"]{{display:none!important}}
+body.filter-all tbody tr{{display:table-row}}
+body.filter-contacted tbody tr{{display:none}}
+body.filter-contacted tbody tr[data-csv-status="sent"],
+body.filter-contacted tbody tr[data-csv-status="replied"]{{display:table-row}}
+body.filter-new tbody tr{{display:none}}
+body.filter-new tbody tr[data-csv-status="new"],
+body.filter-new tbody tr[data-csv-status="live"],
+body.filter-new tbody tr[data-csv-status="pending"]{{display:table-row}}
 .toast{{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#166534;color:#4ade80;padding:10px 24px;border-radius:8px;font-size:0.85rem;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none}}
 .toast.show{{opacity:1}}
 </style>
@@ -393,8 +408,10 @@ function saveViewFilter(value) {{
 
 function applyFilters() {{
     const hideDead = document.getElementById('hideDeadToggle').checked;
-    const filter = document.getElementById('viewFilter').value;
+    const filter = document.getElementById('viewFilter').value || DEFAULT_VIEW_FILTER;
     saveViewFilter(filter);
+    document.body.className = 'filter-' + filter + (hideDead ? ' hide-dead' : '');
+
     const rows = document.querySelectorAll('tbody tr');
     let deadCount = 0;
     let visibleCount = 0;
@@ -418,11 +435,21 @@ function applyFilters() {{
     document.getElementById('filterCount').textContent = visibleCount + ' shown';
 }}
 
+document.addEventListener('click', (event) => {{
+    const btn = event.target.closest('[data-copy-msg]');
+    if (btn) copyMsg(btn.getAttribute('data-copy-msg') || '', btn);
+}});
+
 window.addEventListener('DOMContentLoaded', () => {{
-    document.getElementById('viewFilter').value = loadViewFilter();
-    applySavedStatuses();
-    bindStatusToggles();
-    applyFilters();
+    try {{
+        document.getElementById('viewFilter').value = loadViewFilter();
+        applySavedStatuses();
+        bindStatusToggles();
+        applyFilters();
+    }} catch (error) {{
+        console.error('Tracker filter init failed', error);
+        document.body.className = 'filter-ready hide-dead';
+    }}
 }});
 
 function markCopied(btn) {{
@@ -472,7 +499,7 @@ async function copyMsg(text, btn) {{
 }}
 </script>
 </head>
-<body>
+<body class="filter-ready hide-dead">
 
 <h1>🌳 Barrie Demo Drop — Lead Tracker</h1>
 <p class="subtitle">{total} local businesses found without websites. Demo sites built and ready for outreach.</p>
@@ -518,11 +545,12 @@ async function copyMsg(text, btn) {{
 <p class="last-updated">Last updated: {now} · Generated by Hermes Agent · <a href="https://www.kumon.com/barrie-mapleview-on" target="_blank" rel="noopener">Kumon Barrie Mapleview — Humberto Domingues</a></p>
 
 <script>
-// Backup init — SMS onclick HTML must not contain raw newlines (breaks page JS).
+// Backup init — CSS class on body shows Ready outreach before JS runs.
 (function () {{
+    document.body.className = 'filter-ready hide-dead';
     var sel = document.getElementById('viewFilter');
     if (sel) sel.value = 'ready';
-    if (typeof applyFilters === 'function') applyFilters();
+    try {{ if (typeof applyFilters === 'function') applyFilters(); }} catch (e) {{}}
 }})();
 </script>
 
