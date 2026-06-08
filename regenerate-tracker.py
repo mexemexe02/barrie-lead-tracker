@@ -280,7 +280,7 @@ tr:hover{{background:#1a1d2a}}
 const STATUS_CYCLE = ['new', 'ready', 'sent', 'dead'];
 const STATUS_STORAGE_KEY = 'barrie_status_overrides_v3';
 const LEGACY_STATUS_STORAGE_KEY = 'barrie_status_overrides_v2';
-const VIEW_FILTER_KEY = 'barrie_view_filter_v1';
+const VIEW_FILTER_KEY = 'barrie_view_filter_v2';
 const DEFAULT_VIEW_FILTER = 'ready';
 
 function readCookie(name) {{
@@ -379,15 +379,14 @@ function isReadyRow(row) {{
 }}
 
 function loadViewFilter() {{
-    try {{
-        const saved = localStorage.getItem(VIEW_FILTER_KEY);
-        if (saved && ['all', 'ready', 'contacted', 'new'].includes(saved)) return saved;
-    }} catch (error) {{}}
+    // Always open on Ready outreach — user asked for this as the default every visit.
+    // (Old v1 localStorage could stick on "all" and hide ready leads.)
     return DEFAULT_VIEW_FILTER;
 }}
 
 function saveViewFilter(value) {{
-    try {{ localStorage.setItem(VIEW_FILTER_KEY, value); }} catch (error) {{}}
+    // Session-only: remember filter while this tab is open, but next visit starts at Ready.
+    try {{ sessionStorage.setItem(VIEW_FILTER_KEY, value); }} catch (error) {{}}
 }}
 
 function applyFilters() {{
