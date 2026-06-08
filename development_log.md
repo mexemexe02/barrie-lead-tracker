@@ -970,3 +970,26 @@ Tier A wrong-number re-outreach finished — all 5 leads contacted on correct ro
 
 ### Next
 - Tier B follow-ups (Fils Rest call, Atrium FB, etc.) or Tier C Ready list — Jeff Chadwick first
+
+### Ready outreach (Tier C)
+- #1 Chadwick's Painting (Jeff Chadwick): FB DM sent 2026-06-08 — logged + pushed
+
+## 2026-06-08 — Island Mainland marked dead (has website)
+
+### Summary
+User caught Island Mainland Painting on ready list despite live official site. Marked dead; added FB website-check harness for remaining ready leads.
+
+### Root cause
+- Demo built 2026-06-03 without FB About / website-field check
+- 2026-06-08 enrichment assumed "Facebook only" from CSV social field — never opened parsonspainterz About
+- browser-harness CDP was not running during ready-lead prep (curl/Google-only gap)
+
+### Actions
+- Confirmed https://www.islandmainlandpainting.com/ (200, WordPress)
+- leads.csv → status `dead` with website evidence
+- outreach-ready-enrichment.md updated — Ray Parsons removed from queue
+- Added `browser_verify_ready_fb.py` for FB About website link audit on remaining ready leads
+
+### Next
+- Start Edge CDP and run `Get-Content browser_verify_ready_fb.py | browser-harness` before any more Ready outreach
+- Ready #3: Prestige Classic (Dennis) — verify FB first

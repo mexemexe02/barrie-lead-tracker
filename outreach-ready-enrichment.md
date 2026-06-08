@@ -24,17 +24,13 @@ Strategy: Facebook DM first, name the owner when known, lead with something spec
 
 ---
 
-### 2. Island Mainland Painting — Ray Parsons
+### 2. ~~Island Mainland Painting — Ray Parsons~~ **REMOVED — HAS WEBSITE**
 | Field | Value |
 |-------|-------|
-| Route | **Facebook DM** → [facebook.com/parsonspainterz](https://www.facebook.com/parsonspainterz/) |
-| Owner | Ray Parsons (LinkedIn: Island Mainland Painting Co, Gravenhurst/Muskoka) |
-| Phone | 705-999-0915 |
-| Hook | Cottage/year-round painting & restoration; strong Muskoka/Gravenhurst presence |
-| Demo | https://mexemexe02.github.io/island-mainland-painting/ |
+| Status | **DEAD** — https://www.islandmainlandpainting.com/ (live WordPress). Listed on FB + LinkedIn. |
+| Why missed | Enrichment assumed FB-only without opening FB About / website field. **Do not pitch.** |
 
-**Draft DM:**
-> Hey Ray — I'm Humberto, local in Barrie (Kumon Mapleview). I saw Island Mainland Painting's Facebook page — love that you focus on cottages and year-round restoration, not just quick interior jobs. I'm a web developer and most painters in your space still rely on Facebook alone. Would you be open to a quick call about a proper portfolio site? I put together a concept: https://mexemexe02.github.io/island-mainland-painting/
+~~**Draft DM:**~~ *Withdrawn — business already has official site.*
 
 ---
 
@@ -187,8 +183,8 @@ Strategy: Facebook DM first, name the owner when known, lead with something spec
 
 ## Recommended send order
 
-1. Jeff Chadwick (Chadwick's)
-2. Ray Parsons (Island Mainland)
+1. Jeff Chadwick (Chadwick's) — sent 2026-06-08
+2. ~~Ray Parsons (Island Mainland)~~ — **DEAD, has website**
 3. Dennis (Prestige Classic)
 4. Shacor Painting
 5. Vellinga Painting
