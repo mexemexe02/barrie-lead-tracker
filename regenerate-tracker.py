@@ -58,7 +58,18 @@ def inferred_no_website(lead):
         or (has_demo(lead) and "demo deployed" in notes)
     )
 
+def already_contacted(lead):
+    if lead.get("status") in ("sent", "replied", "dead", "in_progress"):
+        return True
+    if (lead.get("outreach_date") or "").strip():
+        return True
+    if (lead.get("outreach_method") or "").strip():
+        return True
+    return False
+
 def is_ready_outreach(lead):
+    if already_contacted(lead):
+        return False
     status = lead.get("status", "new")
     if status == "ready":
         return True
