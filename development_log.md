@@ -957,3 +957,16 @@ Humberto completed Tier A re-outreach to wrong-number leads using correct contac
 - Tier A #4 Huronia Hardwood 705-739-9453
 - Tier A #5 B8's FB DM
 - Tier C: 14 ready leads (separate queue — never wrong-SMS'd)
+
+## 2026-06-08 — Tier A complete (B8's + Huronia)
+
+### Summary
+Tier A wrong-number re-outreach finished — all 5 leads contacted on correct route.
+
+### Actions
+- Huronia Hardwood Floors: SMS to correct 705-739-9453 (logged + pushed)
+- B8's Smokehouse Deli: FB DM + SMS to 705-487-3885 (old 249-252-0148 was Starbucks)
+- Updated leads.csv notes + regenerated tracker; pushed master + main
+
+### Next
+- Tier B follow-ups (Fils Rest call, Atrium FB, etc.) or Tier C Ready list — Jeff Chadwick first
