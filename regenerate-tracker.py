@@ -143,7 +143,8 @@ def format_actions(lead):
     # SMS button (if phone exists)
     if phone not in ("—", "") and is_textable_phone(raw_phone):
         sms_msg = sms_template(business, category, demo_url, phone, contact_name)
-        sms_attr = html_module.escape(sms_msg, quote=True)
+        # No raw newlines in HTML attributes — breaks the whole page.
+        sms_attr = html_module.escape(sms_msg.replace("\r\n", " ").replace("\n", " ").replace("\r", " "), quote=True)
         buttons.append(
             f'<button type="button" class="copy-btn copy-sms" data-copy-msg="{sms_attr}" '
             f'title="Copy SMS for {business}">📱 SMS</button>'
@@ -152,7 +153,7 @@ def format_actions(lead):
     # Email button (if email exists)
     if email_addr not in ("—", ""):
         email_msg = email_template(business, category, demo_url, contact_name)
-        email_attr = html_module.escape(email_msg, quote=True)
+        email_attr = html_module.escape(email_msg.replace("\r\n", " ").replace("\n", " ").replace("\r", " "), quote=True)
         buttons.append(
             f'<button type="button" class="copy-btn copy-email" data-copy-msg="{email_attr}" '
             f'title="Copy Email for {business}">✉️ Email</button>'
