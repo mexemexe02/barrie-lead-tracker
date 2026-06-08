@@ -939,3 +939,21 @@ Re-ran SMS audit phone checks using **browser-harness** (live Chrome CDP) per Hu
 ### Blockers / Notes
 - Playwright MCP in Cursor still fails (Chrome not at default path)
 - Windows: `Get-Content browser_verify_harness_batch1.py | browser-harness` (heredoc does not work in PowerShell)
+
+---
+
+## 2026-06-08 — Humberto Tier A outreach (live)
+
+### Summary
+Humberto completed Tier A re-outreach to wrong-number leads using correct contacts.
+
+### Actions
+- Thornton Cafe: FB DM sent (personal FB)
+- Express Country Style: SMS to correct 705-730-0944
+- The Installer & Co: SMS to correct 705-796-3499
+- Updated leads.csv notes + regenerated tracker; pushed master + main (dd42546)
+
+### Next
+- Tier A #4 Huronia Hardwood 705-739-9453
+- Tier A #5 B8's FB DM
+- Tier C: 14 ready leads (separate queue — never wrong-SMS'd)
