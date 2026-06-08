@@ -993,3 +993,21 @@ User caught Island Mainland Painting on ready list despite live official site. M
 ### Next
 - Start Edge CDP and run `Get-Content browser_verify_ready_fb.py | browser-harness` before any more Ready outreach
 - Ready #3: Prestige Classic (Dennis) — verify FB first
+
+## 2026-06-08 — Coolify tracker = main UI
+
+### Summary
+Humberto confirmed he uses the Coolify admin tracker as his primary dashboard (not GitHub Pages).
+
+### Actions
+- Pushed `barrie-tracker-app` commit `8d0d515`: default **Ready Outreach** view on every load, soft-close SMS template, no sessionStorage view override
+- Updated `AGENTS.md` to document Coolify as Humberto's main UI
+- Triggered Coolify redeploy for app `ew7x9b6nzzxwql770as22map`
+
+### Clearview HVAC — retroactive sent log
+- User already SMS'd 705-428-3144 before session; was still `ready` in CSV (never logged)
+- Fixed: status `sent`, outreach_method `sms`, notes updated — do not pitch again
+
+### Files Changed
+- `barrie-tracker-app/server.js` — default view + SMS template
+- `AGENTS.md` — Coolify noted as primary tracker

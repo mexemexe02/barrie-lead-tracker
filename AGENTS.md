@@ -166,9 +166,11 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 - Deploy command: `gh api repos/mexemexe02/<repo>/pages -X POST -f "source[branch]=master" -f "source[path]=/"`
 - **GitHub Pages > Coolify** when Coolify is being flaky
 
-## Persistent Admin Tracker
+## Persistent Admin Tracker (Humberto's main UI)
 
-The static GitHub Pages tracker is still generated from `leads.csv`, but manual outreach/status/contact edits must use the Coolify admin tracker when Humberto wants them remembered.
+**Humberto uses the Coolify admin tracker as his primary dashboard** — not the GitHub Pages static tracker.
+
+The static GitHub Pages tracker is still generated from `leads.csv` for public/reference, but manual outreach/status/contact edits must use the Coolify admin tracker when Humberto wants them remembered.
 
 - URL: `http://ew7x9b6nzzxwql770as22map.178.156.135.237.sslip.io`
 - Repo: `mexemexe02/barrie-tracker-app`

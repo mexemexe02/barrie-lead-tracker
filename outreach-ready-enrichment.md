@@ -77,7 +77,7 @@ Strategy: Facebook DM first, name the owner when known, lead with something spec
 
 ---
 
-### 6. Clearview Heating & Air — Stayner/Clearview area
+### 6. Clearview Heating & Air — Stayner/Clearview area — ✅ **SENT** (SMS 705-428-3144)
 | Field | Value |
 |-------|-------|
 | Route | **Facebook DM** → [facebook.com/pages/Clearview-Heating-Air-Condition-Supply/1602017150120748](https://www.facebook.com/pages/Clearview-Heating-Air-Condition-Supply/1602017150120748) |
@@ -189,7 +189,7 @@ Strategy: Facebook DM first, name the owner when known, lead with something spec
 4. Shacor Painting
 5. Vellinga Painting
 6. NS Flooring (GTA Hardwood demo)
-7. Clearview HVAC
+6. ~~Clearview HVAC~~ ✅ sent SMS 705-428-3144
 8. Barrie Sandblasting
 
 **Do not SMS.** Send DMs yourself from your real profile. Follow up once after 5 days with a short bump (no link dump — ask if they saw your message).
