@@ -102,7 +102,7 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 - Push to GitHub
 
 ### 6. Pitch (DRAFT ONLY — Humberto approves before sending)
-- SMS template: "Hi, I'm Humberto — local Barrie biz owner (Kumon Mapleview). I noticed [Business] doesn't have a website yet. I put together a quick demo: [URL]. If you're interested, I can build you a proper professional site. No pressure. Worth a look?"
+- SMS template: "Hi — I'm Humberto, local to Barrie (Kumon Mapleview). I noticed [Business] doesn't have a website yet, and I put together a quick demo: [URL]. Let me know what you think if you're interested."
 - Email: CC mexemexe02@gmail.com on EVERY outreach
 - **NEVER send without Humberto's approval**
 - Never say "free", "no catch", "it's yours" — professional positioning only

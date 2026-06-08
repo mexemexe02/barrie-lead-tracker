@@ -93,12 +93,14 @@ def greeting(contact_name):
     return f"Hi {name}," if name else "Hi,"
 
 def sms_template(business, category, demo_url, phone, contact_name=""):
-    """Short SMS pitch — 160 chars ideal."""
-    short_url = demo_url.replace("https://", "").replace("http://", "").rstrip("/")
+    """Short SMS pitch — Humberto's preferred soft close (2026-06-08)."""
+    name = first_name(contact_name)
+    greet = f"Hi {name} —" if name else "Hi —"
+    url = (demo_url or "").rstrip("/")
     return (
-        f"{greeting(contact_name)} I'm Humberto. {KUMON_LINE} "
-        f"I noticed {business} does not have a website yet, so I put together a quick demo: {short_url}. "
-        f"If you are interested, I can build you a proper professional site. Worth a look?"
+        f"{greet} I'm Humberto, local to Barrie (Kumon Mapleview). "
+        f"I noticed {business} doesn't have a website yet, and I put together a quick demo: {url}\n\n"
+        f"Let me know what you think if you're interested."
     )
 
 def email_template(business, category, demo_url, contact_name=""):
