@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Regenerate the Barrie Demo Drop tracker HTML from leads.csv and push to GitHub Pages.
 V2: Added SMS/Email copy buttons with outreach templates."""
-import csv, html, os, subprocess
+import csv, os, subprocess
+import html as html_module
 from datetime import datetime, timezone
 
 PROJ_DIR = os.path.expanduser("~/website-projects")
@@ -142,7 +143,7 @@ def format_actions(lead):
     # SMS button (if phone exists)
     if phone not in ("—", "") and is_textable_phone(raw_phone):
         sms_msg = sms_template(business, category, demo_url, phone, contact_name)
-        sms_attr = html.escape(sms_msg, quote=True)
+        sms_attr = html_module.escape(sms_msg, quote=True)
         buttons.append(
             f'<button type="button" class="copy-btn copy-sms" data-copy-msg="{sms_attr}" '
             f'title="Copy SMS for {business}">📱 SMS</button>'
@@ -151,7 +152,7 @@ def format_actions(lead):
     # Email button (if email exists)
     if email_addr not in ("—", ""):
         email_msg = email_template(business, category, demo_url, contact_name)
-        email_attr = html.escape(email_msg, quote=True)
+        email_attr = html_module.escape(email_msg, quote=True)
         buttons.append(
             f'<button type="button" class="copy-btn copy-email" data-copy-msg="{email_attr}" '
             f'title="Copy Email for {business}">✉️ Email</button>'
@@ -219,7 +220,7 @@ def generate_html(leads):
         ready_default = "1" if is_ready_outreach(lead) else "0"
 
         rows += (
-            f'<tr data-ready-default="{ready_default}" data-csv-status="{html.escape(status)}">'
+            f'<tr data-ready-default="{ready_default}" data-csv-status="{html_module.escape(status)}">'
             f'<td>{i}</td><td>{business}</td><td>{category}</td>'
             f'<td>{phone}</td><td>{email}</td><td>{social}</td>'
             f'<td>{demo}</td><td>{badge(status_display, key)}</td>'
