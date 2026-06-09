@@ -1008,6 +1008,48 @@ Humberto confirmed he uses the Coolify admin tracker as his primary dashboard (n
 - User already SMS'd 705-428-3144 before session; was still `ready` in CSV (never logged)
 - Fixed: status `sent`, outreach_method `sms`, notes updated — do not pitch again
 
+## 2026-06-08 — Tracker self-audit (Coolify)
+
+### Summary
+Proactive bug hunt on Coolify admin tracker after user-reported filter/stat issues.
+
+### Bugs found and fixed
+- Stats counted filtered view only (Sent showed 0 on Ready Outreach) — fixed earlier
+- `alreadyContacted` treated empty outreach fields as contacted — hid all Ready leads
+- Coolify override could downgrade CSV `sent` back to `ready` — added status rank merge
+- Empty override fields wiped CSV outreach_method/date — merge preserves CSV
+- Copy SMS required phone_status=verified — now shows for any non-toll-free phone
+- No Mark FB Sent button — added fb_dm outreach_method
+- CSV fetch could serve stale cache — cache-bust on reload
+- Shared logic extracted to `lead-logic.js` + `audit-logic.test.js`
+
+### Files Changed
+- `barrie-tracker-app/server.js`, `lead-logic.js`, `audit-logic.test.js`
+- `regenerate-tracker.py` — aligned no-website inference + contacted row flag
+
 ### Files Changed
 - `barrie-tracker-app/server.js` — default view + SMS template
 - `AGENTS.md` — Coolify noted as primary tracker
+
+## 2026-06-08 — Melissa Sepideh Ziaei (melissa-ziaei-nutrition)
+
+### Summary
+Finished holistic nutrition & personal training demo site with real ClearBAR brand logo, verified contact/social links, and GitHub Pages deployment.
+
+### Actions
+- Built 1,505-line single-file site: programs, services, ClearBARs spotlight, FAQ, contact form
+- Used local ClearBAR brand logo (`assets/clearbar-brand-logo.jpg`) — no personal headshot found
+- Contact: 647-545-5327, sepzee@gmail.com, FB/LinkedIn/X links
+- Deployed: https://mexemexe02.github.io/melissa-ziaei-nutrition/
+- GitHub repo: mexemexe02/melissa-ziaei-nutrition
+
+### Key Decisions
+- Hero/lifestyle imagery stays Unsplash (verified 200); brand sections use ClearBAR logo only
+- Demo form uses mailto to sepzee@gmail.com (static site, no backend)
+
+### Files Changed
+- `melissa-ziaei-nutrition/index.html` — full site
+- `melissa-ziaei-nutrition/assets/clearbar-brand-logo.jpg` — brand asset
+
+### Blockers / Notes
+- Not in leads.csv (custom outreach contact outside main pipeline batch)
