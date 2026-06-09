@@ -1039,7 +1039,7 @@ Finished holistic nutrition & personal training demo site with real ClearBAR bra
 ### Actions
 - Built 1,505-line single-file site: programs, services, ClearBARs spotlight, FAQ, contact form
 - Used local ClearBAR brand logo (`assets/clearbar-brand-logo.jpg`) — no personal headshot found
-- Contact: 647-545-5327, sepzee@gmail.com, FB/LinkedIn/X links
+- Contact: 647-545-5327, TheLuckyTrove@gmail.com, FB/LinkedIn/X links (updated 6/9 — was sepzee@gmail.com)
 - Deployed: https://mexemexe02.github.io/melissa-ziaei-nutrition/
 - GitHub repo: mexemexe02/melissa-ziaei-nutrition
 
