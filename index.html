@@ -15,16 +15,22 @@ th{background:#1a1d2a;color:#c9a84c;padding:10px 6px;text-align:left;font-weight
 td{padding:8px 6px;border-bottom:1px solid #1a1d2a;vertical-align:top}
 tr:hover{background:#1a1d2a}
 .status-new{color:#4ade80}
-.status-sent{color:#60a5fa}
 .status-pending{color:#fbbf24}
+.status-ready{color:#22d3ee}
+.status-approved{color:#FFB040}
+.status-sent{color:#60a5fa}
+.status-live{color:#00FF41}
 .status-replied{color:#c084fc}
 .status-dead{color:#ef4444}
 .url{color:#60a5fa;font-size:0.78rem;word-break:break-all;text-decoration:none}
 .url:hover{text-decoration:underline}
 .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.72rem;font-weight:600;white-space:nowrap}
 .badge-new{background:#166534;color:#4ade80}
-.badge-sent{background:#1e3a5f;color:#60a5fa}
 .badge-pending{background:#5c4a1f;color:#fbbf24}
+.badge-ready{background:#164e63;color:#22d3ee}
+.badge-approved{background:#4a3a14;color:#FFB040}
+.badge-sent{background:#1e3a5f;color:#60a5fa}
+.badge-live{background:#14532d;color:#00FF41}
 .badge-replied{background:#3b1f5e;color:#c084fc}
 .badge-dead{background:#3b1111;color:#ef4444}
 .summary{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
@@ -52,7 +58,8 @@ tr:hover{background:#1a1d2a}
 
 <div class="summary">
   <div class="stat"><div class="stat-num">197</div><div class="stat-label">Total Leads</div></div>
-  <div class="stat"><div class="stat-num">77</div><div class="stat-label">Contacted</div></div>
+  <div class="stat"><div class="stat-num">0</div><div class="stat-label">Approved</div></div>
+  <div class="stat"><div class="stat-num">76</div><div class="stat-label">Contacted</div></div>
   <div class="stat"><div class="stat-num">120</div><div class="stat-label">New (Not Sent)</div></div>
   <div class="stat"><div class="stat-num">133</div><div class="stat-label">Cleaned & Verified</div></div>
 </div>
@@ -92,9 +99,9 @@ tr:hover{background:#1a1d2a}
 <tr><td>27</td><td>Fils Rest</td><td>Restaurant</td><td><a href="tel:705-726-7818" class="url">705-726-7818</a></td><td>—</td><td>—</td><td><a href="http://yk8k7v8eluzwvorpjmia5t04.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">yk8k7v8eluzwvorpjmia5t04.178.156.135.237.sslip.io</a></td><td><span class="badge badge-sent">sent</span></td></tr>
 <tr><td>28</td><td>ActRight Roofing</td><td>Roofing</td><td><a href="tel:705-999-9095" class="url">705-999-9095</a></td><td>—</td><td><a href="https://www.facebook.com/61576707270558/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/actright-roofing/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/actright-roofing</a></td><td><span class="badge badge-sent">sent</span></td></tr>
 <tr><td>29</td><td>Clearview Heating & Air</td><td>HVAC</td><td><a href="tel:705-428-3144" class="url">705-428-3144</a></td><td>—</td><td><a href="https://www.facebook.com/pages/Clearview-Heating-Air-Condition-Supply/1602017150120748" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/clearview-hvac/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/clearview-hvac</a></td><td><span class="badge badge-sent">sent</span></td></tr>
-<tr><td>30</td><td>Skinner Ink</td><td>Tattoo</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/skinner-ink/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/skinner-ink</a></td><td><span class="badge badge-new">live</span></td></tr>
+<tr><td>30</td><td>Skinner Ink</td><td>Tattoo</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/skinner-ink/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/skinner-ink</a></td><td><span class="badge badge-live">live</span></td></tr>
 <tr><td>31</td><td>Tattoo Emission</td><td>Tattoo</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>32</td><td>Best Pals Grooming</td><td>Pet Grooming</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/best-pals-grooming/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/best-pals-grooming</a></td><td><span class="badge badge-new">live</span></td></tr>
+<tr><td>32</td><td>Best Pals Grooming</td><td>Pet Grooming</td><td>—</td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/best-pals-grooming/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/best-pals-grooming</a></td><td><span class="badge badge-live">live</span></td></tr>
 <tr><td>33</td><td>At The Five Resto</td><td>Restaurant</td><td>—</td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>34</td><td>Express Country Style</td><td>Cafes</td><td><a href="tel:705-730-0944" class="url">705-730-0944</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/express-country-style/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/express-country-style</a></td><td><span class="badge badge-sent">sent</span></td></tr>
 <tr><td>35</td><td>Bruno's Bakery &amp; Cafe</td><td>Cafes</td><td><a href="tel:705-315-1661" class="url">705-315-1661</a></td><td>—</td><td><a href="https://www.facebook.com/BrunosBakeryAndCafe/" target="_blank" class="url" rel="noopener">FB Page ↗</a></td><td><a href="https://mexemexe02.github.io/brunos-bakery-cafe/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/brunos-bakery-cafe</a></td><td><span class="badge badge-dead">dead</span></td></tr>
@@ -134,7 +141,7 @@ tr:hover{background:#1a1d2a}
 <tr><td>69</td><td>Ritekote Painting</td><td>Painters</td><td><a href="tel:705-716-5857" class="url">705-716-5857</a></td><td>—</td><td>—</td><td><a href="http://kl1gu4uheyb6mq17j55sf4p0.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">kl1gu4uheyb6mq17j55sf4p0.178.156.135.237.sslip.io</a></td><td><span class="badge badge-dead">dead</span></td></tr>
 <tr><td>70</td><td>Cann-Paint</td><td>Painters</td><td><a href="tel:705-795-4587" class="url">705-795-4587</a></td><td><a href="mailto:cann-paint@sympatico.ca" class="url">cann-paint@sympatico.ca</a></td><td>—</td><td><a href="http://m6u5zpdpro3b1bmxxze55f5w.178.156.135.237.sslip.io" target="_blank" class="url" rel="noopener">m6u5zpdpro3b1bmxxze55f5w.178.156.135.237.sslip.io</a></td><td><span class="badge badge-dead">dead</span></td></tr>
 <tr><td>71</td><td>Ideal Landscape Services</td><td>Landscapers</td><td><a href="tel:705-896-0196" class="url">705-896-0196</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
-<tr><td>72</td><td>Pattison Bros</td><td>Landscapers</td><td><a href="tel:905-729-2031" class="url">905-729-2031</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/pattison-bros/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/pattison-bros</a></td><td><span class="badge badge-new">ready</span></td></tr>
+<tr><td>72</td><td>Pattison Bros</td><td>Landscapers</td><td><a href="tel:905-729-2031" class="url">905-729-2031</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/pattison-bros/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/pattison-bros</a></td><td><span class="badge badge-ready">ready</span></td></tr>
 <tr><td>73</td><td>Rocklandscapedesign Pool &amp; Spa</td><td>Landscapers</td><td><a href="tel:905-729-2031" class="url">905-729-2031</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/rocklandscapedesign-pool-spa/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/rocklandscapedesign-pool-spa</a></td><td><span class="badge badge-dead">dead</span></td></tr>
 <tr><td>74</td><td>C &amp; V Concrete</td><td>Landscapers</td><td><a href="tel:705-302-3131" class="url">705-302-3131</a></td><td>—</td><td>—</td><td><a href="https://mexemexe02.github.io/c-v-concrete/" target="_blank" class="url" rel="noopener">mexemexe02.github.io/c-v-concrete</a></td><td><span class="badge badge-dead">dead</span></td></tr>
 <tr><td>75</td><td>Down2Earth Home Garden Landscaping And Property Management</td><td>Landscapers</td><td><a href="tel:705-323-9464" class="url">705-323-9464</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-dead">dead</span></td></tr>
@@ -243,7 +250,7 @@ tr:hover{background:#1a1d2a}
 <tr><td>178</td><td>Outright Roofing</td><td>Roofing</td><td><a href="tel:(705) 302-7133" class="url">(705) 302-7133</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>179</td><td>MKT Roofing and Exteriors</td><td>Roofing</td><td><a href="tel:(705) 279-1774" class="url">(705) 279-1774</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>180</td><td>E.H. Gas Services Ltd</td><td>HVAC</td><td><a href="tel:(705) 716-3451" class="url">(705) 716-3451</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
-<tr><td>181</td><td>Superior HVAC Service</td><td></td><td>—</td><td><a href="mailto:(705) 996-6048" class="url">(705) 996-6048</a></td><td>—</td><td><a href="http://HVAC" target="_blank" class="url" rel="noopener">HVAC</a></td><td><span class="badge badge-new"></span></td></tr>
+<tr><td>181</td><td>Superior HVAC Service</td><td></td><td>—</td><td><a href="mailto:(705) 996-6048" class="url">(705) 996-6048</a></td><td>—</td><td><a href="http://HVAC" target="_blank" class="url" rel="noopener">HVAC</a></td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>182</td><td>Minnings Electrical Service</td><td>Electrician</td><td><a href="tel:(705) 881-9718" class="url">(705) 881-9718</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>183</td><td>Manatherapie</td><td>Massage Therapy</td><td><a href="tel:(705) 309-0534" class="url">(705) 309-0534</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
 <tr><td>184</td><td>Rae Smith-RMT</td><td>Massage Therapy</td><td><a href="tel:(705) 737-3297" class="url">(705) 737-3297</a></td><td>—</td><td>—</td><td>TBD</td><td><span class="badge badge-new">new</span></td></tr>
@@ -264,7 +271,7 @@ tr:hover{background:#1a1d2a}
 </table>
 </div>
 
-<p class="last-updated">Last updated: June 18, 2026 at 12:10 UTC · Generated by Hermes Agent · <a href="https://www.kumon.com/barrie-mapleview-on" target="_blank">Kumon Barrie Mapleview — Humberto Domingues</a></p>
+<p class="last-updated">Last updated: June 18, 2026 at 16:03 UTC · Generated by Hermes Agent · <a href="https://www.kumon.com/barrie-mapleview-on" target="_blank">Kumon Barrie Mapleview — Humberto Domingues</a></p>
 
 <script>
 function toggleDead() {
