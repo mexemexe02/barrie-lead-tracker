@@ -1,0 +1,10 @@
+[
+  {
+    "ticker": "AAPL",
+    "issuer": "Apple Inc.",
+    "shares": 1000,
+    "type": "Buy",
+    "scheduled_time": "2026-06-25T09:30:37.289548",
+    "status": "pending"
+  }
+]
