@@ -102,7 +102,7 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 - Push to GitHub
 
 ### 6. Pitch (DRAFT ONLY — Humberto approves before sending)
-- SMS template: "Hi — I'm Humberto, local to Barrie (Kumon Mapleview). I noticed [Business] doesn't have a website yet, and I put together a quick demo: [URL]. Let me know what you think if you're interested."
+- SMS template: "Hi! I'm Humberto, a fellow Barrie business owner (Kumon Mapleview). I also build websites, so I built a free demo website for [Business] — take a look: [URL] No obligation — if you like it, it's yours. Let me know what you think of the site. :-) Cheers."
 - Email: CC mexemexe02@gmail.com on EVERY outreach
 - **NEVER send without Humberto's approval**
 - Never say "free", "no catch", "it's yours" — professional positioning only
@@ -110,6 +110,13 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 ## Quality Standards
 
 ### Demo Site Requirements
+- ✅ **MOBILE-FIRST — must work perfectly on phones (primary audience)**
+- ✅ Responsive at 3+ breakpoints (480px, 768px, 1024px minimum)
+- ✅ Touch-friendly tap targets (min 44px for all buttons/links)
+- ✅ Proper viewport meta tag
+- ✅ No horizontal scroll on any device
+- ✅ Readable font sizes on small screens (min 16px body text on mobile)
+- ✅ Cart/checkout usable on phone screens
 - ✅ Dark theme (charcoal/industrial/warm tones)
 - ✅ Real hero image (Unsplash, verified working)
 - ✅ Google Fonts (Bebas Neue, Playfair Display, Cormorant Garamond + Inter)
