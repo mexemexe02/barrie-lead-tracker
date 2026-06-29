@@ -111,6 +111,9 @@ Humberto's side hustle: find local Barrie, Ontario businesses without websites, 
 
 ### Demo Site Requirements
 - ✅ **MOBILE-FIRST — must work perfectly on phones (primary audience)**
+- ✅ **RICH VISUAL DESIGN** — dark/dramatic themes with real hero images, gradient overlays, styled cards. NOT flat/minimal/basic.
+- ✅ **REAL IMAGES** — every site must have a hero image AND (for contractors) a project portfolio gallery. No gradient-only or placeholder backgrounds.
+- ✅ **BUSINESS-APPROPRIATE COLOR SCHEME** — match the industry (pool = blues/teals, carpentry = warm/wood tones, restaurant = warm/appetizing, etc.)
 - ✅ Responsive at 3+ breakpoints (480px, 768px, 1024px minimum)
 - ✅ Touch-friendly tap targets (min 44px for all buttons/links)
 - ✅ Proper viewport meta tag
